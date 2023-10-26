@@ -8,7 +8,7 @@ In VS Code, install the [REST Client](https://marketplace.visualstudio.com/items
 
 Replace the parameter values at the top of every file contains placeholders for the following values:
 
-- `{{env}}` - The environment to query. Either `sod` or `sod2` or `qastage` or `qastage2` or `online` or `online3`.
+- `{{env}}` - The environment to query. Either `sod` or `sod2` or `qaonline` or `stage` or `online` or `online3`.
 - `{{token}}` - The access token to use for authentication.
 - `{{tenant}}` - The online tenant context identifier to query.
 - `{{ticket}}` - The ticket credential to use for queries. Must be used with app_secret.
