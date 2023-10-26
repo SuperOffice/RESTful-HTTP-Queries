@@ -19,7 +19,7 @@ Replace the parameter values at the top of every file contains placeholders for 
 Query using access token:
 
 ```http
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/3 HTTP/1.1
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/3 HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/json
 ```
@@ -27,7 +27,7 @@ Accept: application/json
 Query using ticket credential with app secret:
 
 ```http
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/3 HTTP/1.1
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/3 HTTP/1.1
 Authorization: SOTicket {{ticket}}
 SO-AppToken: {{app_secret}}
 Accept: application/json
