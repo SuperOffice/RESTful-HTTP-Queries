@@ -1,0 +1,2515 @@
+@token=8A:
+@tenant=Cust12345
+@env=sod
+@ticket=7T:
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/Person?$filter=personUdef/SuperOffice:SuperIdUid = 'oIns7VrorQWa5rTTQsYLls1QIOhlYxifxSw7LqeElX'
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/default HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/1192925 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/person?$filter=lastName contains 'L\'Oréal' HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person?$select=firstName,lastName,email/emailAddress,phone/formattedNumber HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person?$select=firstName,lastName,email/emailAddress,personCountry,personCountryId HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Person/GetUserCandidateByPerson
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Accept-Language: en
+Content-Type: application/json; charset=utf-8
+
+{
+  "PersonId": 941374
+}
+
+###
+
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Person/CreateOrUpdateUserCandidate
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Accept-Language: en
+Content-Type: application/json; charset=utf-8
+
+{
+  "Username": "user@name.com",
+  "PersonId": 941374,
+  "AccessAllRequests": true
+}
+
+###
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/agents/person HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/Person?$filter=personUdef/SuperOffice:1 = 'Works'
+Authorization: Bearer {{token}}
+Accept: application/json
+Accept-Language: en
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/simpleperson?$select=firstName,lastName&$filter=personId eq 3 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+###
+GET https://{{env}}.superoffice.com/{{tenant}}//api/v1/Person/3/Simple?$select=firstName,lastName HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+
+###
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/25 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+
+###
+PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/29 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+[ 
+    { 
+        "op": "replace", 
+        "path": "Address/Street", 
+        "value": {
+            "Address1": "225 Shattuck Hill Road C-1",
+            "Address2": "C/O Tony Yates",
+            "City": "Somewhere",
+            "State": "OH",
+            "Zipcode": "03823"
+        }
+    } 
+]
+
+###
+
+PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/174639 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+[ 
+    { 
+        "op": "replace", 
+        "path": "Title", 
+        "value": "Developer Lead"
+    } 
+]
+
+###
+
+PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/5 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+[ 
+  {
+    "op": "replace",
+    "path": "Title",
+    "value": "Operations Leader"
+  },
+  { 
+      "op": "replace", 
+      "path": "CustomFields", 
+      "value": {
+          "x_sale": "5",
+          "SuperOffice:2": "42",
+          "SuperOffice:9": "Testing2",
+      }
+  }
+]
+
+###
+
+# This fails... needs the complete address fields like above.
+PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/29 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+[ 
+    { 
+        "op": "replace", 
+        "path": "Address/Street/Address1", 
+        "value": {
+            "Value": "226 Shattuck Hill Road C-1"
+        }
+    } 
+]
+
+###
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/174644 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/174644 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+[ 
+    { 
+        "op": "replace", 
+        "path": "Emails", 
+        "value": [
+          {
+            "Value": "stevejhnson@email1.com",
+            "Description": "Job"
+          }
+        ]
+    } 
+]
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "Firstname": "Steve",
+  "Lastname": "Martin",
+  "Contact": {
+    "ContactId": "5"
+  },
+  "Country": {
+    "CountryId": "1"
+  },
+  "Emails": [
+    {
+      "Value": "email@email.com",
+      "Description": "EmailDescription"
+    }
+  ],
+  "CustomFields": {
+    "x_sale": "5",
+    "SuperOffice:2": "42",
+    "SuperOffice:9": "Testing2",
+  },
+}
+
+###
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "PersonId": 0,
+  "Firstname": "Steve",
+  "MiddleName": "Martin",
+  "Lastname": "Johnson",
+  "Mrmrs": "",
+  "Title": "Salesman",
+  "UpdatedDate": "0001-01-01T00:00:00",
+  "CreatedDate": "0001-01-01T00:00:00",
+  "BirthDate": "0001-01-01T00:00:00",
+  "CreatedBy": {
+    "AssociateId": 5,
+    "Name": "TY",
+    "PersonId": 5,
+    "Rank": 0,
+    "Tooltip": "",
+    "Type": "InternalAssociate",
+    "GroupIdx": 5,
+    "FullName": "Anthony Yates",
+    "FormalName": "Anthony Yates",
+    "Deleted": false,
+    "EjUserId": 2,
+    "UserName": null,
+    "TableRight": {
+      "Mask": "Select, Update",
+      "Reason": "[SR_USER_CANNOT_DELETE_SELF]"
+    },
+    "FieldProperties": {}
+  },
+  "Emails": [],
+  "Description": "",
+  "IsAssociate": false,
+  "PrivatePhones": [],
+  "Faxes": [],
+  "MobilePhones": [],
+  "OfficePhones": [],
+  "OtherPhones": [],
+  "Position": {
+    "Id": 0,
+    "Value": "",
+    "Tooltip": "",
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "UpdatedBy": null,
+  "Contact": {
+    "ContactId": 19
+  },
+  "Country": {
+    "CountryId": 826,
+    "Name": "United Kingdom",
+    "CurrencyId": 36,
+    "EnglishName": "United Kingdom",
+    "TwoLetterISOCountry": "GB",
+    "ThreeLetterISOCountry": "GBR",
+    "ImageDescription": null,
+    "OrgNrText": "VAT No.:",
+    "InterAreaPrefix": "0",
+    "DialInPrefix": "44",
+    "ZipPrefix": "GB",
+    "DomainName": "GB",
+    "AddressLayoutId": 3,
+    "DomesticAddressLayoutId": 3,
+    "ForeignAddressLayoutId": 3,
+    "Rank": 67,
+    "Tooltip": "United Kingdom; Great Britain",
+    "Deleted": false,
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "Interests": [
+    {
+      "Id": 57,
+      "Name": "ContHdOne",
+      "ToolTip": "ContHdOne",
+      "Deleted": false,
+      "Rank": 15,
+      "Type": "persint",
+      "ColorBlock": 0,
+      "IconHint": "persint",
+      "Selected": false,
+      "LastChanged": "0001-01-01T00:00:00",
+      "ChildItems": [
+        {
+          "Id": 10,
+          "Name": "Greetings/Christmas card",
+          "ToolTip": "Greetings/Christmas card",
+          "Deleted": false,
+          "Rank": 10,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 11,
+          "Name": "Invitation to seminar",
+          "ToolTip": "Invitation to seminar",
+          "Deleted": false,
+          "Rank": 11,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 8,
+          "Name": "Press releases",
+          "ToolTip": "Press releases",
+          "Deleted": false,
+          "Rank": 8,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 7,
+          "Name": "Pricelists",
+          "ToolTip": "Pricelists",
+          "Deleted": false,
+          "Rank": 7,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 6,
+          "Name": "Product News",
+          "ToolTip": "Product News",
+          "Deleted": false,
+          "Rank": 6,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 5,
+          "Name": "Sales Contact",
+          "ToolTip": "Sales Contact",
+          "Deleted": false,
+          "Rank": 5,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 9,
+          "Name": "Technical information",
+          "ToolTip": "Technical information",
+          "Deleted": false,
+          "Rank": 9,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        }
+      ],
+      "ExtraInfo": "",
+      "StyleHint": "",
+      "Hidden": false,
+      "FullName": null,
+      "TableRight": null,
+      "FieldProperties": {}
+    },
+    {
+      "Id": 58,
+      "Name": "ContHdTwo",
+      "ToolTip": "ContHdTwo",
+      "Deleted": false,
+      "Rank": 16,
+      "Type": "persint",
+      "ColorBlock": 0,
+      "IconHint": "persint",
+      "Selected": false,
+      "LastChanged": "0001-01-01T00:00:00",
+      "ChildItems": [
+        {
+          "Id": 3,
+          "Name": "Administrative Contact",
+          "ToolTip": "Administrative Contact",
+          "Deleted": false,
+          "Rank": 3,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 4,
+          "Name": "Decision Maker",
+          "ToolTip": "Decision Maker",
+          "Deleted": false,
+          "Rank": 4,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 1,
+          "Name": "Reference",
+          "ToolTip": "Reference",
+          "Deleted": false,
+          "Rank": 1,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 2,
+          "Name": "Technical Contact",
+          "ToolTip": "Technical Contact",
+          "Deleted": false,
+          "Rank": 2,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        }
+      ],
+      "ExtraInfo": "",
+      "StyleHint": "",
+      "Hidden": false,
+      "FullName": null,
+      "TableRight": null,
+      "FieldProperties": {}
+    }
+  ],
+  "PersonNumber": "10055",
+  "FullName": "",
+  "NoMailing": false,
+  "UsePersonAddress": false,
+  "Retired": false,
+  "Urls": [],
+  "FormalName": "",
+  "Address": {
+    "Wgs84Latitude": 0.0,
+    "Wgs84Longitude": 0.0,
+    "LocalizedAddress": [
+      [
+        {
+          "Name": "Address1",
+          "Value": "",
+          "Tooltip": "",
+          "Label": "SR_AL_ADDRESS1",
+          "ValueLength": 80,
+          "AddressType": "PersonPrivateAddress",
+          "TableRight": null,
+          "FieldProperties": {}
+        }
+      ],
+      [
+        {
+          "Name": "Address2",
+          "Value": "",
+          "Tooltip": "",
+          "Label": "SR_AL_ADDRESS2",
+          "ValueLength": 80,
+          "AddressType": "PersonPrivateAddress",
+          "TableRight": null,
+          "FieldProperties": {}
+        }
+      ],
+      [
+        {
+          "Name": "Address3",
+          "Value": "",
+          "Tooltip": "",
+          "Label": "SR_AL_ADDRESS3",
+          "ValueLength": 80,
+          "AddressType": "PersonPrivateAddress",
+          "TableRight": null,
+          "FieldProperties": {}
+        }
+      ],
+      [
+        {
+          "Name": "City",
+          "Value": "",
+          "Tooltip": "",
+          "Label": "SR_AL_CITY",
+          "ValueLength": 80,
+          "AddressType": "PersonPrivateAddress",
+          "TableRight": null,
+          "FieldProperties": {}
+        }
+      ],
+      [
+        {
+          "Name": "County",
+          "Value": "",
+          "Tooltip": "",
+          "Label": "SR_AL_COUNTYPCODE",
+          "ValueLength": 29,
+          "AddressType": "PersonPrivateAddress",
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Name": "Zipcode",
+          "Value": "",
+          "Tooltip": "",
+          "Label": "",
+          "ValueLength": 12,
+          "AddressType": "PersonPrivateAddress",
+          "TableRight": null,
+          "FieldProperties": {}
+        }
+      ]
+    ],
+    "Street": {
+      "AtypeIdx": "Unknown",
+      "Address1": "",
+      "Address2": "",
+      "Address3": "",
+      "City": "",
+      "County": "",
+      "State": "",
+      "Zipcode": "",
+      "Formatted": ""
+    },
+    "Postal": null,
+    "Formatted": "",
+    "TableRight": {
+      "Mask": "Select, Update, Insert, Delete",
+      "Reason": ""
+    },
+    "FieldProperties": {
+      "zipcode": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 11
+      },
+      "city": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 79
+      },
+      "state": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 5
+      },
+      "county": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 29
+      },
+      "address1": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 79
+      },
+      "address2": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 79
+      },
+      "address3": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 79
+      }
+    }
+  },
+  "Post3": "",
+  "Post2": "",
+  "Post1": "",
+  "Kanalname": "",
+  "Kanafname": "",
+  "CorrespondingAssociate": null,
+  "Category": {
+    "Id": 0,
+    "Value": "",
+    "Tooltip": "",
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "Business": {
+    "Id": 2,
+    "Value": "Banking/Finance",
+    "Tooltip": "",
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "Associate": {
+    "AssociateId": 5,
+    "Name": "TY",
+    "PersonId": 5,
+    "Rank": 0,
+    "Tooltip": "",
+    "Type": "InternalAssociate",
+    "GroupIdx": 5,
+    "FullName": "Anthony Yates",
+    "FormalName": "Anthony Yates",
+    "Deleted": false,
+    "EjUserId": 2,
+    "UserName": null,
+    "TableRight": {
+      "Mask": "Select, Update",
+      "Reason": "[SR_USER_CANNOT_DELETE_SELF]"
+    },
+    "FieldProperties": {}
+  },
+  "Salutation": "",
+  "ActiveInterests": 0,
+  "SupportAssociate": null,
+  "TicketPriority": null,
+  "CustomerLanguage": null,
+  "DbiAgentId": 0,
+  "DbiKey": "",
+  "DbiLastModified": "0001-01-01T00:00:00",
+  "DbiLastSyncronized": "0001-01-01T00:00:00",
+  "SentInfo": 0,
+  "ShowContactTickets": 0,
+  "UserInfo": null,
+  "ChatEmails": [],
+  "InternetPhones": [],
+  "Source": 0,
+  "ActiveErpLinks": 0,
+  "ShipmentTypes": [
+    {
+      "Id": 1,
+      "Name": "NO:\"Invitasjoner\";IT:\"Inviti\";PL:\"Zaproszenia\";JP:\"招待\";CN:\"邀请\";FR:\"Invitations\";CZ:\"Pozvánky\";SP:\"Invitaciones\";SW:\"Förfrågningar\";NL:\"Uitnodigingen\";DA:\"Invitationer\";FI:\"Kutsut\";GE:\"Einladungen\";US:\"Invitations\";RU:\"Приглашения\"",
+      "ToolTip": "",
+      "Deleted": false,
+      "Rank": 1,
+      "Type": null,
+      "ColorBlock": 0,
+      "IconHint": null,
+      "Selected": true,
+      "LastChanged": "0001-01-01T00:00:00",
+      "ChildItems": [],
+      "ExtraInfo": null,
+      "StyleHint": null,
+      "Hidden": false,
+      "FullName": null,
+      "TableRight": null,
+      "FieldProperties": {}
+    },
+    {
+      "Id": 3,
+      "Name": "NO:\"Kampanjer\";IT:\"Promozioni\";PL:\"Promocje\";JP:\"ﾌﾟﾛﾓｰｼｮﾝ\";CN:\"推广\";FR:\"Promotions\";CZ:\"Podpory prodeje\";SP:\"Promociones\";SW:\"Kampanjer\";NL:\"Promoties\";DA:\"Kampagner\";FI:\"Tarjoukset\";GE:\"Sonderaktionen\";US:\"Promotions\";RU:\"Промо-акции\"",
+      "ToolTip": "",
+      "Deleted": false,
+      "Rank": 3,
+      "Type": null,
+      "ColorBlock": 0,
+      "IconHint": null,
+      "Selected": true,
+      "LastChanged": "0001-01-01T00:00:00",
+      "ChildItems": [],
+      "ExtraInfo": null,
+      "StyleHint": null,
+      "Hidden": false,
+      "FullName": null,
+      "TableRight": null,
+      "FieldProperties": {}
+    },
+    {
+      "Id": 2,
+      "Name": "NO:\"Nyheter\";IT:\"Novità\";PL:\"Wiadomości\";JP:\"ﾆｭｰｽ\";CN:\"新闻\";FR:\"Nouvelles\";CZ:\"Novinky\";SP:\"Noticias\";SW:\"Nyheter\";NL:\"Nieuws\";DA:\"Nyheder\";FI:\"Uutiset\";GE:\"Neuigkeiten\";US:\"News\";RU:\"Новости\"",
+      "ToolTip": "",
+      "Deleted": false,
+      "Rank": 2,
+      "Type": null,
+      "ColorBlock": 0,
+      "IconHint": null,
+      "Selected": true,
+      "LastChanged": "0001-01-01T00:00:00",
+      "ChildItems": [],
+      "ExtraInfo": null,
+      "StyleHint": null,
+      "Hidden": false,
+      "FullName": null,
+      "TableRight": null,
+      "FieldProperties": {}
+    },
+    {
+      "Id": 4,
+      "Name": "NO:\"Viktige meldinger\";IT:\"Messaggi urgenti\";PL:\"Pilne wiadomości\";JP:\"緊急ﾒｯｾｰｼﾞ\";CN:\"紧急消息\";FR:\"Messages urgents\";CZ:\"Urgentní zprávy\";SP:\"Mensajes urgentes\";SW:\"Brådskande meddelanden\";NL:\"Urgente berichten\";DA:\"Hastemeddelelser\";FI:\"Tärkeät viestit\";GE:\"Wichtige Mitteilungen\";US:\"Urgent messages\";RU:\"Срочные сообщения\"",
+      "ToolTip": "",
+      "Deleted": false,
+      "Rank": 4,
+      "Type": null,
+      "ColorBlock": 0,
+      "IconHint": null,
+      "Selected": true,
+      "LastChanged": "0001-01-01T00:00:00",
+      "ChildItems": [],
+      "ExtraInfo": null,
+      "StyleHint": null,
+      "Hidden": false,
+      "FullName": null,
+      "TableRight": null,
+      "FieldProperties": {}
+    }
+  ],
+  "Consents": [
+    {
+      "ConsentPersonId": 0,
+      "Comment": "",
+      "Registered": "0001-01-01T00:00:00",
+      "RegisteredAssociateId": 0,
+      "Updated": "0001-01-01T00:00:00",
+      "UpdatedAssociateId": 0,
+      "LegalBaseId": 6,
+      "LegalBaseKey": "61F",
+      "LegalBaseName": "NO:\"Berettiget interesse\";IT:\"Interesse legittimo\";PL:\"Prawnie uzasadnione interesy\";JP:\"正当な利益\";CN:\"合法权益\";FR:\"Intérêt légitime\";CZ:\"Oprávněný zájem\";SP:\"Interés legítimo\";SW:\"Legitimt intresse\";NL:\"Rechtmatig belang\";DA:\"Legitim interesse\";FI:\"Oikeutettu etu\";GE:\"Berechtigte Interessen\";US:\"Legitimate interest\";RU:\"Законный интерес\"",
+      "ConsentPurposeId": 1,
+      "ConsentPurposeKey": "STORE",
+      "ConsentPurposeName": "US:\"Sales and service\";GE:\"Verkauf und Service\"",
+      "ConsentSourceId": 9,
+      "ConsentSourceKey": "UNKNOWN",
+      "ConsentSourceName": "NO:\"Ukjent\";IT:\"Sconosciuto\";PL:\"Nieznane\";JP:\"不明\";CN:\"未知\";FR:\"Inconnu\";CZ:\"Neznámé\";SP:\"Desconocido\";SW:\"Okänt\";NL:\"Onbekend\";DA:\"Ukendt\";FI:\"Tuntematon\";GE:\"Unbekannt\";US:\"Unknown\";RU:\"Неизвестно\"",
+      "TableRight": null,
+      "FieldProperties": {}
+    }
+  ],
+  "BounceEmails": [],
+  "ActiveStatusMonitorId": 0,
+  "UserDefinedFields": {
+    "SuperOffice:1": "",
+    "SuperOffice:2": "[D:01/01/0001 00:00:00.0000000]"
+  },
+  "ExtraFields": {},
+  "CustomFields": {
+    "SuperOffice:1": "Updated Text Here",
+    "SuperOffice:1:org": "",
+    "SuperOffice:2": "[DT:01/01/0001 00:00:00.0000000]",
+    "SuperOffice:2:org": "[DT:01/01/0001 00:00:00.0000000]"
+  }
+}
+
+###
+
+PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/174644 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "PersonId": 174644,
+  "Firstname": "Steve",
+  "MiddleName": "Jack",
+  "Lastname": "Johnson",
+  "Mrmrs": "",
+  "Title": "Salesman",
+  "UpdatedDate": "2022-07-14T14:44:54",
+  "CreatedDate": "2022-07-14T14:42:01",
+  "BirthDate": "0001-01-01T00:00:00",
+  "CreatedBy": {
+    "AssociateId": 5,
+    "Name": "TY",
+    "PersonId": 5,
+    "Rank": 0,
+    "Tooltip": "",
+    "Type": "InternalAssociate",
+    "GroupIdx": 5,
+    "FullName": "Anthony Yates",
+    "FormalName": "Anthony Yates",
+    "Deleted": false,
+    "EjUserId": 2,
+    "UserName": null,
+    "TableRight": {
+      "Mask": "Select, Update",
+      "Reason": "[SR_USER_CANNOT_DELETE_SELF]"
+    },
+    "FieldProperties": {}
+  },
+  "Emails": [
+    {
+      "Value": "stevejhnson@email1.com",
+      "StrippedValue": "stevejhnson@email1.com",
+      "Description": "Job",
+      "TableRight": null,
+      "FieldProperties": {}
+    }
+  ],
+  "Description": "",
+  "IsAssociate": false,
+  "PrivatePhones": [],
+  "Faxes": [],
+  "MobilePhones": [],
+  "OfficePhones": [],
+  "OtherPhones": [],
+  "Position": {
+    "Id": 0,
+    "Value": "",
+    "Tooltip": "",
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "UpdatedBy": {
+    "AssociateId": 5,
+    "Name": "TY",
+    "PersonId": 5,
+    "Rank": 0,
+    "Tooltip": "",
+    "Type": "InternalAssociate",
+    "GroupIdx": 5,
+    "FullName": "Anthony Yates",
+    "FormalName": "Anthony Yates",
+    "Deleted": false,
+    "EjUserId": 2,
+    "UserName": null,
+    "TableRight": {
+      "Mask": "Select, Update",
+      "Reason": "[SR_USER_CANNOT_DELETE_SELF]"
+    },
+    "FieldProperties": {}
+  },
+  "Contact": {
+    "ContactId": 19,
+    "Name": "Hugo Enterprises",
+    "OrgNr": "1231231231",
+    "Department": "Mega Industry Hotness",
+    "URL": "",
+    "City": "",
+    "DirectPhone": "",
+    "AssociateId": 5,
+    "CountryId": 826,
+    "EmailAddress": "",
+    "Kananame": "",
+    "EmailAddressName": null,
+    "URLName": null,
+    "AssociateFullName": "Anthony Yates",
+    "BusinessName": "Banking/Finance",
+    "CategoryName": "Business Partner",
+    "CountryName": "United Kingdom",
+    "Address": {
+      "Wgs84Latitude": 0.0,
+      "Wgs84Longitude": 0.0,
+      "LocalizedAddress": [
+        [
+          {
+            "Name": "PostalAddress1",
+            "Value": "",
+            "Tooltip": "",
+            "Label": "SR_AL_ADDRESS1",
+            "ValueLength": 80,
+            "AddressType": "ContactPostalAddress",
+            "TableRight": null,
+            "FieldProperties": {}
+          }
+        ],
+        [
+          {
+            "Name": "PostalAddress2",
+            "Value": "",
+            "Tooltip": "",
+            "Label": "SR_AL_ADDRESS2",
+            "ValueLength": 80,
+            "AddressType": "ContactPostalAddress",
+            "TableRight": null,
+            "FieldProperties": {}
+          }
+        ],
+        [
+          {
+            "Name": "PostalAddress3",
+            "Value": "",
+            "Tooltip": "",
+            "Label": "SR_AL_ADDRESS3",
+            "ValueLength": 80,
+            "AddressType": "ContactPostalAddress",
+            "TableRight": null,
+            "FieldProperties": {}
+          }
+        ],
+        [
+          {
+            "Name": "PostalCity",
+            "Value": "",
+            "Tooltip": "",
+            "Label": "SR_AL_CITY",
+            "ValueLength": 80,
+            "AddressType": "ContactPostalAddress",
+            "TableRight": null,
+            "FieldProperties": {}
+          }
+        ],
+        [
+          {
+            "Name": "PostalCounty",
+            "Value": "",
+            "Tooltip": "",
+            "Label": "SR_AL_COUNTYPCODE",
+            "ValueLength": 29,
+            "AddressType": "ContactPostalAddress",
+            "TableRight": null,
+            "FieldProperties": {}
+          },
+          {
+            "Name": "PostalZipcode",
+            "Value": "",
+            "Tooltip": "",
+            "Label": "",
+            "ValueLength": 12,
+            "AddressType": "ContactPostalAddress",
+            "TableRight": null,
+            "FieldProperties": {}
+          }
+        ]
+      ],
+      "Street": {
+        "AtypeIdx": "ContactStreetAddress",
+        "Address1": "",
+        "Address2": "",
+        "Address3": "",
+        "City": "",
+        "County": "",
+        "State": "",
+        "Zipcode": "",
+        "Formatted": ""
+      },
+      "Postal": {
+        "AtypeIdx": "ContactPostalAddress",
+        "Address1": "",
+        "Address2": "",
+        "Address3": "",
+        "City": "",
+        "County": "",
+        "State": "",
+        "Zipcode": "",
+        "Formatted": ""
+      },
+      "Formatted": "",
+      "TableRight": null,
+      "FieldProperties": {}
+    },
+    "FormattedAddress": "",
+    "FullName": "Hugo Enterprises, Mega Industry Hotness",
+    "IsOwnerContact": false,
+    "ActiveErpLinks": 0,
+    "TableRight": {
+      "Mask": "Select, Update, Insert",
+      "Reason": "[SR_ACCESS_DBOWNER]"
+    },
+    "FieldProperties": {
+      "ContactId": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Int32",
+        "FieldLength": 4
+      },
+      "Name": {
+        "FieldRight": {
+          "Mask": "Update, UIHintMandatory",
+          "Reason": "[SR_ACCESS_MANDATORY]"
+        },
+        "FieldType": "System.String",
+        "FieldLength": 219
+      },
+      "Department": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 219
+      },
+      "OrgNr": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 49
+      },
+      "UrlAddress": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 1023
+      },
+      "Phone": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 239
+      },
+      "AssociateId": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Int32",
+        "FieldLength": 4
+      },
+      "ContactCountryId": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Int32",
+        "FieldLength": 4
+      },
+      "Email": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 239
+      },
+      "Kananame": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 219
+      },
+      "CategoryId": {
+        "FieldRight": {
+          "Mask": "Update, UIHintMandatory",
+          "Reason": "[SR_ACCESS_MANDATORY]"
+        },
+        "FieldType": "System.Int32",
+        "FieldLength": 4
+      },
+      "BusinessId": {
+        "FieldRight": {
+          "Mask": "Update, UIHintMandatory",
+          "Reason": "[SR_ACCESS_MANDATORY]"
+        },
+        "FieldType": "System.Int32",
+        "FieldLength": 4
+      },
+      "PostalAddress": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Int32",
+        "FieldLength": 4
+      },
+      "StreetAddress": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Int32",
+        "FieldLength": 4
+      }
+    }
+  },
+  "Country": {
+    "CountryId": 826,
+    "Name": "United Kingdom",
+    "CurrencyId": 36,
+    "EnglishName": "United Kingdom",
+    "TwoLetterISOCountry": "GB",
+    "ThreeLetterISOCountry": "GBR",
+    "ImageDescription": null,
+    "OrgNrText": "VAT No.:",
+    "InterAreaPrefix": "0",
+    "DialInPrefix": "44",
+    "ZipPrefix": "GB",
+    "DomainName": "GB",
+    "AddressLayoutId": 3,
+    "DomesticAddressLayoutId": 3,
+    "ForeignAddressLayoutId": 3,
+    "Rank": 67,
+    "Tooltip": "United Kingdom; Great Britain",
+    "Deleted": false,
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "Interests": [
+    {
+      "Id": 57,
+      "Name": "ContHdOne",
+      "ToolTip": "ContHdOne",
+      "Deleted": false,
+      "Rank": 15,
+      "Type": "persint",
+      "ColorBlock": 0,
+      "IconHint": "persint",
+      "Selected": false,
+      "LastChanged": "0001-01-01T00:00:00",
+      "ChildItems": [
+        {
+          "Id": 10,
+          "Name": "Greetings/Christmas card",
+          "ToolTip": "Greetings/Christmas card",
+          "Deleted": false,
+          "Rank": 10,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 11,
+          "Name": "Invitation to seminar",
+          "ToolTip": "Invitation to seminar",
+          "Deleted": false,
+          "Rank": 11,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 8,
+          "Name": "Press releases",
+          "ToolTip": "Press releases",
+          "Deleted": false,
+          "Rank": 8,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 7,
+          "Name": "Pricelists",
+          "ToolTip": "Pricelists",
+          "Deleted": false,
+          "Rank": 7,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 6,
+          "Name": "Product News",
+          "ToolTip": "Product News",
+          "Deleted": false,
+          "Rank": 6,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 5,
+          "Name": "Sales Contact",
+          "ToolTip": "Sales Contact",
+          "Deleted": false,
+          "Rank": 5,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 9,
+          "Name": "Technical information",
+          "ToolTip": "Technical information",
+          "Deleted": false,
+          "Rank": 9,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        }
+      ],
+      "ExtraInfo": "",
+      "StyleHint": "",
+      "Hidden": false,
+      "FullName": null,
+      "TableRight": null,
+      "FieldProperties": {}
+    },
+    {
+      "Id": 58,
+      "Name": "ContHdTwo",
+      "ToolTip": "ContHdTwo",
+      "Deleted": false,
+      "Rank": 16,
+      "Type": "persint",
+      "ColorBlock": 0,
+      "IconHint": "persint",
+      "Selected": false,
+      "LastChanged": "0001-01-01T00:00:00",
+      "ChildItems": [
+        {
+          "Id": 3,
+          "Name": "Administrative Contact",
+          "ToolTip": "Administrative Contact",
+          "Deleted": false,
+          "Rank": 3,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 4,
+          "Name": "Decision Maker",
+          "ToolTip": "Decision Maker",
+          "Deleted": false,
+          "Rank": 4,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 1,
+          "Name": "Reference",
+          "ToolTip": "Reference",
+          "Deleted": false,
+          "Rank": 1,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Id": 2,
+          "Name": "Technical Contact",
+          "ToolTip": "Technical Contact",
+          "Deleted": false,
+          "Rank": 2,
+          "Type": "persint",
+          "ColorBlock": 0,
+          "IconHint": "persint",
+          "Selected": false,
+          "LastChanged": "0001-01-01T00:00:00",
+          "ChildItems": [],
+          "ExtraInfo": "",
+          "StyleHint": "",
+          "Hidden": false,
+          "FullName": null,
+          "TableRight": null,
+          "FieldProperties": {}
+        }
+      ],
+      "ExtraInfo": "",
+      "StyleHint": "",
+      "Hidden": false,
+      "FullName": null,
+      "TableRight": null,
+      "FieldProperties": {}
+    }
+  ],
+  "PersonNumber": "10055",
+  "FullName": "Steve Martin Johnson",
+  "NoMailing": false,
+  "UsePersonAddress": false,
+  "Retired": false,
+  "Urls": [],
+  "FormalName": "Steve Martin Johnson",
+  "Address": {
+    "Wgs84Latitude": 0.0,
+    "Wgs84Longitude": 0.0,
+    "LocalizedAddress": [
+      [
+        {
+          "Name": "Address1",
+          "Value": "",
+          "Tooltip": "",
+          "Label": "SR_AL_ADDRESS1",
+          "ValueLength": 80,
+          "AddressType": "PersonPrivateAddress",
+          "TableRight": null,
+          "FieldProperties": {}
+        }
+      ],
+      [
+        {
+          "Name": "Address2",
+          "Value": "",
+          "Tooltip": "",
+          "Label": "SR_AL_ADDRESS2",
+          "ValueLength": 80,
+          "AddressType": "PersonPrivateAddress",
+          "TableRight": null,
+          "FieldProperties": {}
+        }
+      ],
+      [
+        {
+          "Name": "Address3",
+          "Value": "",
+          "Tooltip": "",
+          "Label": "SR_AL_ADDRESS3",
+          "ValueLength": 80,
+          "AddressType": "PersonPrivateAddress",
+          "TableRight": null,
+          "FieldProperties": {}
+        }
+      ],
+      [
+        {
+          "Name": "City",
+          "Value": "",
+          "Tooltip": "",
+          "Label": "SR_AL_CITY",
+          "ValueLength": 80,
+          "AddressType": "PersonPrivateAddress",
+          "TableRight": null,
+          "FieldProperties": {}
+        }
+      ],
+      [
+        {
+          "Name": "County",
+          "Value": "",
+          "Tooltip": "",
+          "Label": "SR_AL_COUNTYPCODE",
+          "ValueLength": 29,
+          "AddressType": "PersonPrivateAddress",
+          "TableRight": null,
+          "FieldProperties": {}
+        },
+        {
+          "Name": "Zipcode",
+          "Value": "",
+          "Tooltip": "",
+          "Label": "",
+          "ValueLength": 12,
+          "AddressType": "PersonPrivateAddress",
+          "TableRight": null,
+          "FieldProperties": {}
+        }
+      ]
+    ],
+    "Street": {
+      "AtypeIdx": "PersonPrivateAddress",
+      "Address1": "",
+      "Address2": "",
+      "Address3": "",
+      "City": "",
+      "County": "",
+      "State": "",
+      "Zipcode": "",
+      "Formatted": ""
+    },
+    "Postal": null,
+    "Formatted": "",
+    "TableRight": {
+      "Mask": "Select, Update, Insert, Delete",
+      "Reason": ""
+    },
+    "FieldProperties": {
+      "zipcode": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 11
+      },
+      "city": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 79
+      },
+      "state": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 5
+      },
+      "county": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 29
+      },
+      "address1": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 79
+      },
+      "address2": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 79
+      },
+      "address3": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 79
+      }
+    }
+  },
+  "Post3": "",
+  "Post2": "",
+  "Post1": "",
+  "Kanalname": "",
+  "Kanafname": "",
+  "CorrespondingAssociate": null,
+  "Category": {
+    "Id": 4,
+    "Value": "Business Partner",
+    "Tooltip": "",
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "Business": {
+    "Id": 2,
+    "Value": "Banking/Finance",
+    "Tooltip": "",
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "Associate": {
+    "AssociateId": 5,
+    "Name": "TY",
+    "PersonId": 5,
+    "Rank": 0,
+    "Tooltip": "",
+    "Type": "InternalAssociate",
+    "GroupIdx": 5,
+    "FullName": "Anthony Yates",
+    "FormalName": "Anthony Yates",
+    "Deleted": false,
+    "EjUserId": 2,
+    "UserName": null,
+    "TableRight": {
+      "Mask": "Select, Update",
+      "Reason": "[SR_USER_CANNOT_DELETE_SELF]"
+    },
+    "FieldProperties": {}
+  },
+  "Salutation": "",
+  "ActiveInterests": 0,
+  "SupportAssociate": null,
+  "TicketPriority": null,
+  "CustomerLanguage": null,
+  "DbiAgentId": 0,
+  "DbiKey": "",
+  "DbiLastModified": "0001-01-01T00:00:00",
+  "DbiLastSyncronized": "0001-01-01T00:00:00",
+  "SentInfo": 0,
+  "ShowContactTickets": 0,
+  "UserInfo": null,
+  "ChatEmails": [],
+  "InternetPhones": [],
+  "Source": 0,
+  "ActiveErpLinks": 0,
+  "ShipmentTypes": [
+    {
+      "Id": 1,
+      "Name": "NO:\"Invitasjoner\";IT:\"Inviti\";PL:\"Zaproszenia\";JP:\"招待\";CN:\"邀请\";FR:\"Invitations\";CZ:\"Pozvánky\";SP:\"Invitaciones\";SW:\"Förfrågningar\";NL:\"Uitnodigingen\";DA:\"Invitationer\";FI:\"Kutsut\";GE:\"Einladungen\";US:\"Invitations\";RU:\"Приглашения\"",
+      "ToolTip": "",
+      "Deleted": false,
+      "Rank": 1,
+      "Type": null,
+      "ColorBlock": 0,
+      "IconHint": null,
+      "Selected": true,
+      "LastChanged": "0001-01-01T00:00:00",
+      "ChildItems": [],
+      "ExtraInfo": null,
+      "StyleHint": null,
+      "Hidden": false,
+      "FullName": null,
+      "TableRight": null,
+      "FieldProperties": {}
+    },
+    {
+      "Id": 3,
+      "Name": "NO:\"Kampanjer\";IT:\"Promozioni\";PL:\"Promocje\";JP:\"ﾌﾟﾛﾓｰｼｮﾝ\";CN:\"推广\";FR:\"Promotions\";CZ:\"Podpory prodeje\";SP:\"Promociones\";SW:\"Kampanjer\";NL:\"Promoties\";DA:\"Kampagner\";FI:\"Tarjoukset\";GE:\"Sonderaktionen\";US:\"Promotions\";RU:\"Промо-акции\"",
+      "ToolTip": "",
+      "Deleted": false,
+      "Rank": 3,
+      "Type": null,
+      "ColorBlock": 0,
+      "IconHint": null,
+      "Selected": true,
+      "LastChanged": "0001-01-01T00:00:00",
+      "ChildItems": [],
+      "ExtraInfo": null,
+      "StyleHint": null,
+      "Hidden": false,
+      "FullName": null,
+      "TableRight": null,
+      "FieldProperties": {}
+    },
+    {
+      "Id": 2,
+      "Name": "NO:\"Nyheter\";IT:\"Novità\";PL:\"Wiadomości\";JP:\"ﾆｭｰｽ\";CN:\"新闻\";FR:\"Nouvelles\";CZ:\"Novinky\";SP:\"Noticias\";SW:\"Nyheter\";NL:\"Nieuws\";DA:\"Nyheder\";FI:\"Uutiset\";GE:\"Neuigkeiten\";US:\"News\";RU:\"Новости\"",
+      "ToolTip": "",
+      "Deleted": false,
+      "Rank": 2,
+      "Type": null,
+      "ColorBlock": 0,
+      "IconHint": null,
+      "Selected": true,
+      "LastChanged": "0001-01-01T00:00:00",
+      "ChildItems": [],
+      "ExtraInfo": null,
+      "StyleHint": null,
+      "Hidden": false,
+      "FullName": null,
+      "TableRight": null,
+      "FieldProperties": {}
+    },
+    {
+      "Id": 4,
+      "Name": "NO:\"Viktige meldinger\";IT:\"Messaggi urgenti\";PL:\"Pilne wiadomości\";JP:\"緊急ﾒｯｾｰｼﾞ\";CN:\"紧急消息\";FR:\"Messages urgents\";CZ:\"Urgentní zprávy\";SP:\"Mensajes urgentes\";SW:\"Brådskande meddelanden\";NL:\"Urgente berichten\";DA:\"Hastemeddelelser\";FI:\"Tärkeät viestit\";GE:\"Wichtige Mitteilungen\";US:\"Urgent messages\";RU:\"Срочные сообщения\"",
+      "ToolTip": "",
+      "Deleted": false,
+      "Rank": 4,
+      "Type": null,
+      "ColorBlock": 0,
+      "IconHint": null,
+      "Selected": true,
+      "LastChanged": "0001-01-01T00:00:00",
+      "ChildItems": [],
+      "ExtraInfo": null,
+      "StyleHint": null,
+      "Hidden": false,
+      "FullName": null,
+      "TableRight": null,
+      "FieldProperties": {}
+    }
+  ],
+  "Consents": [
+    {
+      "ConsentPersonId": 43,
+      "Comment": "",
+      "Registered": "2022-07-14T14:42:01",
+      "RegisteredAssociateId": 5,
+      "Updated": "0001-01-01T00:00:00",
+      "UpdatedAssociateId": 0,
+      "LegalBaseId": 6,
+      "LegalBaseKey": "61F",
+      "LegalBaseName": "NO:\"Berettiget interesse\";IT:\"Interesse legittimo\";PL:\"Prawnie uzasadnione interesy\";JP:\"正当な利益\";CN:\"合法权益\";FR:\"Intérêt légitime\";CZ:\"Oprávněný zájem\";SP:\"Interés legítimo\";SW:\"Legitimt intresse\";NL:\"Rechtmatig belang\";DA:\"Legitim interesse\";FI:\"Oikeutettu etu\";GE:\"Berechtigte Interessen\";US:\"Legitimate interest\";RU:\"Законный интерес\"",
+      "ConsentPurposeId": 1,
+      "ConsentPurposeKey": "STORE",
+      "ConsentPurposeName": "US:\"Sales and service\";GE:\"Verkauf und Service\"",
+      "ConsentSourceId": 9,
+      "ConsentSourceKey": "UNKNOWN",
+      "ConsentSourceName": "NO:\"Ukjent\";IT:\"Sconosciuto\";PL:\"Nieznane\";JP:\"不明\";CN:\"未知\";FR:\"Inconnu\";CZ:\"Neznámé\";SP:\"Desconocido\";SW:\"Okänt\";NL:\"Onbekend\";DA:\"Ukendt\";FI:\"Tuntematon\";GE:\"Unbekannt\";US:\"Unknown\";RU:\"Неизвестно\"",
+      "TableRight": null,
+      "FieldProperties": {}
+    }
+  ],
+  "BounceEmails": [],
+  "ActiveStatusMonitorId": 0,
+  "UserDefinedFields": {
+    "SuperOffice:1": "Updated Text Here",
+    "SuperOffice:2": "[D:01/01/0001 00:00:00.0000000]"
+  },
+  "ExtraFields": {},
+  "CustomFields": {
+    "SuperOffice:1": "Updated Text Here",
+    "SuperOffice:1:org": "Updated Text Here",
+    "SuperOffice:2": "[DT:01/01/0001 00:00:00.0000000]",
+    "SuperOffice:2:org": "[DT:01/01/0001 00:00:00.0000000]"
+  },
+  "TableRight": {
+    "Mask": "Select, Update, Insert, Delete",
+    "Reason": ""
+  },
+  "FieldProperties": {
+    "PersonId": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 4
+    },
+    "Firstname": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "System.String",
+      "FieldLength": 99
+    },
+    "MiddleName": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 99
+    },
+    "Lastname": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 99
+    },
+    "Mrmrs": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 239
+    },
+    "Title": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 239
+    },
+    "UpdatedDate": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.DateTime",
+      "FieldLength": 16
+    },
+    "CreatedDate": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.DateTime",
+      "FieldLength": 16
+    },
+    "PersonNumber": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_MANDATORY_FIELD_1554]"
+      },
+      "FieldType": "System.String",
+      "FieldLength": 49
+    },
+    "Post3": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 99
+    },
+    "Post2": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 99
+    },
+    "Post1": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 99
+    },
+    "Kanalname": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 99
+    },
+    "Kanafname": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 99
+    },
+    "Salutation": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 239
+    },
+    "DbiAgentId": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 4
+    },
+    "DbiKey": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 255
+    },
+    "DbiLastModified": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.DateTime",
+      "FieldLength": 16
+    },
+    "DbiLastSyncronized": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.DateTime",
+      "FieldLength": 16
+    },
+    "SentInfo": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int16",
+      "FieldLength": 2
+    },
+    "ShowContactTickets": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int16",
+      "FieldLength": 2
+    },
+    "Source": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int16",
+      "FieldLength": 2
+    },
+    "ActiveErpLinks": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 4
+    },
+    "BirthDate": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.DateTime",
+      "FieldLength": 2
+    },
+    "CreatedBy": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.Associate",
+      "FieldLength": 4
+    },
+    "Description": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 2047
+    },
+    "IsAssociate": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 4
+    },
+    "Position": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.Position",
+      "FieldLength": 4
+    },
+    "UpdatedBy": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.Associate",
+      "FieldLength": 4
+    },
+    "Contact": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "SuperOffice.CRM.Services.Contact",
+      "FieldLength": 4
+    },
+    "Country": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.Country",
+      "FieldLength": 4
+    },
+    "Interests": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "",
+      "FieldLength": 0
+    },
+    "FullName": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "",
+      "FieldLength": 99
+    },
+    "NoMailing": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 2
+    },
+    "UsePersonAddress": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 2
+    },
+    "Retired": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 2
+    },
+    "FormalName": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "",
+      "FieldLength": 99
+    },
+    "Address.Zipcode": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 11
+    },
+    "Address.City": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 79
+    },
+    "Address.State": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 5
+    },
+    "Address.County": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 29
+    },
+    "Address.Address1": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 79
+    },
+    "Address.Address2": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 79
+    },
+    "Address.Address3": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 79
+    },
+    "Address": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "",
+      "FieldLength": 0
+    },
+    "CorrespondingAssociate": {
+      "FieldRight": {
+        "Mask": "None",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.Associate",
+      "FieldLength": 0
+    },
+    "Category": {
+      "FieldRight": {
+        "Mask": "Read",
+        "Reason": "[SR_ACCESS_PERSONONCOMPANY]"
+      },
+      "FieldType": "SuperOffice.CRM.Services.Category",
+      "FieldLength": 4
+    },
+    "Business": {
+      "FieldRight": {
+        "Mask": "Read",
+        "Reason": "[SR_ACCESS_PERSONONCOMPANY]"
+      },
+      "FieldType": "SuperOffice.CRM.Services.Business",
+      "FieldLength": 4
+    },
+    "Associate": {
+      "FieldRight": {
+        "Mask": "Read",
+        "Reason": "[SR_ACCESS_PERSONONCOMPANY]"
+      },
+      "FieldType": "SuperOffice.CRM.Services.Associate",
+      "FieldLength": 4
+    },
+    "ActiveInterests": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 0
+    },
+    "SupportAssociate": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.Associate",
+      "FieldLength": 4
+    },
+    "TicketPriority": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.TicketPriority",
+      "FieldLength": 4
+    },
+    "CustomerLanguage": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.CustomerLanguage",
+      "FieldLength": 4
+    },
+    "UserInfo": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.UserInfo",
+      "FieldLength": 4
+    },
+    "ShipmentTypes": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "",
+      "FieldLength": 0
+    },
+    "Consents": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "",
+      "FieldLength": 4
+    },
+    "BounceEmails": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "",
+      "FieldLength": 0
+    },
+    "ActiveStatusMonitorId": {
+      "FieldRight": {
+        "Mask": "Read",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 0
+    },
+    "UserDefinedFields.SuperOffice:1": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": -1
+    },
+    "CustomFields.SuperOffice:1": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": -1
+    },
+    "UserDefinedFields.SuperOffice:2": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": -1
+    },
+    "CustomFields.SuperOffice:2": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": -1
+    },
+    "Emails": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.EntityElement[]",
+      "FieldLength": 0
+    },
+    "PrivatePhones": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.EntityElement[]",
+      "FieldLength": 0
+    },
+    "Faxes": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.EntityElement[]",
+      "FieldLength": 0
+    },
+    "MobilePhones": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.EntityElement[]",
+      "FieldLength": 0
+    },
+    "OfficePhones": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.EntityElement[]",
+      "FieldLength": 0
+    },
+    "OtherPhones": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.EntityElement[]",
+      "FieldLength": 0
+    },
+    "Urls": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.EntityElement[]",
+      "FieldLength": 0
+    },
+    "ChatEmails": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.EntityElement[]",
+      "FieldLength": 0
+    },
+    "InternetPhones": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.EntityElement[]",
+      "FieldLength": 0
+    }
+  },
+  "_Links": {
+    "Self": "https://sod.superoffice.com:443/{{tenant}}/api/v1/Person/174644/",
+    "Self.Simple": "https://sod.superoffice.com:443/{{tenant}}/api/v1/Person/174644/Simple/",
+    "UdefLayout": "https://sod.superoffice.com:443/{{tenant}}/api/v1/Person/UdefLayout/Published/",
+    "Mrmrs.List": "https://sod.superoffice.com:443/{{tenant}}/api/v1/MDOList/mrmrs/",
+    "Position.List": "https://sod.superoffice.com:443/{{tenant}}/api/v1/MDOList/perspos/",
+    "Contact": "https://sod.superoffice.com:443/{{tenant}}/api/v1/Contact/19/",
+    "Contact.List": "https://sod.superoffice.com:443/{{tenant}}/api/v1/MDOList/contact_new/",
+    "Country.List": "https://sod.superoffice.com:443/{{tenant}}/api/v1/MDOList/country/",
+    "Interests.List": "https://sod.superoffice.com:443/{{tenant}}/api/v1/MDOList/persint/",
+    "Category.List": "https://sod.superoffice.com:443/{{tenant}}/api/v1/MDOList/category/",
+    "Business.List": "https://sod.superoffice.com:443/{{tenant}}/api/v1/MDOList/business/",
+    "Associate.List": "https://sod.superoffice.com:443/{{tenant}}/api/v1/MDOList/associate/",
+    "Salutation.List": "https://sod.superoffice.com:443/{{tenant}}/api/v1/MDOList/salutation/",
+    "SupportAssociate.List": "https://sod.superoffice.com:443/{{tenant}}/api/v1/MDOList/associate/",
+    "TicketPriority.List": "https://sod.superoffice.com:443/{{tenant}}/api/v1/MDOList/ticketpriority/",
+    "CustomerLanguage.List": "https://sod.superoffice.com:443/{{tenant}}/api/v1/MDOList/customerlanguage/",
+    "Archive": "https://sod.superoffice.com:443/{{tenant}}/api/v1/Person/",
+    "Archive.Activities": "https://sod.superoffice.com:443/{{tenant}}/api/v1/Person/174644/Activities/",
+    "Archive.Appointments": "https://sod.superoffice.com:443/{{tenant}}/api/v1/Person/174644/Appointments/",
+    "Archive.Documents": "https://sod.superoffice.com:443/{{tenant}}/api/v1/Person/174644/Documents/",
+    "Archive.Sales": "https://sod.superoffice.com:443/{{tenant}}/api/v1/Person/174644/Sales/",
+    "Archive.Relations": "https://sod.superoffice.com:443/{{tenant}}/api/v1/Person/174644/Relations/",
+    "Archive.Tickets": "https://sod.superoffice.com:443/{{tenant}}/api/v1/Person/174644/Tickets/"
+  }
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/BLOB/GetPersonImage HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+{
+  "PersonId": 30000000
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Person/GetPersonImage HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+{
+  "PersonId": 30000000
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Person/GetPersonImages HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+{
+  "PersonIds": [29],
+  "ScaledWidth": 400,
+  "ScaledHeight": 200
+}
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/25/Image
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/25
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/1077264/ImageInfo
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Person/CreateTemporaryKey
+Authorization: Bearer {{token}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Domain": "LoginCustomerCenter",
+  "TargetId": 1077264,
+  "PersonId": 1077264,
+  "Expires": "2023-08-23T16:00:00.0000000+02:00"
+}
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/simpleperson?$select=personId,portraitThumbnail,firstName&$filter=personId=25
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Person/GetPersonEntity
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Accept-Language: en
+Content-Type: application/json; charset=utf-8
+
+{
+  "PersonId": 941374
+}
+
+###
+
+
+PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/5 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+[
+  {  
+    "op": "add",
+    "path": "Interests",
+    "value": [
+      {     
+        "Id": "2",
+        "Selected": false
+      }
+    ]
+  }
+]

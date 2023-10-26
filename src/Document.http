@@ -1,0 +1,171 @@
+@token=8A:
+@tenant=Cust12345
+@env=sod
+@ticket=7T:
+@app_secret=
+
+@filter1 = consentPerson/person/personId in (7,17) 
+@select1 = consentPerson/person/personId,active,key,name,consentPerson/comment
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Document/default
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/DocumentTemplate/Items/58/Content/
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/octet-stream
+
+###
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/document/141 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/doctmpl HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/DocumentTemplate/Items HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/DocumentTemplate/Items/164/content/en HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Document/SaveDocumentEntity
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "DocumentId": 0,
+  "UpdatedBy": null,
+  "CreatedBy": null,
+  "Attention": "",
+  "Header": "Testing 5 Create Doc via the API",
+  "Name": "API-Document5.docx",
+  "OurRef": "",
+  "YourRef": "",
+  "Description": "Testing 5 creating a document via the API",
+  "DocumentTemplate": {
+    "DocumentTemplateId": 164
+  },
+  "Person": {
+    "PersonId": 380
+  },
+  "Associate": {
+    "AssociateId": 5
+  },
+  "Contact": {
+    "ContactId": 67
+  },
+  "Project": {
+    "ProjectId": 328012
+  },
+  "Date": "2023-09-06T13:50:00",
+  "ExternalRef": "",
+  "Completed": "NotStarted",
+  "ActiveLinks": 0,
+  "Type": "Document",
+  "Links": [],
+  "LockSemantics": "None",
+  "Sale": null,
+  "SuggestedDocumentId": 0,
+  "Snum": 0,
+  "UserDefinedFields": {
+    "SuperOffice:3": "False",
+    "SuperOffice:4": ""
+  },
+  "CustomFields": {
+    "SuperOffice:3": "[I:0]",
+    "SuperOffice:4": "",
+  },
+  "PublishEventDate": "0001-01-01T00:00:00Z",
+  "PublishTo": "9999-12-31T23:59:59Z",
+  "PublishFrom": "0001-01-01T00:00:00Z",
+  "IsPublished": false,
+  "VisibleFor": [
+    {
+      "VisibleId": 0,
+      "Visibility": "All",
+      "DisplayValue": "[SR_VFC_ALL]"
+    }
+  ]
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Document/CreateNewPhysicalDocumentFromTemplateWithCustomTags2
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "ContactId": 67,
+  "PersonId": 380,
+  "AppointmentId": 0,
+  "DocumentId": 147,
+  "SaleId": 0,
+  "SelectionId": 0,
+  "ProjectId": 328012,
+  "CustomTags": {
+    "{Custom1}": "myValueone",
+    "{Custom2}": "myValuetwo"
+  },
+  "UiCulture": "en"
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Document/SubstituteTemplateVariablesEx
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{ 
+  "parameters": {
+        "SourceInput": "Testing {Custom1} {Custom2}.",
+        "Encoding": "Html",
+        "ContactId": 67,
+        "PersonId": 380,
+        "AppointmentId": 0,
+        "DocumentId": 147,
+        "SaleId": 0,
+        "SelectionId": 0,
+        "ProjectId": 328012,
+        "QuoteLineId": 0,
+        "QuoteAlternativeId": 0,
+        "TicketId": 0,
+        "CustomTags": 
+        [
+            ["Custom1","myValueone"],
+            ["Custom2","myValuetwo"]
+        ]
+    },
+    "CultureName": "en"
+}
+
+# {
+#     SourceInput = "{usec}",
+#                         Encoding = "Html",
+#                         CultureName = "en", {
+#         "SourceInput": "{usec}",
+#         "Encoding": "Html",
+#         "CultureName": "en",
+#     }
+# }

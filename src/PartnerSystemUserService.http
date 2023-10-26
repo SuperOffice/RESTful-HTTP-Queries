@@ -1,0 +1,18 @@
+@tenant=Cust12345
+@client_secret=
+@signedToken=
+@env=sod
+###
+
+POST https://{{env}}.superoffice.com/Login/api/PartnerSystemUser/Authenticate
+Content-Type: application/json
+Accept: application/json
+
+{
+    "SignedSystemToken": "{{signedToken}}",
+    "ReturnTokenType": "JWT",
+    "ApplicationToken": "{{client_secret}}",
+    "ContextIdentifier": "{{tenant}}"
+}
+
+###

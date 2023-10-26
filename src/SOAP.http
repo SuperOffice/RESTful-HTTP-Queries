@@ -1,0 +1,104 @@
+@token=8A:
+@tenant=Cust12345
+@env=sod
+@ticket=7T:1234abcxyzExample==
+@client_id=1234567890987654321
+@url=
+
+POST {{url}}/{{tenant}}/remote/services88/SoPrincipal.svc HTTP/1.1
+Content-Type: text/xml;charset=UTF-8
+Accept: application/json
+SOAPAction: http://www.superoffice.net/ws/crm/NetServer/Services88/SoPrincipal/AuthenticateUsernamePassword
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+ xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:NetServerServices882="http://schemas.datacontract.org/2004/07/System.Security.Cryptography"
+ xmlns:NetServerServices883="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+ xmlns:NetServerServices881="http://schemas.microsoft.com/2003/10/Serialization/"
+ xmlns:SoPrincipal="http://www.superoffice.net/ws/crm/NetServer/Services88">
+  <SoPrincipal:ApplicationToken>{{client_id}}</SoPrincipal:ApplicationToken>
+ <SOAP-ENV:Body>
+   <SoPrincipal:AuthenticateUsernamePassword>
+    <SoPrincipal:UserName xsi:type="xsd:string">jr</SoPrincipal:UserName>
+    <SoPrincipal:Password xsi:type="xsd:string">jr</SoPrincipal:Password>
+   </SoPrincipal:AuthenticateUsernamePassword>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+### 
+
+POST {{url}}/{{tenant}}/remote/services88/SoPrincipal.svc HTTP/1.1
+Content-Type: text/xml;charset=UTF-8
+Accept: application/json
+SOAPAction: http://www.superoffice.net/ws/crm/NetServer/Services88/SoPrincipal/GetSystemInfo
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:ser="http://www.superoffice.net/ws/crm/NetServer/Services88">
+   <soapenv:Header>
+      <ser:ApplicationToken>{{client_id}}</ser:ApplicationToken>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ser:GetSystemInfo/>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+### 
+
+POST {{url}}/{{tenant}}/remote/services88/Contact.svc HTTP/1.1
+Content-Type: text/xml;charset=UTF-8
+Accept: application/json
+SOAPAction: http://www.superoffice.net/ws/crm/NetServer/Services88/Contact/CreateDefaultContactEntity
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+ xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:NetServerServices882="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+ xmlns:NetServerServices881="http://schemas.microsoft.com/2003/10/Serialization/"
+ xmlns:Contact="http://www.superoffice.net/ws/crm/NetServer/Services88">
+  <Contact:ApplicationToken>1234567-1234-9876</Contact:ApplicationToken>
+  <Contact:Credentials>
+    <Contact:Ticket>{{ticket}}</Contact:Ticket>
+  </Contact:Credentials>
+ <SOAP-ENV:Body>
+   <Contact:CreateDefaultContactEntity>
+   </Contact:CreateDefaultContactEntity>
+
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+###
+
+### 
+
+POST https://{{env}}.superoffice.com/{{tenant}}/remote/services88/Contact.svc HTTP/1.1
+Content-Type: text/xml;charset=UTF-8
+Accept: application/json
+SOAPAction: http://www.superoffice.net/ws/crm/NetServer/Services88/Contact/CreateDefaultContactEntity
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+ xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:NetServerServices882="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+ xmlns:NetServerServices881="http://schemas.microsoft.com/2003/10/Serialization/"
+ xmlns:Contact="http://www.superoffice.net/ws/crm/NetServer/Services88">
+  <Contact:ApplicationToken>{{client_id}}</Contact:ApplicationToken>
+  <Contact:Credentials>
+    <Contact:Ticket>{{ticket}}</Contact:Ticket>
+  </Contact:Credentials>
+ <SOAP-ENV:Body>
+   <Contact:CreateDefaultContactEntity>
+   </Contact:CreateDefaultContactEntity>
+
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+###

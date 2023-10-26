@@ -1,0 +1,535 @@
+@tenant=Cust12345
+@env=sod
+@token=8A:
+
+@app_secret=
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/Lists HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/Country/Items HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/TicketStatus/Items HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/ticketstatus HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/functionrights
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Accept-Language: *
+
+###
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/udlist108 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/cache HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/82/items HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/contact_freetextsearch?query=Super HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+#POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/List/DeleteFromListName HTTP/1.1
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/List/DeleteFromListDefinition HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+    "UdListDefinitionId": "108",
+    "Id": "22"
+}
+
+###
+
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/MDO/GetList HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Name": "contact",
+  "ForceFlatList": false,
+  "AdditionalInfo": "contact_id=5,4",
+  "OnlyHistory": false
+}
+
+###
+
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/MDO/GetList HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Name": "Lists",
+  "ForceFlatList": false,
+  "AdditionalInfo": "",
+  "OnlyHistory": false
+}
+
+###
+
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/Category/Items/82 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/List/GetCategory?categoryId=3 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/Category/Headings HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/Category/1/UserGroups HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+#GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/Category/MDOItems?query=Com HTTP/1.1
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/Category/MDOItems HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/Country/Items HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/Country/MDOItems HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/List/GetCategories HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+###
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/82/Items HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/List/GetListEntityByName HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Name": "Category",
+}
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/109/Items HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/doctmpl HTTP/1.1
+Authorization: {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/Country/Items HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/WebPanel/Items/2 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+####
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/80/Items/2/UserGroups HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/81/Items HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/28/Items/2/UserGroups HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/28/Items/2/UserGroups HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+[
+  {
+    "Id": 2,
+    "Name": "Sales",
+    "Selected": true,
+  },
+  {
+    "Id": 4,
+    "Name": "Services",
+    "Selected": true,
+  },
+  {
+    "Id": 3,
+    "Name": "Technical",
+    "Selected": false,
+  },
+  {
+    "Id": 5,
+    "Name": "Marketing",
+    "Selected": false,
+  },
+  {
+    "Id": 1,
+    "Name": "Administration",
+    "Selected": false,
+  }
+]
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/default HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/tags HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/List HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Name": "Tonys Wazzoo List",
+  "Tooltip": "Tonys wazzoo list",
+  "UseGroupsAndHeadings": false
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/109/Items HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Name": "Custom list item one",
+  "Tooltip": "Custom list item one",
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/106/Items HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Name": "US:\"Custom list item one.\";GE:\"Benutzerdefiniertes Listenelement zwei.\"",
+  "Tooltip": "US:\"Custom list item one description.\";GE:\"Benutzerdefiniertes Listenelement zwei tooltip.\""
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/List/GetHeadingsFromName HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Name": "contint"
+}
+
+
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/List/CreateDefaultListEntity HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+# {
+#   "Id": 0,
+#   "Name": null,
+#   "Tooltip": null,
+#   "Deleted": false,
+#   "Rank": 0,
+#   "IsCustomList": false,
+#   "IsMDOList": false,
+#   "UseGroupsAndHeadings": true,
+#   "ListType": null,
+#   "InUseByUserDefinedFields": false,
+#   "TableRight": null,
+#   "FieldProperties": {}
+# }
+
+###
+
+
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/List/SaveListEntity HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+{
+  "Name": "MyCustomList",
+  "Tooltip": "A list to contain my custom items",
+}
+
+# Response
+# {
+#   "Id": 106,
+#   "Name": "MyCustomList",
+#   "Tooltip": "A list to contain my custom items",
+#   "Deleted": false,
+#   "Rank": 0,
+#   "IsCustomList": false,
+#   "IsMDOList": false,
+#   "UseGroupsAndHeadings": false,
+#   "ListType": null,
+#   "InUseByUserDefinedFields": false,
+#   "TableRight": null,
+#   "FieldProperties": {}
+# }
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/List/SaveListEntity HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+{
+  "Name": "My Custom List with Groups",
+  "Tooltip": "A list to contain my custom items with groups",
+  "IsCustomList": true,
+  "UseGroupsAndHeadings": true,
+}
+
+# Response
+# {
+#   "Id": 107,
+#   "Name": "My Custom List with Groups",
+#   "Tooltip": "A list to contain my custom items with groups",
+#   "Deleted": false,
+#   "Rank": 0,
+#   "IsCustomList": true,
+#   "IsMDOList": false,
+#   "UseGroupsAndHeadings": true,
+#   "ListType": null,
+#   "InUseByUserDefinedFields": false,
+#   "TableRight": null,
+#   "FieldProperties": {}
+# }
+
+
+###
+
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/MDO/GetList HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Name": "udlist",
+  "ForceFlatList": false,
+  "AdditionalInfo": "107",
+  "OnlyHistory": false
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/MDO/GetList HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Name": "udlist107",
+  "ForceFlatList": false,
+  "AdditionalInfo": "",
+  "OnlyHistory": false
+}
+
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/List/CreateDefaultListItemEntity HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+#Response
+# {
+#   "Id": 0,
+#   "Name": null,
+#   "Tooltip": null,
+#   "Deleted": false,
+#   "UdListDefinitionId": 0,
+#   "Rank": 0,
+#   "TableRight": null,
+#   "FieldProperties": {}
+# }
+
+###
+
+# Fucking null reference exception!!!
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/List/SaveListItemEntity HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+{
+  "Id": 0,
+  "Name": "Custom List Item one",
+  "Tooltip": "Represents custom list item one",
+  "Deleted": false,
+  "UdListDefinitionId": 106,
+  "Rank": 0,
+  "TableRight": null,
+  "FieldProperties": {}
+}
+
+
+
+
+#----------------------------------------------------------------------------------
+# RESTful REST
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/List HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+{
+  "Name": "Example List with Groups",
+  "Tooltip": "A list to contain my custom items with groups",
+  "IsCustomList": true,
+  "UseGroupsAndHeadings": true,
+}
+
+# Response
+
+# {
+#   "Id": 108,
+#   "Name": "Example List with Groups",
+#   "Tooltip": "A list to contain my custom items with groups",
+#   "Deleted": false,
+#   "Rank": 0,
+#   "IsCustomList": true,
+#   "IsMDOList": false,
+#   "UseGroupsAndHeadings": true,
+#   "ListType": null,
+#   "InUseByUserDefinedFields": false,
+#   "TableRight": null,
+#   "FieldProperties": {},
+#   "_Links": {
+#     "Self": "https://sod.superoffice.com:443/{{tenant}}/api/v1/List/108/"
+#   }
+# }
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/109/Items HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Name": "Custom list item three",
+  "Tooltip": "Custom list item three",
+}
+
+# Response
+
+# {
+#   "Id": 20,
+#   "Name": "Custom list item one",
+#   "Tooltip": "Custom list item one",
+#   "Deleted": false,
+#   "UdListDefinitionId": 108,
+#   "Rank": 0,
+#   "TableRight": null,
+#   "FieldProperties": {}
+# }
+
+###
+

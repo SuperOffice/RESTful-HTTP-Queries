@@ -1,0 +1,77 @@
+@token=8A:
+@tenant=Cust12345
+@env=sod
+@ticket=7T:
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/sale/3 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/sale/5/activities?$select=saleId,contactId HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/SaleActivity?$entities=appointment,document&$select=saleId,contactId&$filter=saleId eq 5 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/sale/default HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/sale HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Contact": { "ContactId" : 17 },
+    "Person": { "PersonId": 24 },
+    "Associate": { "AssociateId": 5 },
+    "Heading": "Heading Text Two",
+    "SaleText": "Sale Text Two",
+    "Rating": { "Id": 1 },
+    "Saledate": "2016-01-07T09:40:59.5506914+01:00",
+    "Amount": 15980.266,
+    "SaleType": { "Id": 2 }
+}
+
+###
+
+PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/sale/3 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+[
+    {
+        "op": "add",
+        "path": "Links",
+        "value": [
+            {
+                "op": "replace",
+                "path": "Address/Street/Address2",
+                "value": "bar"
+            },
+            {
+                "op": "replace",
+                "path": "Address/Street/City",
+                "value": "quux"
+            }
+        ]
+    }
+]
+

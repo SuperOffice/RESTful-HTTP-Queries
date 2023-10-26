@@ -1,0 +1,113 @@
+@token=8A:
+@tenant=Cust12345
+@env=sod
+@ticket=7T:
+@app_secret=
+
+@qry = ejscript.id,ejscript.hierarchy_id.name,ejscript.hierarchy_id.fullname
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/Dynamic?$select={{qry}} HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/Dynamic?$select=ejscript.id,ejscript.hierarchy_id.fullname HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/CRMScript/default
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/CRMScript
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/CRMScript
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "Name": "Create User-Candidate via API 2",
+  "Description": "Testing Person User-Candidate creation.",
+  "IncludeId": "myIncludeId",
+  "HierarchyId": 14,
+  "Source": "#setLanguageLevel 3;
+if(getVariable(\"personId\").toInteger() > 0)
+{
+  Integer personId = getVariable(\"personId\").toInteger();
+  Customer c;
+  c.load(personId);
+  c.save();
+  log(\"Person loaded and saved\");
+  print(\"Person saved!\");
+}
+else
+{
+  log(\"No customer found: id=\" + getVariable(\"personId\"));
+}"
+}
+
+###
+PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/CRMScript/194
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "Source": "#setLanguageLevel 3;
+if(getVariable(\"personId\").toInteger() > 0)
+{
+  Integer personId = getVariable(\"personId\").toInteger();
+  Customer c;
+  c.load(personId);
+  c.save();
+  log(\"Person loaded and saved\");
+  print(\"Person saved!\");
+}
+else
+{
+  log(\"No customer found: id=\" + getVariable(\"personId\"));
+}",
+}
+###
+
+
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/CRMScript/195/Execute
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "personId": "27"
+}
+
+###
+
+DELETE https://{{env}}.superoffice.com/{{tenant}}/api/v1/CRMScript/194
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+
+###
+@include=myIncludeName
+@key=ob6ZOUUwph3XafpG
+@contentform=Content-Type: application/x-www-form-urlencoded
+
+GET https://{{env}}.superoffice.com/{{tenant}}/CS/scripts/customer.fcgi?action=safeParse&includeId=myIncludeName&key=ob6ZOUUwph3XafpG
+
+
+###

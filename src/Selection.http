@@ -1,0 +1,742 @@
+@token=8A:
+@tenant=Cust12345
+@env=sod
+@ticket=7T:
+
+# Get the list of Typical Search entities to generate Typical Search buttons.
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/SelectionMemberTypeV2 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+# SAME AS ABOVE!!! *********************************************************
+
+# Get the list of Typical Search entities to generate Typical Search buttons.
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/MDO/GetList HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Accept-Language: en
+Content-Type: application/json; charset=utf-8
+
+{
+  "Name": "selectionmembertypev2",
+  "ForceFlatList": true,
+  "AdditionalInfo": "",
+  "OnlyHistory": false
+}
+
+###
+
+# Get the list of Typical Searchs for contact.
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/typicalSearch/selectable?additional=contact HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+Accept-Language: en
+
+
+###
+
+# SAME AS ABOVE!!! *********************************************************
+
+# Get the list of Typical Searchs for contact.
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/MDO/GetList HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+{
+  "Name": "typicalSearch",
+  "ForceFlatList": true,
+  "AdditionalInfo": "contact",
+  "OnlyHistory": false
+}
+
+
+###
+
+
+# Get search Archive Provider for entity by typical search id.
+
+# NO REST equivalent!
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Selection/GetSelectionForFind HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "EntityName": "quoteline",
+  "TypicalSearchId": 2
+}
+
+###
+
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Selection/GetSelectionForFind HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "EntityName": "person",
+  "TypicalSearchId": 0
+}
+
+###
+
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Selection/GetSelectionForFind HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "EntityName": "sale",
+  "TypicalSearchId": 0
+}
+
+###
+
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Selection/GetSelectionForFind HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "EntityName": "project",
+  "TypicalSearchId": 0
+}
+
+###
+
+# Load Selection filters by provider name.
+# MDOAgent.GetList( name: "archiveRestrictionColumns:" + providerName  )
+#                          archiveRestrictionColumns:{providername}
+
+# SAINT must be enabled to get SAINT fields in this list!
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/archiveRestrictionColumns:ContactPersonDynamicSelectionV2 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+Accept-Language: en
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/archiveColumns:ContactPersonDynamicSelectionV2 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+Accept-Language: en
+
+###
+
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/archiveEntities:ContactPersonDynamicSelectionV2 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+Accept-Language: en
+
+###
+
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/MDO/GetList HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "Name": "archiveEntities:ContactPersonDynamicSelectionV2",
+  "ForceFlatList": true,
+  "AdditionalInfo": "",
+  "OnlyHistory": false
+}
+
+###
+
+# Gets the saved criterias for the current selection. (SelectionAgent.GetDynamicSelectionCriteriaGroups)
+# Archive Provider: ContactPersonDynamicSelectionV2
+# Selection ID: 21
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Selection/GetDynamicSelectionCriteriaGroups HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "SelectionId": "21",
+}
+
+###
+
+# SAME AS ABOVE!!! *********************************************************
+
+# Gets the saved criterias for the current selection. (SelectionAgent.GetDynamicSelectionCriteriaGroups)
+# Archive Provider: ContactPersonDynamicSelectionV2
+# Selection ID: 21
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Selection/28/CriteriaGroups HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+# Gets extended information about the named filter
+# most importantly the names of the operators, and sub-restrictions for SAINT-filters.  
+
+# DesiredColumnNames: filter-name, 
+# ProviderName: providerName, 
+# StorageKey: ”selection”+selectionId, 
+# StorageType: ”criteria” 
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Find/GetSpecifiedCriteriaInformationWithDefaults HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "DesiredColumnNames": ["firstName", "lastName"],
+  "ProviderName": "ContactPersonDynamicSelectionV2",
+  "StorageKey": "selection=0",
+  "StorageType": "criteria"
+}
+
+###
+
+# Get list of operators for given filter's datatype. Cached. 
+# -----------------------------------------------------------------------
+
+# Get the restriction operators (non-lists).
+# bool, date, datetime, decimal, int,positiveString, string, stringorPK
+
+# Get the restriction operators (lists).
+# associate, ejUser, intArray, listAll, listAny, listInterest, userGroup
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/restrictionOperators/selectable?additional=positiveString HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/MDO/GetList HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+Accept-Language: en
+
+{
+  "Name": "restrictionOperators",
+  "ForceFlatList": true,
+  "AdditionalInfo": "positiveString",
+  "OnlyHistory": false
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Archive/GetAvailableColumns
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Accept-Language: en
+Content-Type: application/json; charset=utf-8
+
+{
+  "ProviderName": "ContactPersonDynamicSelectionV2",
+  "Context": ""
+}
+
+###
+
+# Get list of category items. 
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/Category HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Selection/28/CriteriaGroups HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Selection/24/CriteriaGroups HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+[
+  {
+    "Name": "0",
+    "Description": "",
+    "Rank": 0,
+    "Restrictions": [
+      {
+        "Name": "firstName",
+        "Operator": "begins",
+        "Values": [
+          "B"
+        ],
+        "DisplayValues": [
+          "B"
+        ],
+        "ColumnInfo": {
+          "DisplayName": "[SR_PERSONARCHIVE_FIRSTNAME]",
+          "DisplayTooltip": "[SR_PERSONARCHIVE_FIRSTNAME_TOOLTIP]",
+          "DisplayType": "string",
+          "CanOrderBy": true,
+          "Name": "firstName",
+          "CanRestrictBy": true,
+          "RestrictionType": "string",
+          "RestrictionListName": null,
+          "IsVisible": true,
+          "ExtraInfo": "",
+          "Width": "20%",
+          "IconHint": "Person",
+          "HeadingIconHint": ""
+        },
+        "IsActive": true,
+        "SubRestrictions": null,
+        "InterParenthesis": 0,
+        "InterOperator": "And",
+        "UniqueHash": 939057318
+      },
+      {
+        "Name": "lastName",
+        "Operator": "begins",
+        "Values": [
+          "Y"
+        ],
+        "DisplayValues": [
+          "Y"
+        ],
+        "ColumnInfo": {
+          "DisplayName": "[SR_PERSONARCHIVE_LASTNAME]",
+          "DisplayTooltip": "[SR_PERSONARCHIVE_LASTNAME_TOOLTIP]",
+          "DisplayType": "string",
+          "CanOrderBy": true,
+          "Name": "lastName",
+          "CanRestrictBy": true,
+          "RestrictionType": "string",
+          "RestrictionListName": null,
+          "IsVisible": true,
+          "ExtraInfo": "",
+          "Width": "20%",
+          "IconHint": "Person",
+          "HeadingIconHint": ""
+        },
+        "IsActive": true,
+        "SubRestrictions": null,
+        "InterParenthesis": 0,
+        "InterOperator": "And",
+        "UniqueHash": -588059390
+      }
+    ]
+  },
+  {
+    "Name": "1",
+    "Description": "",
+    "Rank": 1,
+    "Restrictions": [
+      {
+        "Name": "firstName",
+        "Operator": "begins",
+        "Values": [
+          "R"
+        ],
+        "DisplayValues": [
+          "R"
+        ],
+        "ColumnInfo": {
+          "DisplayName": "[SR_PERSONARCHIVE_FIRSTNAME]",
+          "DisplayTooltip": "[SR_PERSONARCHIVE_FIRSTNAME_TOOLTIP]",
+          "DisplayType": "string",
+          "CanOrderBy": true,
+          "Name": "firstName",
+          "CanRestrictBy": true,
+          "RestrictionType": "string",
+          "RestrictionListName": null,
+          "IsVisible": true,
+          "ExtraInfo": "",
+          "Width": "20%",
+          "IconHint": "Person",
+          "HeadingIconHint": ""
+        },
+        "IsActive": true,
+        "SubRestrictions": null,
+        "InterParenthesis": 0,
+        "InterOperator": "And",
+        "UniqueHash": 939057318
+      },
+      {
+        "Name": "lastName",
+        "Operator": "begins",
+        "Values": [
+          "Y"
+        ],
+        "DisplayValues": [
+          "Y"
+        ],
+        "ColumnInfo": {
+          "DisplayName": "[SR_PERSONARCHIVE_LASTNAME]",
+          "DisplayTooltip": "[SR_PERSONARCHIVE_LASTNAME_TOOLTIP]",
+          "DisplayType": "string",
+          "CanOrderBy": true,
+          "Name": "lastName",
+          "CanRestrictBy": true,
+          "RestrictionType": "string",
+          "RestrictionListName": null,
+          "IsVisible": true,
+          "ExtraInfo": "",
+          "Width": "20%",
+          "IconHint": "Person",
+          "HeadingIconHint": ""
+        },
+        "IsActive": true,
+        "SubRestrictions": null,
+        "InterParenthesis": 0,
+        "InterOperator": "And",
+        "UniqueHash": -588059390
+      }
+    ]
+  }
+]
+###
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Selection/SetDynamicSelectionCriteriaGroups
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+Accept-Language: en
+
+{
+  "SelectionId": 24,
+  "Criteria": [
+    {
+      "Name": "0",
+      "Description": "",
+      "Rank": 0,
+      "Restrictions": [
+        {
+          "Name": "firstName",
+          "Operator": "begins",
+          "Values": [
+            "T"
+          ],
+          "DisplayValues": [
+            "T"
+          ],
+          "ColumnInfo": {
+            "DisplayName": "[SR_PERSONARCHIVE_FIRSTNAME]",
+            "DisplayTooltip": "[SR_PERSONARCHIVE_FIRSTNAME_TOOLTIP]",
+            "DisplayType": "string",
+            "CanOrderBy": true,
+            "Name": "firstName",
+            "CanRestrictBy": true,
+            "RestrictionType": "string",
+            "RestrictionListName": null,
+            "IsVisible": true,
+            "ExtraInfo": "",
+            "Width": "20%",
+            "IconHint": "Person",
+            "HeadingIconHint": ""
+          },
+          "IsActive": true,
+          "SubRestrictions": null,
+          "InterParenthesis": 0,
+          "InterOperator": "And",
+          "UniqueHash": 939057318
+        },
+        {
+          "Name": "lastName",
+          "Operator": "begins",
+          "Values": [
+            "Y"
+          ],
+          "DisplayValues": [
+            "Y"
+          ],
+          "ColumnInfo": {
+            "DisplayName": "[SR_PERSONARCHIVE_LASTNAME]",
+            "DisplayTooltip": "[SR_PERSONARCHIVE_LASTNAME_TOOLTIP]",
+            "DisplayType": "string",
+            "CanOrderBy": true,
+            "Name": "lastName",
+            "CanRestrictBy": true,
+            "RestrictionType": "string",
+            "RestrictionListName": null,
+            "IsVisible": true,
+            "ExtraInfo": "",
+            "Width": "20%",
+            "IconHint": "Person",
+            "HeadingIconHint": ""
+          },
+          "IsActive": true,
+          "SubRestrictions": null,
+          "InterParenthesis": 0,
+          "InterOperator": "And",
+          "UniqueHash": -588059390
+        }
+      ]
+    },
+    {
+      "Name": "1",
+      "Description": "",
+      "Rank": 1,
+      "Restrictions": [
+        {
+          "Name": "firstName",
+          "Operator": "begins",
+          "Values": [
+            "R"
+          ],
+          "DisplayValues": [
+            "R"
+          ],
+          "ColumnInfo": {
+            "DisplayName": "[SR_PERSONARCHIVE_FIRSTNAME]",
+            "DisplayTooltip": "[SR_PERSONARCHIVE_FIRSTNAME_TOOLTIP]",
+            "DisplayType": "string",
+            "CanOrderBy": true,
+            "Name": "firstName",
+            "CanRestrictBy": true,
+            "RestrictionType": "string",
+            "RestrictionListName": null,
+            "IsVisible": true,
+            "ExtraInfo": "",
+            "Width": "20%",
+            "IconHint": "Person",
+            "HeadingIconHint": ""
+          },
+          "IsActive": true,
+          "SubRestrictions": null,
+          "InterParenthesis": 0,
+          "InterOperator": "And",
+          "UniqueHash": 939057318
+        },
+        {
+          "Name": "lastName",
+          "Operator": "begins",
+          "Values": [
+            "Y"
+          ],
+          "DisplayValues": [
+            "Y"
+          ],
+          "ColumnInfo": {
+            "DisplayName": "[SR_PERSONARCHIVE_LASTNAME]",
+            "DisplayTooltip": "[SR_PERSONARCHIVE_LASTNAME_TOOLTIP]",
+            "DisplayType": "string",
+            "CanOrderBy": true,
+            "Name": "lastName",
+            "CanRestrictBy": true,
+            "RestrictionType": "string",
+            "RestrictionListName": null,
+            "IsVisible": true,
+            "ExtraInfo": "",
+            "Width": "20%",
+            "IconHint": "Person",
+            "HeadingIconHint": ""
+          },
+          "IsActive": true,
+          "SubRestrictions": null,
+          "InterParenthesis": 0,
+          "InterOperator": "And",
+          "UniqueHash": -588059390
+        }
+      ]
+    }
+  ]
+}
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Selection/GetSelectionMembersArchiveRows HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "SelectionId": "18",
+  "Select": "contactId,name,personId,category,categoryId"
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Selection/CreateDefaultSelectionEntity HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Selection/default HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Selection/GetSelectionEntity?selectionEntityId=18 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Selection/24 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Selection/28/CriteriaGroups HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/SelectionCategory/Items HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+###
+
+#- beforeTime
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment?$select=date,type,text,contact/name?&$filter=date after '2020-05-28T15:00:00' HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+#- beforeTime
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment?$select=date,type,text,contact/name?&$filter=date thisPeriod 1 4 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+#***********************************************************************************
+# Create Selection
+#***********************************************************************************
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Selection/default HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+#***********************************************************************************
+# Save Selection
+#***********************************************************************************
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Selection HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "Description": "Testing Selections (Description)",
+  "Postit": "",
+  "SelectionCategory": {
+    "Id": 2,
+  },
+  "IncludePerson": 0,
+  "Name": "Selections from API (Name)",
+  "SelectionType": "Dynamic",
+  "CompanyUnique": false,
+  "TargetTableNumber": 5,
+  "TargetTableName": "contact",
+  "Completed": false,
+  "LeftSelectionId": 0,
+  "RightSelectionId": 0,
+  "SelectionUnionType": "Unknown",
+  "MainProviderName": "ContactPersonDynamicSelectionV2",
+  "ShadowProviderName": "",
+  "MainHeading": "[SR_SELECTION_DYNAMICSELECTION_OF] [SR_COMPANY_AND_PERSON] (MainHeading)",
+  "MemberTabHeading": "[SR_COMPANY_AND_PERSON] (MemberTabeHeading)",
+  "VisibleFor": [
+    {
+      "VisibleId": 0,
+      "Visibility": "All",
+    }
+  ]
+}
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Selection/28 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Archive/GetArchiveListByColumns HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+Accept-Language: en
+
+{
+  "ProviderName": "ContactPersonDynamicSelectionV2",
+  "Columns": [
+    "firstName",
+    "lastName"
+  ],
+  "SortOrder": [
+    {
+      "Name": "firstName",
+      "Direction": "ASC"
+    }
+  ],
+  "Restriction": [
+    {
+      "Name": "selectionId",
+      "Operator": "=",
+      "Values": [
+        "34"
+      ]
+    }
+  ],
+  "Entities": [
+    "person"
+  ],
+  "Page": 0,
+  "PageSize": 100
+}
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/ContactPersonDynamicSelectionV2?$select=firstName,lastName&$filter=selectionId = 34 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/contactselection?$select=name,Count(name):Footer&$filter=selectionId eq 145379&$options=GrandTotal=true&$top=50000000 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/selection/145379/members?$select=name HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###

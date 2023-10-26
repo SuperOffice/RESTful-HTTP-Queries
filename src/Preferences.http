@@ -1,0 +1,171 @@
+@token=8A:
+@tenant=Cust12345
+@env=sod
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/PreferenceDescription/default HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/PreferenceDescription HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Section": "Example Preference Section",
+  "Key": ".",
+  "Name": "US:\"DevNet Preference Settings\";GE:\"DevNet-Voreinstellungen\"",
+  "ValueType": "Unknown",
+  "MaxLevel": "Individual",
+  "SysMaxLevel": "Individual",
+  "AccessFlags": "adminGUI",
+  "Description": "US:\"DevNet Preference Settings\";GE:\"DevNet-Voreinstellungen\"",
+  "IsBuiltin": false
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/PreferenceDescription HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Section": "Example Preference Section",
+  "Key": "DevNetBoolean",
+  "Name": "US:\"DevNet true or false setting\";",
+  "ValueType": "Bool",
+  "MaxLevel": "Individual",
+  "SysMaxLevel": "Individual",
+  "AccessFlags": "adminGUI",
+  "Description": "US:\"DevNet true or false setting\";",
+  "IsBuiltin": false
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/PreferenceDescription HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Section": "Example Preference Section",
+  "Key": "DevNetText",
+  "Name": "US:\"DevNet Text setting (99 chars)\";GE:\"Kurztexteinstellung (99 fig)\"",
+  "ValueType": "Text",
+  "MaxLevel": "Individual",
+  "SysMaxLevel": "Individual",
+  "AccessFlags": "adminGUI",
+  "Description": "US:\"DevNet text setting\";",
+  "IsBuiltin": false
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/PreferenceDescription HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Section": "Example Preference Section",
+  "Key": "DevNetNumber",
+  "Name": "US:\"DevNet number setting.\";GE:\"DevNet Nummerneinstellung.\"",
+  "ValueType": "Number",
+  "MaxLevel": "Individual",
+  "SysMaxLevel": "Individual",
+  "AccessFlags": "adminGUI",
+  "Description": "US:\"DevNet number setting\";",
+  "IsBuiltin": false
+}
+
+###
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/PreferenceDescription HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Section": "Example Preference Section",
+  "Key": "DevNetUDList",
+  "Name": "US:\"DevNet UD list setting.\";GE:\"DevNet List.\"",
+  "TableName": "UDList",
+  "ValueType": "ListTableRef",
+  "UserDefinedListId": 101,
+  "MaxLevel": "Individual",
+  "SysMaxLevel": "Individual",
+  "AccessFlags": "adminGUI",
+  "Description": "US:\"DevNet UD list setting\";",
+  "IsBuiltin": false
+}
+
+###
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Preference/Mirroring/SkipTables HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "RawValue": "ej_message,y_table",
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Preference/Rights-sale/Sale.earning/2?value=0 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Preference/Rights-sale/Sale.earning_percent/2?value=0 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+}
+
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/PreferenceDescription HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Section": "Mirroring",
+  "Key": ".",
+  "Name": "US:\"Database Mirroring Settings\";GE:\"Einstellungen für den Datenbankspiegel\"",
+  "ValueType": "Unknown",
+  "MaxLevel": "Database",
+  "SysMaxLevel": "Database",
+  "AccessFlags": "adminGUI",
+  "IsBuiltin": false
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/PreferenceDescription HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "Section": "Mirroring",
+  "Key": "SkipTable",
+  "Name": "US:\"Tables to skip\"",
+  "ValueType": "Text",
+  "MaxLevel": "Database",
+  "SysMaxLevel": "Database",
+  "AccessFlags": "adminGUI",
+  "Description": "US:\"Comma-separated list of tables that are NOT sent to database mirror.\";",
+  "IsBuiltin": false
+}

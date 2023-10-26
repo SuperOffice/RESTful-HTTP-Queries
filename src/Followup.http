@@ -1,0 +1,12 @@
+@token=8A:
+@tenant=Cust12345
+@env=sod
+@ticket=7T:
+@app_secret=
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment/56 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###

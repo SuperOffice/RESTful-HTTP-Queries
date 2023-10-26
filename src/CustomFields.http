@@ -1,0 +1,1072 @@
+@token=8A:
+@tenant=Cust12345
+@env=sod
+@ticket=7T:
+@app_secret=
+
+###
+
+# Get all contact user defined field definitions
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+DELETE https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout/My New Number
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/DeleteUserDefinedFieldInfo?UserDefinedFieldInfoId=151
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+# Get by progid
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout/SuperOffice:1 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+# udefFieldType	Enum: Number, ShortText, LongText, Date, UnlimitedDate, Checkbox, List, Decimal
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout?udefFieldType=Number HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+# Response
+
+{
+  "UDefFieldId": 0,
+  "ColumnId": 8970,
+  "FieldDefault": "",
+  "FieldHeight": 17,
+  "FieldLabel": "",
+  "FieldLeft": 102,
+  "FieldTop": 153,
+  "FieldType": "List",
+  "FieldWidth": 100,
+  "FormatMask": "",
+  "HideLabel": false,
+  "IsIndexed": false,
+  "LabelHeight": 17,
+  "LabelLeft": 0,
+  "LabelTop": 153,
+  "LabelWidth": 100,
+  "LastVersionId": 0,
+  "ListTableId": 0,
+  "IsMandatory": false,
+  "Type": "Contact",
+  "Page1LineNo": 0,
+  "ProgId": "SuperOffice:10",
+  "IsReadOnly": false,
+  "ShortLabel": "",
+  "TabOrder": 10,
+  "TextLength": 0,
+  "Tooltip": "",
+  "UdefIdentity": 10,
+  "UDListDefinitionId": 0,
+  "Justification": "Left",
+  "Version": 9,
+  "TemplateVariableName": "cl10",
+  "HasBeenPublished": false,
+  "MdoListName": null,
+  "TableRight": null,
+  "FieldProperties": {
+    "IsIndexed": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 0
+    },
+    "IsMandatory": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 0
+    }
+  }
+}
+
+
+###
+
+PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+[{
+  "UDefFieldId": 0,
+  "ColumnId": 8971,
+  "FieldDefault": "",
+  "FieldHeight": 17,
+  "FieldLabel": "Tonys Example UDList",
+  "FieldLeft": 102,
+  "FieldTop": 170,
+  "FieldType": "List",
+  "FieldWidth": 100,
+  "FormatMask": "",
+  "HideLabel": false,
+  "IsIndexed": false,
+  "LabelHeight": 17,
+  "LabelLeft": 0,
+  "LabelTop": 170,
+  "LabelWidth": 100,
+  "LastVersionId": 0,
+  "ListTableId": 136,
+  "IsMandatory": false,
+  "Type": "Contact",
+  "Page1LineNo": 0,
+  "ProgId": "SuperOffice:11",
+  "IsReadOnly": false,
+  "ShortLabel": "Tonys UDList",
+  "TabOrder": 11,
+  "TextLength": 0,
+  "Tooltip": "Tooltip for this list UD field",
+  "UdefIdentity": 11,
+  "UDListDefinitionId": 0,
+  "Justification": "Left",
+  "Version": 11,
+  "TemplateVariableName": "cl11",
+  "HasBeenPublished": false,
+  "MdoListName": null
+}]
+
+###
+
+# update the fields
+
+PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+[
+  {
+    "UDefFieldId": 95,
+    "ColumnId": 9025,
+    "FieldDefault": "",
+    "FieldHeight": 17,
+    "FieldLabel": "My Udef Field Definition Changed",
+    "FieldLeft": 102,
+    "FieldTop": 0,
+    "FieldType": "ShortText",
+    "FieldWidth": 100,
+    "FormatMask": "",
+    "HideLabel": false,
+    "IsIndexed": false,
+    "LabelHeight": 17,
+    "LabelLeft": 0,
+    "LabelTop": 0,
+    "LabelWidth": 100,
+    "LastVersionId": 85,
+    "ListTableId": 0,
+    "IsMandatory": false,
+    "Type": "Contact",
+    "Page1LineNo": 1,
+    "ProgId": "SuperOffice:1",
+    "IsReadOnly": false,
+    "ShortLabel": "",
+    "TabOrder": 1,
+    "TextLength": 25,
+    "Tooltip": "My Udef Field Tooltip",
+    "UdefIdentity": 1,
+    "UDListDefinitionId": 0,
+    "Justification": "Left",
+    "Version": 12,
+    "TemplateVariableName": "cs05",
+    "HasBeenPublished": true,
+    "MdoListName": null,
+    "TableRight": null,
+    "FieldProperties": {
+      "IsIndexed": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      },
+      "IsMandatory": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      }
+    }
+  },
+  {
+    "UDefFieldId": 96,
+    "ColumnId": 8965,
+    "FieldDefault": "1",
+    "FieldHeight": 17,
+    "FieldLabel": "Udef Field Number",
+    "FieldLeft": 102,
+    "FieldTop": 17,
+    "FieldType": "Number",
+    "FieldWidth": 100,
+    "FormatMask": "",
+    "HideLabel": false,
+    "IsIndexed": false,
+    "LabelHeight": 17,
+    "LabelLeft": 0,
+    "LabelTop": 17,
+    "LabelWidth": 100,
+    "LastVersionId": 86,
+    "ListTableId": 0,
+    "IsMandatory": false,
+    "Type": "Contact",
+    "Page1LineNo": 0,
+    "ProgId": "SuperOffice:2",
+    "IsReadOnly": false,
+    "ShortLabel": "",
+    "TabOrder": 2,
+    "TextLength": 0,
+    "Tooltip": "Udef Field Number",
+    "UdefIdentity": 2,
+    "UDListDefinitionId": 0,
+    "Justification": "Left",
+    "Version": 12,
+    "TemplateVariableName": "cl05",
+    "HasBeenPublished": true,
+    "MdoListName": null,
+    "TableRight": null,
+    "FieldProperties": {
+      "IsIndexed": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      },
+      "IsMandatory": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      }
+    }
+  },
+  {
+    "UDefFieldId": 97,
+    "ColumnId": 8966,
+    "FieldDefault": "",
+    "FieldHeight": 17,
+    "FieldLabel": "Udef Field Date",
+    "FieldLeft": 102,
+    "FieldTop": 34,
+    "FieldType": "Date",
+    "FieldWidth": 100,
+    "FormatMask": "",
+    "HideLabel": false,
+    "IsIndexed": false,
+    "LabelHeight": 17,
+    "LabelLeft": 0,
+    "LabelTop": 34,
+    "LabelWidth": 100,
+    "LastVersionId": 87,
+    "ListTableId": 0,
+    "IsMandatory": false,
+    "Type": "Contact",
+    "Page1LineNo": 0,
+    "ProgId": "SuperOffice:3",
+    "IsReadOnly": false,
+    "ShortLabel": "",
+    "TabOrder": 3,
+    "TextLength": 0,
+    "Tooltip": "Udef Field Date",
+    "UdefIdentity": 3,
+    "UDListDefinitionId": 0,
+    "Justification": "Left",
+    "Version": 12,
+    "TemplateVariableName": "cl06",
+    "HasBeenPublished": true,
+    "MdoListName": null,
+    "TableRight": null,
+    "FieldProperties": {
+      "IsIndexed": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      },
+      "IsMandatory": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      }
+    }
+  },
+  {
+    "UDefFieldId": 98,
+    "ColumnId": 8967,
+    "FieldDefault": "0",
+    "FieldHeight": 17,
+    "FieldLabel": "Udef Field Checkbox",
+    "FieldLeft": 102,
+    "FieldTop": 51,
+    "FieldType": "Checkbox",
+    "FieldWidth": 100,
+    "FormatMask": "",
+    "HideLabel": false,
+    "IsIndexed": false,
+    "LabelHeight": 17,
+    "LabelLeft": 0,
+    "LabelTop": 51,
+    "LabelWidth": 100,
+    "LastVersionId": 88,
+    "ListTableId": 0,
+    "IsMandatory": false,
+    "Type": "Contact",
+    "Page1LineNo": 0,
+    "ProgId": "SuperOffice:4",
+    "IsReadOnly": false,
+    "ShortLabel": "",
+    "TabOrder": 4,
+    "TextLength": 0,
+    "Tooltip": "Udef Field Checkbox",
+    "UdefIdentity": 4,
+    "UDListDefinitionId": 0,
+    "Justification": "Left",
+    "Version": 12,
+    "TemplateVariableName": "cl07",
+    "HasBeenPublished": true,
+    "MdoListName": null,
+    "TableRight": null,
+    "FieldProperties": {
+      "IsIndexed": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      },
+      "IsMandatory": {
+        "FieldRight": {
+          "Mask": "Read",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      }
+    }
+  },
+  {
+    "UDefFieldId": 99,
+    "ColumnId": 9065,
+    "FieldDefault": "",
+    "FieldHeight": 17,
+    "FieldLabel": "Udef Field Decimal",
+    "FieldLeft": 102,
+    "FieldTop": 68,
+    "FieldType": "Decimal",
+    "FieldWidth": 100,
+    "FormatMask": "",
+    "HideLabel": false,
+    "IsIndexed": false,
+    "LabelHeight": 17,
+    "LabelLeft": 0,
+    "LabelTop": 68,
+    "LabelWidth": 100,
+    "LastVersionId": 89,
+    "ListTableId": 0,
+    "IsMandatory": false,
+    "Type": "Contact",
+    "Page1LineNo": 0,
+    "ProgId": "SuperOffice:5",
+    "IsReadOnly": false,
+    "ShortLabel": "",
+    "TabOrder": 5,
+    "TextLength": 0,
+    "Tooltip": "Udef Field Decimal",
+    "UdefIdentity": 5,
+    "UDListDefinitionId": 0,
+    "Justification": "Left",
+    "Version": 12,
+    "TemplateVariableName": "cf05",
+    "HasBeenPublished": true,
+    "MdoListName": null,
+    "TableRight": null,
+    "FieldProperties": {
+      "IsIndexed": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      },
+      "IsMandatory": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      }
+    }
+  },
+  {
+    "UDefFieldId": 100,
+    "ColumnId": 8968,
+    "FieldDefault": "",
+    "FieldHeight": 17,
+    "FieldLabel": "Udef Field UDList",
+    "FieldLeft": 102,
+    "FieldTop": 85,
+    "FieldType": "List",
+    "FieldWidth": 100,
+    "FormatMask": "",
+    "HideLabel": false,
+    "IsIndexed": false,
+    "LabelHeight": 17,
+    "LabelLeft": 0,
+    "LabelTop": 85,
+    "LabelWidth": 100,
+    "LastVersionId": 90,
+    "ListTableId": 136,
+    "IsMandatory": false,
+    "Type": "Contact",
+    "Page1LineNo": 2,
+    "ProgId": "SuperOffice:6",
+    "IsReadOnly": false,
+    "ShortLabel": "",
+    "TabOrder": 6,
+    "TextLength": 0,
+    "Tooltip": "",
+    "UdefIdentity": 6,
+    "UDListDefinitionId": 98,
+    "Justification": "Left",
+    "Version": 12,
+    "TemplateVariableName": "cl08",
+    "HasBeenPublished": true,
+    "MdoListName": "udlist98",
+    "TableRight": null,
+    "FieldProperties": {
+      "IsIndexed": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      },
+      "IsMandatory": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      }
+    }
+  },
+  {
+    "UDefFieldId": 101,
+    "ColumnId": 8969,
+    "FieldDefault": "",
+    "FieldHeight": 17,
+    "FieldLabel": "UD Businesses",
+    "FieldLeft": 102,
+    "FieldTop": 102,
+    "FieldType": "List",
+    "FieldWidth": 100,
+    "FormatMask": "",
+    "HideLabel": false,
+    "IsIndexed": false,
+    "LabelHeight": 17,
+    "LabelLeft": 0,
+    "LabelTop": 102,
+    "LabelWidth": 100,
+    "LastVersionId": 91,
+    "ListTableId": 61,
+    "IsMandatory": false,
+    "Type": "Contact",
+    "Page1LineNo": 3,
+    "ProgId": "SuperOffice:7",
+    "IsReadOnly": false,
+    "ShortLabel": "",
+    "TabOrder": 7,
+    "TextLength": 0,
+    "Tooltip": "",
+    "UdefIdentity": 7,
+    "UDListDefinitionId": 0,
+    "Justification": "Left",
+    "Version": 12,
+    "TemplateVariableName": "cl09",
+    "HasBeenPublished": true,
+    "MdoListName": "business",
+    "TableRight": null,
+    "FieldProperties": {
+      "IsIndexed": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      },
+      "IsMandatory": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      }
+    }
+  },
+  {
+    "UDefFieldId": 102,
+    "ColumnId": 9026,
+    "FieldDefault": "",
+    "FieldHeight": 17,
+    "FieldLabel": "Udef UnlimitedDate",
+    "FieldLeft": 102,
+    "FieldTop": 119,
+    "FieldType": "UnlimitedDate",
+    "FieldWidth": 100,
+    "FormatMask": "",
+    "HideLabel": false,
+    "IsIndexed": false,
+    "LabelHeight": 17,
+    "LabelLeft": 0,
+    "LabelTop": 119,
+    "LabelWidth": 100,
+    "LastVersionId": 92,
+    "ListTableId": 0,
+    "IsMandatory": false,
+    "Type": "Contact",
+    "Page1LineNo": 0,
+    "ProgId": "SuperOffice:8",
+    "IsReadOnly": false,
+    "ShortLabel": "",
+    "TabOrder": 8,
+    "TextLength": 0,
+    "Tooltip": "",
+    "UdefIdentity": 8,
+    "UDListDefinitionId": 0,
+    "Justification": "Left",
+    "Version": 12,
+    "TemplateVariableName": "cs06",
+    "HasBeenPublished": true,
+    "MdoListName": null,
+    "TableRight": null,
+    "FieldProperties": {
+      "IsIndexed": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      },
+      "IsMandatory": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      }
+    }
+  },
+  {
+    "UDefFieldId": 103,
+    "ColumnId": 9221,
+    "FieldDefault": "My Default Value",
+    "FieldHeight": 17,
+    "FieldLabel": "My Custom Field",
+    "FieldLeft": 102,
+    "FieldTop": 136,
+    "FieldType": "LongText",
+    "FieldWidth": 100,
+    "FormatMask": "",
+    "HideLabel": false,
+    "IsIndexed": false,
+    "LabelHeight": 17,
+    "LabelLeft": 0,
+    "LabelTop": 136,
+    "LabelWidth": 100,
+    "LastVersionId": 93,
+    "ListTableId": 0,
+    "IsMandatory": false,
+    "Type": "Contact",
+    "Page1LineNo": 0,
+    "ProgId": "SuperOffice:9",
+    "IsReadOnly": false,
+    "ShortLabel": "MyField",
+    "TabOrder": 9,
+    "TextLength": 175,
+    "Tooltip": "My Custom Field Tooltip",
+    "UdefIdentity": 9,
+    "UDListDefinitionId": 0,
+    "Justification": "Left",
+    "Version": 12,
+    "TemplateVariableName": "cs45",
+    "HasBeenPublished": true,
+    "MdoListName": null,
+    "TableRight": null,
+    "FieldProperties": {
+      "IsIndexed": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      },
+      "IsMandatory": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      }
+    }
+  },
+  {
+    "UDefFieldId": 104,
+    "ColumnId": 8970,
+    "FieldDefault": "",
+    "FieldHeight": 17,
+    "FieldLabel": "MyUdefList",
+    "FieldLeft": 102,
+    "FieldTop": 153,
+    "FieldType": "List",
+    "FieldWidth": 100,
+    "FormatMask": "",
+    "HideLabel": false,
+    "IsIndexed": false,
+    "LabelHeight": 17,
+    "LabelLeft": 0,
+    "LabelTop": 153,
+    "LabelWidth": 100,
+    "LastVersionId": 94,
+    "ListTableId": 136,
+    "IsMandatory": false,
+    "Type": "Contact",
+    "Page1LineNo": 0,
+    "ProgId": "SuperOffice:10",
+    "IsReadOnly": false,
+    "ShortLabel": "",
+    "TabOrder": 10,
+    "TextLength": 0,
+    "Tooltip": "Tooltip for MyUdefList",
+    "UdefIdentity": 10,
+    "UDListDefinitionId": 108,
+    "Justification": "Left",
+    "Version": 12,
+    "TemplateVariableName": "cl10",
+    "HasBeenPublished": true,
+    "MdoListName": "udlist108",
+    "TableRight": null,
+    "FieldProperties": {
+      "IsIndexed": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      },
+      "IsMandatory": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      }
+    }
+  },
+  {
+    "UDefFieldId": 105,
+    "ColumnId": 8971,
+    "FieldDefault": "",
+    "FieldHeight": 17,
+    "FieldLabel": "Tonys Updated Example UDList",
+    "FieldLeft": 102,
+    "FieldTop": 170,
+    "FieldType": "List",
+    "FieldWidth": 100,
+    "FormatMask": "",
+    "HideLabel": false,
+    "IsIndexed": false,
+    "LabelHeight": 17,
+    "LabelLeft": 0,
+    "LabelTop": 170,
+    "LabelWidth": 100,
+    "LastVersionId": 0,
+    "ListTableId": 136,
+    "IsMandatory": false,
+    "Type": "Contact",
+    "Page1LineNo": 0,
+    "ProgId": "SuperOffice:11",
+    "IsReadOnly": false,
+    "ShortLabel": "Tonys UDList",
+    "TabOrder": 11,
+    "TextLength": 0,
+    "Tooltip": "Tooltip for this Updated list UD field",
+    "UdefIdentity": 11,
+    "UDListDefinitionId": 108,
+    "Justification": "Left",
+    "Version": 12,
+    "TemplateVariableName": "cl11",
+    "HasBeenPublished": false,
+    "MdoListName": null,
+    "TableRight": null,
+    "FieldProperties": {
+      "IsIndexed": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      },
+      "IsMandatory": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      }
+    }
+  }
+]
+
+###
+
+# update just one field
+
+PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+[
+  {
+    "UDefFieldId": 116,
+    "ColumnId": 8971,
+    "FieldDefault": "",
+    "FieldHeight": 17,
+    "FieldLabel": "Tonys updated example UDList",
+    "FieldLeft": 102,
+    "FieldTop": 170,
+    "FieldType": "List",
+    "FieldWidth": 100,
+    "FormatMask": "",
+    "HideLabel": false,
+    "IsIndexed": false,
+    "LabelHeight": 17,
+    "LabelLeft": 0,
+    "LabelTop": 170,
+    "LabelWidth": 100,
+    "LastVersionId": 0,
+    "ListTableId": 136,
+    "IsMandatory": false,
+    "Type": "Contact",
+    "Page1LineNo": 0,
+    "ProgId": "SuperOffice:11",
+    "IsReadOnly": false,
+    "ShortLabel": "Tonys UDList",
+    "TabOrder": 11,
+    "TextLength": 0,
+    "Tooltip": "Tooltip for this updated list UD field",
+    "UdefIdentity": 11,
+    "UDListDefinitionId": 108,
+    "Justification": "Left",
+    "Version": 12,
+    "TemplateVariableName": "cl11",
+    "HasBeenPublished": false,
+    "MdoListName": null,
+    "TableRight": null,
+    "FieldProperties": {
+      "IsIndexed": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      },
+      "IsMandatory": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Boolean",
+        "FieldLength": 0
+      }
+    }
+  }
+]
+
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout/Publish HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout/Changed HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/default.aspx?flush HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/GetPublishedUserDefinedFieldList
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "OwnerType": "Contact"
+}
+
+###
+
+#*************************************************************
+# remember that UDefFieldId ID changes with each new version
+#*************************************************************
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/SaveUserDefinedFieldInfo
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+    "UDefFieldId": 116,
+    "ColumnId": 8971,
+    "FieldDefault": "",
+    "FieldHeight": 17,
+    "FieldLabel": "Tonys Updated Example UDList",
+    "FieldLeft": 102,
+    "FieldTop": 170,
+    "FieldType": "List",
+    "FieldWidth": 100,
+    "FormatMask": "",
+    "HideLabel": false,
+    "IsIndexed": false,
+    "LabelHeight": 17,
+    "LabelLeft": 0,
+    "LabelTop": 170,
+    "LabelWidth": 100,
+    "LastVersionId": 0,
+    "ListTableId": 136,
+    "IsMandatory": false,
+    "Type": "Contact",
+    "Page1LineNo": 0,
+    "ProgId": "SuperOffice:11",
+    "IsReadOnly": false,
+    "ShortLabel": "Tonys UDList",
+    "TabOrder": 11,
+    "TextLength": 0,
+    "Tooltip": "Tooltip for this updated list UD field",
+    "UdefIdentity": 11,
+    "UDListDefinitionId": 108,
+    "Justification": "Left",
+    "Version": 12,
+    "TemplateVariableName": "cl11",
+    "HasBeenPublished": false,
+    "MdoListName": null
+  }
+
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/GetUserDefinedFieldFromProgId
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "ProgId": "SuperOffice:11",
+  "OwnerType": "Contact"
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/CreateUserDefinedFieldInfo
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+    "OwnerType": "Contact",
+    "FieldType": "Number",
+}
+
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/SaveUserDefinedFieldInfo
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "UDefFieldId": 0,
+  "ColumnId": 8972,
+  "FieldDefault": "",
+  "FieldHeight": 17,
+  "FieldLabel": "My New Number",
+  "FieldLeft": 102,
+  "FieldTop": 187,
+  "FieldType": "Number",
+  "FieldWidth": 100,
+  "FormatMask": "",
+  "HideLabel": false,
+  "IsIndexed": false,
+  "LabelHeight": 17,
+  "LabelLeft": 0,
+  "LabelTop": 187,
+  "LabelWidth": 100,
+  "LastVersionId": 0,
+  "ListTableId": 0,
+  "IsMandatory": false,
+  "Type": "Contact",
+  "Page1LineNo": 0,
+  "ProgId": "SuperOffice:12",
+  "IsReadOnly": false,
+  "ShortLabel": "NewNumber",
+  "TabOrder": 12,
+  "TextLength": 0,
+  "Tooltip": "",
+  "UdefIdentity": 12,
+  "UDListDefinitionId": 0,
+  "Justification": "Left",
+  "Version": 13,
+  "TemplateVariableName": "cl12",
+  "HasBeenPublished": false,
+  "MdoListName": null
+}
+
+###
+
+Response:
+
+{
+  "UDefFieldId": 128,
+  "ColumnId": 8972,
+  "FieldDefault": "",
+  "FieldHeight": 17,
+  "FieldLabel": "My New Number",
+  "FieldLeft": 102,
+  "FieldTop": 187,
+  "FieldType": "Number",
+  "FieldWidth": 100,
+  "FormatMask": "",
+  "HideLabel": false,
+  "IsIndexed": false,
+  "LabelHeight": 17,
+  "LabelLeft": 0,
+  "LabelTop": 187,
+  "LabelWidth": 100,
+  "LastVersionId": 0,
+  "ListTableId": 0,
+  "IsMandatory": false,
+  "Type": "Contact",
+  "Page1LineNo": 0,
+  "ProgId": "SuperOffice:12",
+  "IsReadOnly": false,
+  "ShortLabel": "NewNumber",
+  "TabOrder": 12,
+  "TextLength": 0,
+  "Tooltip": "",
+  "UdefIdentity": 12,
+  "UDListDefinitionId": 0,
+  "Justification": "Left",
+  "Version": 13,
+  "TemplateVariableName": "cl12",
+  "HasBeenPublished": false,
+  "MdoListName": null,
+  "TableRight": null,
+  "FieldProperties": {
+    "IsIndexed": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 0
+    },
+    "IsMandatory": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 0
+    }
+  }
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/IsAnyPublishEventActive
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/SetPublishStartSystemEvent
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "OwnerType": "Contact"
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/GetUserDefinedFieldFromFieldLabel
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+    "FieldLabel": "My New Number",
+    "OwnerType": "Contact"
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/Publish
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "OwnerType": "Contact"
+}
+

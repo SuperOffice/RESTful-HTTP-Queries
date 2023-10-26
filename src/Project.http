@@ -1,0 +1,29 @@
+@token=8A:
+@tenant=Cust12345
+@env=sod
+@ticket=7T:
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/project/246010 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/project/246010/Links HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/project?$select=name,type,associateId,projectMember/contactId,projectMember/personId&$filter=projectId eq 246010 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/projectmember?$select=projectId,contactId,personId&$filter=projectId gt 246828 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json

@@ -1,0 +1,94 @@
+@token=8A:
+@tenant=Cust12345
+@env=sod
+@ticket=7T:
+@client_secret=1234567890
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/Activity?$entities=appointment&$select=type,recordType,date,text&$orderby=appointmentId HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment/default HTTP/1.1
+Authorization: SoTicket {{ticket}}
+SO-AppToken: ca452f9c29870bc278017796cd16bd11
+Accept: application/json
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment HTTP/1.1
+Authorization: SoTicket {{ticket}}
+SO-AppToken: ca452f9c29870bc278017796cd16bd11
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Contact": { "ContactId": 2},
+    "Person": {"PersonId": 15 },
+    "Description": "A Simple API Test",
+    "StartDate": "2021-10-20T15:30:00",
+    "ActiveDate": "2021-10-20T16:00:00",
+    "EndDate": "2021-10-20T13:45:00"
+}
+
+
+###
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment?$select=type,text,contact/name HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Appointment/GetAppointmentEntity?appointmentEntityId=4
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment/4
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment/4
+Authorization: SoTicket {{ticket}}
+SO-AppToken: ca452f9c29870bc278017796cd16bd11
+Content-Type: application/json
+Accept: application/json
+
+###
+
+PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment/8 HTTP/1.1
+Authorization: SoTicket {{ticket}}
+SO-AppToken: ca452f9c29870bc278017796cd16bd11
+Content-Type: application/json
+Accept: application/json
+
+[ 
+    { 
+        "op": "replace", 
+        "path": "Associate", 
+        "value": {
+            "AssociateId": "10"
+        }
+    } 
+]
+
+# [
+#   {  
+#     "op": "add",
+#     "path": "Interests",
+#     "value": [
+#       {     
+#         "Id": "3",
+#         "Selected": true
+#       }
+#     ]
+#   }
+# ]

@@ -1,0 +1,23 @@
+# use to test status of a MirroringClientService endpoint
+@url=https://.../MirroringClientService.svc
+
+###
+POST {{url}} HTTP/1.1
+Content-Type: text/xml;charset=UTF-8
+SOAPAction: http://www.superoffice.com/online/mirroring/0.1/IMirroringClientService/Authenticate
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+<s:Header>
+    <SignedToken s:mustUnderstand="1" xmlns="http://www.superoffice.com/online/mirroring/0.1">eyJhbsyNmwg</SignedToken>
+</s:Header>
+<s:Body>
+    <AuthenticateRequest xmlns="http://www.superoffice.com/online/mirroring/0.1">
+        <ClientState/>
+    </AuthenticateRequest>
+</s:Body>
+</s:Envelope>
+
+###
+
+GET {{url}}/MirroringClientService.svc HTTP/1.1
+###

@@ -1,0 +1,14 @@
+# 1. Specify the client id
+@clientId=
+# 2. Specify the client secret
+@clientSecret=
+# 3. Specify the refresh token (obtained during the authorization code flow) https://docs.superoffice.com/en/authentication/online/sign-in-user/auth-code-flow.html
+@refresh_token=
+# 4. Update the redirect uri if necessary.
+@redirectUri=https://devnet-tools.superoffice.com/openid/callback
+@grantType=refresh_token
+
+### Request refresh token
+
+POST https://sod.superoffice.com/login/common/oauth/tokens?grant_type={{grantType}}&client_id={{clientId}}&client_secret={{clientSecret}}&redirect_uri={{redirectUri}}&refresh_token={{refresh_token}}
+Accept: application/json

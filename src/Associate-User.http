@@ -1,0 +1,118 @@
+@token=8A:
+@tenant=Cust12345
+@env=sod
+@ticket=7T:
+@client_secret=1234567890
+
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Associate/GetAssociatesByGroup?$select=AssociateId,Name
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "GroupId": 5,
+  "Type": 2
+}
+
+# 2 = InternalAssociate
+# 4 = SystemAssociate
+
+###
+
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/MDO/GetList
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "Name": "Associate",
+  "ForceFlatList": false,
+  "AdditionalInfo": "",
+  "OnlyHistory": false
+}
+
+###
+
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Archive/GetArchiveListByColumns HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+{
+  "ProviderName": "InternalUsers",
+  "Columns": [
+    "firstName",
+    "lastName",
+    "middleName",
+    "fullName",
+    "personId",
+    "title",
+    "associateDbId"
+  ],
+  "SortOrder": [
+    {
+      "Name": "associateDbId",
+      "Direction": "ASC"
+    }
+  ],
+  "Restriction": [
+    {
+      "Name": "associateDbId",
+      "Operator": ">",
+      "Values": [
+        "0"
+      ],
+      "IsActive": true
+    }
+  ],
+  "Entities": [
+    "all"
+  ],
+  "Page": 0,
+  "PageSize": 1000000
+}
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Associate/GetAssociateList
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+[ 3,4,5,6,7,8,9,10 ]
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/user/currentPrincipal HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/user/currentAssociate HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+#Inaccessible online
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/user/current HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=associate.associate_id,associate.name,associate.lastlogin HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/user/currentToken HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###

@@ -1,0 +1,169 @@
+@token=8A:
+@tenant=Cust12345
+@env=sod
+@ticket=7T:
+
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/ HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/dynamic?$select=webhook_usage.webhook_usage_id,webhook_usage.total_calls,webhook_usage.total_errors,webhook_usage.consecutive_errors,webhook_usage.last_error HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/dynamic?$select=webhook_usage.webhook_usage_id,webhook_usage.total_calls,webhook_usage.total_errors,webhook_usage.consecutive_errors,webhook_usage.last_error&$filter=webhook_usage.webhook_usage_id eq 34 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/56 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+DELETE https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/21 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/default HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/56 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "Name": "Test For Activity Changes 3",
+  "Events": [
+    "activity.created",
+    "activity.changed",
+    "contact.changed",
+    "document.created",
+    "document.changed",
+    "person.changed"
+  ],
+  "TargetUrl": "https://webhook.site/bd235284-cf81-4123-8b3c-fb07679189fe",
+  "Secret": "",
+  "State": "Active",
+  "Type": "webhook",
+}
+
+###
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "Name": "Person changed webhook with custom headers",
+  "Events": [
+    "person.changed"
+  ],
+  "TargetUrl": "https://webhook.site/29b0945a-6e24-4cfe-97ab-e46857b80093",
+  "Secret": "",
+  "State": "Active",
+  "Type": "webhook",
+  "Headers": {
+    "X-Custom-Header1": "Custom Value1",
+    "X-Custom-Header2": "Custom Value2"
+  }
+}
+
+###
+
+PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/11 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "WebhookId": 13,
+    "Name": "Person Updated Webhooks",
+    "Events": [
+      "person.changed"
+    ],
+    "TargetUrl": "https://online.superoffice.com/Cust12345/CS/scripts/customer.exe?action=safeParse&includeId=prod-crm-webhook&key=jhBujG0gI9COuJE8",
+    "Secret": "",
+    "State": "Active",
+    "Type": "webhook"
+}
+
+###
+
+PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/11 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "WebhookId": 13,
+    "Name": "Person Updated Webhooks",
+    "Events": [
+      "person.changed"
+    ],
+    "TargetUrl": "https://online.superoffice.com/Cust12345/CS/scripts/customer.exe?action=safeParse&includeId=prod-crm-webhook&key=jhBujG0gI9COuJE8",
+    "Secret": "",
+    "State": "Active",
+    "Type": "webhook"
+}
+
+###
+
+PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/47 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+[
+  {
+  "op": "add",
+  "path": "/Headers",
+  "value": {
+        "X-Custom-Header" : "Custom-Value",
+        "X-Custom-Header1": "Custom-Value1",
+        "X-Custom-Header2": "Custom-Value2"
+      }
+  }
+]
+
+###
+
+PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/15 HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+[
+  {
+  "op": "replace",
+  "path": "/Properties",
+  "value": {
+        "Person" : {"firstName": "Tony", "lastName": "Stark"},
+        "Place" : {"state": "New York", "city": "New York"}
+      }
+  }
+]
+
+###
+POST https://msteamsstage.superofficeapps.com/Webhook/Handler HTTP/1.1
+Content-Type: application/json
+
+{
+  "Test": "Test"
+}

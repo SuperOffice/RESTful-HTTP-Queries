@@ -1,0 +1,33 @@
+@token=8A:
+@tenant=Cust12345
+@env=sod
+@ticket=7T:
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/String/SR_TICKETARCHIVE_STATUS_OPEN HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Resource/GetResourceSubstitutions
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Accept-Language: en
+Content-Type: application/json; charset=utf-8
+
+{
+  "ResourceNames": [
+    "SR_TICKETARCHIVE_STATUS_OPEN"
+  ],
+  "Culture": "en"
+}
+
+###
+
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/resource?search="SR_TICKETARCHIVE_STATUS_OPEN" HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
