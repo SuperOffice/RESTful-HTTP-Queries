@@ -35,4 +35,4 @@ Accept: application/json
 
 ## Get Access Token
 
-Use the OIDC.http file and follow the instructions in the file.
+Use the [OIDC.http](./src/OIDC.http) file and follow the instructions in the file.
