@@ -1,0 +1,51 @@
+@token=
+@env=sod2
+@tenant=Cust12345
+
+###
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=y_equipment.x_name,y_equipment.x_number,y_equipment.x_description,y_equipment.x_owner,y_equipment.x_start_date HTTP/1.1
+Accept: application/json
+Authorization: Bearer {{token}}
+###
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Table/y_equipment/6 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+###
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Table/y_equipment HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+{
+    "x_number": "54321",
+    "x_name": "Equipt three",
+    "x_description": "Description for equipt three",
+    "x_owner": "5",
+}
+###
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Table/y_equipment HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+{
+    "x_number": "44444",
+    "x_name": "Equipt four",
+    "x_description": "Description for equipt four",
+    "x_owner": "5",
+    "x_start_date": "[DT:11/23/2023 14:00:00.0000000]"
+}
+
+###
+PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Table/y_equipment/6 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+{
+    "x_number": "66666",
+    "x_name": "Equipt four",
+    "x_description": "Description for equipt four",
+    "x_owner": "5",
+    "x_start_date": "[DT:11/23/2023 14:30:00.0000000]"
+}
