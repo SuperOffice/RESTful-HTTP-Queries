@@ -5,8 +5,8 @@
             "tenant": "",
             "env": "",
             "ticket": "",
-            "client_id": "",
-            "client_secret": "",
+            "clientId": "",
+            "clientSecret": "",
             "refresh_token": "",
             "redirectUri": "",
             "grantType": ""
