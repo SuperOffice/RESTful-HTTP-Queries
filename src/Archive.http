@@ -1,11 +1,3 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-@ticket=7T:
-@client_secret=1234567890
-
-
-
 GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=kb_entry.id,kb_entry.title HTTP/1.1
 Accept: application/json
 Authorization: Bearer {{token}}
@@ -131,8 +123,6 @@ Authorization: Bearer {{token}}
   "Page": 0,
   "PageSize": 100
 }
-
-
 
 ###
 
@@ -262,7 +252,7 @@ Authorization: Bearer {{token}}
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/recyclecontact/?$select=name,department&$filter=contactId eq 10855
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/recyclecontact/?$select=name,department
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer {{token}}
@@ -429,13 +419,13 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "Columns": "Field,blankallowed,active,recordId",
-  "ProviderName": "Numbers",
+  "Columns": "contactExtra/y_whatever/x_contact_id/x_codetable/x_code,contactExtra/y_whatever/x_contact_id/x_codetable/x_description,contactExtra/y_whatever/x_contact_id/x_codetable/id",
+  "ProviderName": "contact",
   "Page": 0,
   "PageSize": 200,
-  "Entities": "number",
+  "Entities": "contact",
   "SortOrder": "",
-  "Restrictions": "getAllRows=1"
+  "Restrictions": "contactExtra/y_whatever/x_contact_id/x_codetable/x_code eq 'MyCode Is here!'"
 }
 
 ###

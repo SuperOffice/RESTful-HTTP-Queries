@@ -1,9 +1,3 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-@ticket=7T:
-
-
 GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/Person?$filter=personUdef/SuperOffice:SuperIdUid = 'oIns7VrorQWa5rTTQsYLls1QIOhlYxifxSw7LqeElX'
 Authorization: Bearer {{token}}
 Accept: application/json
@@ -239,7 +233,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "PersonId": 0,
+  "PersonId": 26,
   "Firstname": "Steve",
   "MiddleName": "Martin",
   "Lastname": "Johnson",
@@ -249,7 +243,7 @@ Accept: application/json
   "CreatedDate": "0001-01-01T00:00:00",
   "BirthDate": "0001-01-01T00:00:00",
   "CreatedBy": {
-    "AssociateId": 5,
+    "AssociateId": 6,
     "Name": "TY",
     "PersonId": 5,
     "Rank": 0,
@@ -2497,19 +2491,17 @@ Content-Type: application/json; charset=utf-8
 ###
 
 
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/5 HTTP/1.1
+PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/28 HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 [
   {  
-    "op": "add",
-    "path": "Interests",
-    "value": [
+    "op": "replace",
+    "path": "/CreatedBy",
+    "value": 
       {     
-        "Id": "2",
-        "Selected": false
+        "AssociateId": "6"
       }
-    ]
   }
 ]

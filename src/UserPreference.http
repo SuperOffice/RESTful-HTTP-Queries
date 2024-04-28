@@ -1,0 +1,4 @@
+### Get User Preferences
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/UserPreferences HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json

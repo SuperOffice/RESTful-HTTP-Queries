@@ -1,18 +1,13 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod2
-@ticket=7T:
-@client_secret=
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/contact/2 HTTP/1.1
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/contact/28 HTTP/1.1
 Authorization: SOTicket {{ticket}}
 SO-AppToken: {{client_secret}}
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/contact/default HTTP/1.1
+GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/contact/28 HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/json
 
@@ -155,30 +150,26 @@ Authorization: Bearer {{token}}
 Accept: application/json
 
 ###
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/contact/25 HTTP/1.1
+PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/contact/28 HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
 
-{
-  "SupportPerson": {
-    "PersonId" : 15
-  }
-}
+[ { "op": "replace", "path": "/Department", "value": "foo" } ]
 
 ###
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/contact/25 HTTP/1.1
+PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/contact/28 HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
 
 [
   {
-  "op": "replace",
-  "path": "/SupportPerson",
-  "value": {
-        "PersonId" : 5
-      }
+    "op": "replace",
+    "path": "/UpdatedBy",
+    "value": {
+      "AssociateId": 6
+    }
   }
 ]
 
