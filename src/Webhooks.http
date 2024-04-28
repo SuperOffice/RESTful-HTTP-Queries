@@ -1,9 +1,3 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-@ticket=7T:
-
-
 GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/ HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json

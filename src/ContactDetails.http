@@ -2,7 +2,7 @@
 
 GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/contact/28 HTTP/1.1
 Authorization: SOTicket {{ticket}}
-SO-AppToken: {{client_secret}}
+SO-AppToken: {{{{clientSecret}}}}
 Accept: application/json
 
 ###

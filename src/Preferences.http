@@ -1,7 +1,4 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-
+###
 GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/PreferenceDescription/default HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/json; charset=utf-8

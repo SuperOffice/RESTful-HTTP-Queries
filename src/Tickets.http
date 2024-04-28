@@ -1,9 +1,4 @@
-@token=8A:Cust31038.AWYYLcVmXPK7CHAiRRynqPogAgAAF9ysiOpMQF664vdST1jkJENbZ+xM0+U6N++v1SFmdhx6UxOyon+UMbaibxP2j/EkWEkGdzg9UuCXN/PMBRpUUW8XFGlGD1pihqCGh8CvCiLClfeCt4kqysmt3i2NyDIvzBMpheHTDAh/p/qC78ymnjSAbCY8jIHorqtFdyGOc+YvH/k9I5rUpK0u9RWhWqQM5GMmioXctXt4sFCeip4bNLu8Njv2iEIdZ/0cxAiundrI+oRkpxWEW9wEyQVydpxFlyBEGpkwKcSBLFngE9jrwdT+/NyAkRKhKbaYuexzC0EIN2PmHMzmi9hz1vuBQDxfg7ehr76wqUbPmnFVWXZ7V2RhDOxuHM0RZRh2VufzMZzgYKBNGWJODV/3HjbZ0uTSU6UzrI7QNcDnnMcNaOb9WmLUuNQv13Pkvrwd7lE2Cn5iUg5tyNW02heTOjoNb8Ca6Cfth9wm08KsDeWiM2EnSiOlur0i03XTn7UO5oNVc64mRdPRiAYeBmiFPcPZ9V/bxbQXFYwqBc0KSOwCg+WYDW2veCj15YwzcJtdLc29gq/agAGKa9YcAoftnvG6mupckr/fZqlXWm5gapJHHBVM7sN0dt9gwgHuHvg4YFKw5pvhDrvqS//XCBsjm92cIUA1JL5zHs/hx2d8A7jKXeTIzHdIeoR4toub3Vfqhj6nd7gN4daDrktfeTaSqPbustkClV/aPmBITUEcTe55GrwDC4NLf1QKHRrA5Beh7UOuJVmCcUrBC3oiWWqMxWqBmTCM
-@tenant=Cust31038
-@env=sod2
-@ticket=7T:
-
-
+###
 GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Ticket/66 HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/json; charset=utf-8

@@ -1,8 +1,3 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-@ticket=7T:
-
 # Get the list of Typical Search entities to generate Typical Search buttons.
 GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/SelectionMemberTypeV2 HTTP/1.1
 Authorization: Bearer {{token}}

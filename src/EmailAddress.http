@@ -1,9 +1,3 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-@ticket=7T:
-@app_secret=
-
 ###
 
 GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=associate.associate_id,associate.person_id,associate.person_id.firstname,associate.person_id.(email->person_id).email_address HTTP/1.1
