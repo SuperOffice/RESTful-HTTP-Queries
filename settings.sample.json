@@ -3,13 +3,34 @@
         "$shared": {
             "token": "",
             "tenant": "",
-            "env": "",
             "ticket": "",
+            "env": "online",
+            "api": "",
             "clientId": "",
             "clientSecret": "",
             "refresh_token": "",
-            "redirectUri": "",
-            "grantType": ""
+            "redirectUri": "https://devnet-tools.superoffice.com/openid/callback",
+            "grantType": "refresh_token"
+        },
+        "sod": {
+            "token": "",
+            "tenant": "",
+            "ticket": "",
+            "env": "sod",
+            "api": "",
+            "clientId": "",
+            "clientSecret": "",
+            "refresh_token": ""
+        },
+        "online": {
+            "token": "",
+            "tenant": "",
+            "ticket": "",
+            "env": "online",
+            "api": "",
+            "clientId": "",
+            "clientSecret": "",
+            "refresh_token": ""
         }
     }
 }
