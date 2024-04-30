@@ -38,7 +38,9 @@ To acquire a new accessToken you need to have the following properties defined i
 
 Use the [OIDC.http](./src/OIDC.http) file and run the `Authorization`-method to acquire a new accessToken. The result contains your `{{token}}` and `{{refresh_token}}`, put those into your settings.json.
 
-The result also contains the id_token, which you can decode at (<https://jwt.io>) and select the '<http://schemes.superoffice.net/identity/webapi_url>' property from the payload, this should be put into the  `{{api}}`. An alternative is to run the `Get State`-method in [OIDC.http](./src/OIDC.http), or simply put the url https://{{env}}.superoffice.com/api/state/{{tenant}} in your browser.
+The result also contains the id_token, which you can decode at (<https://jwt.io>) and select the '<http://schemes.superoffice.net/identity/webapi_url>' property from the payload, this should be put into the  `{{api}}`.
+
+An alternative is to run the `Get State`-method in [OIDC.http](./src/OIDC.http), or simply put the url https://{{env}}.superoffice.com/api/state/{{tenant}} in your browser.
 This is setting needed because your tenants API URL might dynamically change, and you need to make sure you are connecting towards the correct API URL or else you could get a `421 Misdirected Request`.
 
 ## Authorization usage

@@ -11,5 +11,5 @@ GET https://sod.superoffice.com/api/state/{{tenant}}
 Accept : application/json
 
 ### Response 200 (application/json) - Unfortunately this doesnt work, and its unable to overwrite the token => https://github.com/Huachao/vscode-restclient/issues/179 
-@{{api}} = {{State.response.body.Api}}
+@{{api_url}} = {{State.response.body.Api}}
 @{{token}} = {{Authorization.response.body.access_token}}
