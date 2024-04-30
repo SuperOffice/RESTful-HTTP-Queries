@@ -1,14 +1,47 @@
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/ HTTP/1.1
+### Agents - CreateDefaultWebhook
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Webhook/CreateDefaultWebhook HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
 
-###
-
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/dynamic?$select=webhook_usage.webhook_usage_id,webhook_usage.total_calls,webhook_usage.total_errors,webhook_usage.consecutive_errors,webhook_usage.last_error HTTP/1.1
+### Agents - SaveWebhook
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Webhook/SaveWebHook HTTP/1.1
 Authorization: Bearer {{token}}
+Content-Type: application/json
 Accept: application/json
 
+{
+  "WebhookId": 0,
+  "Name": null,
+  "Events": [
+    "contact.created",
+    "contact.deleted"
+  ],
+  "TargetUrl": "https://webhook.site/0779ad74-0bea-4145-9604-4c33823ca60d",
+  "Secret": null,
+  "State": "Active",
+  "Type": "webhook",
+  "Headers": null,
+  "Properties": null,
+  "Registered": "0001-01-01T00:00:00Z",
+  "RegisteredAssociate": null,
+  "Updated": "0001-01-01T00:00:00Z",
+  "UpdatedAssociate": null,
+  "ErrorsEmail": null
+}
+
+
+### Agents - GetAllWebhooks
+POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Webhook/GetAllWebhooks HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "NameFilter": "",
+  "EventFilter": "",
+  "StateFilter": 0,
+}
 
 ###
 
