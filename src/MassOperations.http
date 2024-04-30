@@ -3,7 +3,7 @@
 @token=7T:
 @app_secret=
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/DatabaseTable/Insert HTTP/1.1
+POST {{api_url}}/v1/Agents/DatabaseTable/Insert HTTP/1.1
 Authorization: SOTicket {{token}}
 SO-AppToken: {{app_secret}}
 Accept: application/json
@@ -41,7 +41,7 @@ Content-Type: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/DatabaseTable/Insert HTTP/1.1
+POST {{api_url}}/v1/Agents/DatabaseTable/Insert HTTP/1.1
 Authorization: SOTicket {{token}}
 SO-AppToken: {{app_secret}}
 Accept: application/json
@@ -79,7 +79,7 @@ Content-Type: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/DatabaseTable/Insert HTTP/1.1
+POST {{api_url}}/v1/Agents/DatabaseTable/Insert HTTP/1.1
 Authorization: SOTicket {{token}}
 SO-AppToken: {{app_secret}}
 Accept: application/json
@@ -142,7 +142,7 @@ Content-Type: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/DatabaseTable/Insert HTTP/1.1
+POST {{api_url}}/v1/Agents/DatabaseTable/Insert HTTP/1.1
 Authorization: SOTicket {{token}}
 SO-AppToken: {{app_secret}}
 Accept: application/json

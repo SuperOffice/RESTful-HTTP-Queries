@@ -1,20 +1,12 @@
 @qry = ejscript.id,ejscript.hierarchy_id.name,ejscript.hierarchy_id.fullname
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/Dynamic?$select={{qry}} HTTP/1.1
+GET {{api_url}}/v1/Archive/Dynamic?$select={{qry}} HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/Dynamic?$select=ejscript.id,ejscript.hierarchy_id.fullname HTTP/1.1
-Authorization: Bearer {{token}}
-Content-Type: application/json
-Accept: application/json
-
-###
-
-
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/CRMScript/default
+GET {{api_url}}/v1/Archive/Dynamic?$select=ejscript.id,ejscript.hierarchy_id.fullname HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
@@ -22,14 +14,22 @@ Accept: application/json
 ###
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/CRMScript
+GET {{api_url}}/v1/CRMScript/default
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/CRMScript
+
+GET {{api_url}}/v1/CRMScript
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+
+POST {{api_url}}/v1/CRMScript
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
@@ -56,7 +56,7 @@ else
 }
 
 ###
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/CRMScript/194
+PATCH {{api_url}}/v1/CRMScript/194
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
@@ -81,7 +81,7 @@ else
 
 
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/CRMScript/195/Execute
+POST {{api_url}}/v1/CRMScript/195/Execute
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -91,7 +91,7 @@ Content-Type: application/json
 
 ###
 
-DELETE https://{{env}}.superoffice.com/{{tenant}}/api/v1/CRMScript/194
+DELETE {{api_url}}/v1/CRMScript/194
 Authorization: Bearer {{token}}
 Content-Type: application/json
 

@@ -1,4 +1,4 @@
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment/56 HTTP/1.1
+GET {{api_url}}/v1/appointment/56 HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/json
 

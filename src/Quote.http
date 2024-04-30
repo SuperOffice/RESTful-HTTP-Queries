@@ -1,18 +1,18 @@
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Quote/GetAllAvailableQuoteConnections
+POST {{api_url}}/v1/Agents/Quote/GetAllAvailableQuoteConnections
 Authorization: Bearer {{token}}
 Accept: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Quote/GetAllAvailableQuoteConnectionsWithPriceLists
+POST {{api_url}}/v1/Agents/Quote/GetAllAvailableQuoteConnectionsWithPriceLists
 Authorization: Bearer {{token}}
 Accept: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Quote/CreateAndSaveQuote
+POST {{api_url}}/v1/Agents/Quote/CreateAndSaveQuote
 Authorization: Bearer {{token}}
 Accept: application/json; charset=utf-8
 Accept-Language: en
@@ -26,7 +26,7 @@ Content-Type: application/json; charset=utf-8
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Quote/GetQuote
+POST {{api_url}}/v1/Agents/Quote/GetQuote
 Authorization: Bearer {{token}}
 Accept: application/json; charset=utf-8
 Accept-Language: en
@@ -40,7 +40,7 @@ Content-Type: application/json; charset=utf-8
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Quote/GetQuoteLines
+POST {{api_url}}/v1/Agents/Quote/GetQuoteLines
 Authorization: Bearer {{token}}
 Accept: application/json; charset=utf-8
 Accept-Language: en
@@ -52,7 +52,7 @@ Content-Type: application/json; charset=utf-8
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Quote/CreateQuoteLine
+POST {{api_url}}/v1/Agents/Quote/CreateQuoteLine
 Authorization: Bearer {{token}}
 Accept: application/json; charset=utf-8
 Accept-Language: en
@@ -68,6 +68,6 @@ Content-Type: application/json; charset=utf-8
 #     "QuoteAlternativeId": 2,
 #     "ERPProductKey": "46282-S",
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/QuoteConnection?$select=quoteConnectionId,displayName,displayDescription,connectorName
+GET {{api_url}}/v1/archive/QuoteConnection?$select=quoteConnectionId,displayName,displayDescription,connectorName
 Authorization: Bearer {{token}}
 Accept: application/json

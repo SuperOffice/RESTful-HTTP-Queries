@@ -1,16 +1,16 @@
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=kb_entry.id,kb_entry.title HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=kb_entry.id,kb_entry.title HTTP/1.1
 Accept: application/json
 Authorization: Bearer {{token}}
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=kb_entry.id,kb_entry.title HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=kb_entry.id,kb_entry.title HTTP/1.1
 Accept: application/json
 Authorization: Bearer {{token}}
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Archive/GetAvailableColumns HTTP/1.1
+POST {{api_url}}/v1/Agents/Archive/GetAvailableColumns HTTP/1.1
 Accept: application/json
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -23,31 +23,31 @@ Content-Type: application/json
 ###
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=ej_message.ticket_id,ej_message.badge HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=ej_message.ticket_id,ej_message.badge HTTP/1.1
 Accept: application/json
 Authorization: Bearer {{token}}
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=UDListDefinition.UDListDefinition_id,UDListDefinition.name,UDListDefinition.listTableId,UDListDefinition.listTableId.(sequence->TableNumber).TableName HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=UDListDefinition.UDListDefinition_id,UDListDefinition.name,UDListDefinition.listTableId,UDListDefinition.listTableId.(sequence->TableNumber).TableName HTTP/1.1
 Accept: application/json
 Authorization: Bearer {{token}}
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=sequence.id,sequence.TableName,sequence.TableNumber HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=sequence.id,sequence.TableName,sequence.TableNumber HTTP/1.1
 Accept: application/json
 Authorization: Bearer {{token}}
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=contact.name,contact.department,contact.(contactinterest->contact_id).cinterest_idx&$filter=contact.contact_id eq 13418 HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=contact.name,contact.department,contact.(contactinterest->contact_id).cinterest_idx&$filter=contact.contact_id eq 13418 HTTP/1.1
 Accept: application/json
 Authorization: Bearer {{token}}
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Archive/GetArchiveListByColumns HTTP/1.1
+POST {{api_url}}/v1/Agents/Archive/GetArchiveListByColumns HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer {{token}}
@@ -82,7 +82,7 @@ Authorization: Bearer {{token}}
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Find/FindFromRestrictionsColumns HTTP/1.1
+POST {{api_url}}/v1/Agents/Find/FindFromRestrictionsColumns HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer {{token}}
@@ -126,7 +126,7 @@ Authorization: Bearer {{token}}
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Archive/GetArchiveListByColumns?$select=contactId,name HTTP/1.1
+POST {{api_url}}/v1/Agents/Archive/GetArchiveListByColumns?$select=contactId,name HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer {{token}}
@@ -170,7 +170,7 @@ Authorization: Bearer {{token}}
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Archive/GetArchiveListByColumns?$select=contactId,name HTTP/1.1
+POST {{api_url}}/v1/Agents/Archive/GetArchiveListByColumns?$select=contactId,name HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer {{token}}
@@ -209,7 +209,7 @@ Authorization: Bearer {{token}}
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/internalusers?$select=associateDbId,fullName,personId,personEmail HTTP/1.1
+GET {{api_url}}/v1/archive/internalusers?$select=associateDbId,fullName,personId,personEmail HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
@@ -217,7 +217,7 @@ Accept: application/json
 ###
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/emailpersonaddress?$entities=email&$select=emailAddress&$filter=personId in (5,6,7,8) HTTP/1.1
+GET {{api_url}}/v1/archive/emailpersonaddress?$entities=email&$select=emailAddress&$filter=personId in (5,6,7,8) HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/json
 
@@ -230,7 +230,7 @@ Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/contact/5
+GET {{api_url}}/v1/contact/5
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer {{token}}
@@ -238,21 +238,21 @@ Authorization: Bearer {{token}}
 ###
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/simpleperson/?$select=firstName,lastname&$filter=birthYear between ('1972','1980') and birthMonth between ('1','6') and birthDay between ('1','25')
+GET {{api_url}}/v1/archive/simpleperson/?$select=firstName,lastname&$filter=birthYear between ('1972','1980') and birthMonth between ('1','6') and birthDay between ('1','25')
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer {{token}}
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/simpleperson/?$select=firstName,lastname&$filter=personId eq 61106
+GET {{api_url}}/v1/archive/simpleperson/?$select=firstName,lastname&$filter=personId eq 61106
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer {{token}}
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/recyclecontact/?$select=name,department
+GET {{api_url}}/v1/archive/recyclecontact/?$select=name,department
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer {{token}}
@@ -260,21 +260,21 @@ Authorization: Bearer {{token}}
 ###
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/recycleperson/?$select=firstName,lastname,personContact/orgnr&$filter=personId eq 61106
+GET {{api_url}}/v1/archive/recycleperson/?$select=firstName,lastname,personContact/orgnr&$filter=personId eq 61106
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer {{token}}
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=person.person_id,person.contact_id&$filter=person.person_id eq 61106 HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=person.person_id,person.contact_id&$filter=person.person_id eq 61106 HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer {{token}}
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=MergeMoveLog.sourceRecord,mergemovelog.mergemovelog_id&$filter=MergeMoveLog.tablenumber eq 5 and MergeMoveLog.registered after '2016-01-01' HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=MergeMoveLog.sourceRecord,mergemovelog.mergemovelog_id&$filter=MergeMoveLog.tablenumber eq 5 and MergeMoveLog.registered after '2016-01-01' HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 8A:{{tenant}}.AeACDXrYwFxRg2QynE1lEwcgAgAAcMg1SKeqZtTM7kyaO5aRvRpyQnjA+C06SQesZhUl8nQ7U2DawZ1VvLvuiBaxDDNTPaOWT0E0g6OZ5t2moBkjqREX6Ce4i4Ml6BvNKGLsDMAkiCR6HvEDSoQhSpSjZlVlYEXMRXpAY8Ot3v9PHewXmQyR0/p3Rnzk5VZkQ8xkZnkgcthCKy28uTlbVIjeuBujQcZQLTpc+m+Ur7inX25Bcz2rPyuj8Nupo77HRQi4QwQi7nyCf0gu8xhw5klHL5lnNPnyZ9313uFdr8DXVdo8zjPEapLZi7v0PJztb9cJvo1QJnHPPkHilTc/9JNvOWOgIlh+oOpGncAlNconDEDC+3OAioZ68+/wPEypoXsHCedVP/v5t4jaJS3QSl36+JKCMMXGSu10OTO/v1VsgUOy832KpDWFwaRihSq5XTAGqqBcnH8ynwdVZhmhEadZ+3foPPpkYu7jRJJy7hOpE4eeSlZTZmhmhjBWYH7Dnz4NUfVJEFlzc9L4BLMZXJrd+ldyacNrjt5VFJbzRMTRf+Y0TvZaFAsyLR3Rb5knQkECnpfMHnPCd6+MUnwytxSeOpiJiEQWnZfyVyy6q9NqE84wdOSgWAz86XB1/5k5DPUcgl9ysJVg9qu6GEfrGTBXqc6a4OBXG42LB6u1sQnjMKKimS7APD7mPNJ/jeSDqTaQnI66moGDyxG5+t7lMSn/yb4LyAmmtuHu84C1QiR/2WrH3uTsRIeygPc73urjhGIuK7X4b3XJbrD25DL4fVZ3uIw2
@@ -282,7 +282,7 @@ Authorization: Bearer 8A:{{tenant}}.AeACDXrYwFxRg2QynE1lEwcgAgAAcMg1SKeqZtTM7kya
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=associate.associate_id,associate.person_id,associate.registered&$filter=associate.registered thisYear&$top=5000 HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=associate.associate_id,associate.person_id,associate.registered&$filter=associate.registered thisYear&$top=5000 HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 8A:{{tenant}}.AZ34i9zkl1aURyE97S9/vSIgAgAAWgCmdOFAKGarzp8Y4r+HvPLG14jQhRNmgt508j2On8Pl1bIbCAF/9+QtDcwUlHyR5kZWCtHIPY02hn1SfV2EoCco9OC/Tpi1KFjDkT6oum5hsM4xCibs38G5ss8zc2wYFUAdWWMiYQJGKCBXtWcu3JmKxoFz1z+VGG4qjqbEnWGSM+8oiqt+ixv4XVyOcF58gDnDtD5wLE3DvGHvNMvKYGQz1e/jYE1rf9nIlQ+PPK4UkMnaENg08BbjyvTsqqUn8laOe29856Q2yP5+21dpkmcewbvohg+pge+nZ2LhGgjo1q0OVQdg9EcHWVClGm02zL0FzWC8GRbnvpqo1yK7vngfqHN7GA3MRzYvBp1ImPlGvNWi3+tivXVrhs4jtLQQibaO4Yd9St1YmLRNmzufflVBflvCUR7WVV0zqK4uZAVat2+BbeV7A2c0ieEb1V7/NV0Fo/FbbIqaH64Lg/kw+OWqqhpB8AqIqsAYvQmt1f7QUha9r5lZjellZjqp7MHN3YtxZkvYXKjGnoMEw/CPEpfUgV8VUAdshpzRlUgJCVBTN3L9GyyNFjcoOLW/dAKH6oivKyqzWiWfDo9CitEwgwAxFmIdlG7yeB6v0ucpaY0UPz6+h31iVQuEPaZQL8EehQjYHfeO7gwqD3fMnF1Abq3buqO7X8avrwUfgpYlXMmXtbJKVpx61/P09zdI/XXvxC8NW9HZuzgbsfXsFdE8Wb60eUhWaTRcE+MlEyaCsJNA2naVXu7fs7j8G8AmZkGQ
@@ -290,21 +290,21 @@ Authorization: Bearer 8A:{{tenant}}.AZ34i9zkl1aURyE97S9/vSIgAgAAWgCmdOFAKGarzp8Y
 ###
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=traveltransactionlog.record_id&$filter=tablenumber eq 11 and traveltransactionlog.type eq 4864 and traveltransactionlog.ttime afterTime YOUR_LAST_QUERY_TIME HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=traveltransactionlog.record_id&$filter=tablenumber eq 11 and traveltransactionlog.type eq 4864 and traveltransactionlog.ttime afterTime YOUR_LAST_QUERY_TIME HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 8A:{{tenant}}.AZ34i9zkl1aURyE97S9/vSIgAgAAWgCmdOFAKGarzp8Y4r+HvPLG14jQhRNmgt508j2On8Pl1bIbCAF/9+QtDcwUlHyR5kZWCtHIPY02hn1SfV2EoCco9OC/Tpi1KFjDkT6oum5hsM4xCibs38G5ss8zc2wYFUAdWWMiYQJGKCBXtWcu3JmKxoFz1z+VGG4qjqbEnWGSM+8oiqt+ixv4XVyOcF58gDnDtD5wLE3DvGHvNMvKYGQz1e/jYE1rf9nIlQ+PPK4UkMnaENg08BbjyvTsqqUn8laOe29856Q2yP5+21dpkmcewbvohg+pge+nZ2LhGgjo1q0OVQdg9EcHWVClGm02zL0FzWC8GRbnvpqo1yK7vngfqHN7GA3MRzYvBp1ImPlGvNWi3+tivXVrhs4jtLQQibaO4Yd9St1YmLRNmzufflVBflvCUR7WVV0zqK4uZAVat2+BbeV7A2c0ieEb1V7/NV0Fo/FbbIqaH64Lg/kw+OWqqhpB8AqIqsAYvQmt1f7QUha9r5lZjellZjqp7MHN3YtxZkvYXKjGnoMEw/CPEpfUgV8VUAdshpzRlUgJCVBTN3L9GyyNFjcoOLW/dAKH6oivKyqzWiWfDo9CitEwgwAxFmIdlG7yeB6v0ucpaY0UPz6+h31iVQuEPaZQL8EehQjYHfeO7gwqD3fMnF1Abq3buqO7X8avrwUfgpYlXMmXtbJKVpx61/P09zdI/XXvxC8NW9HZuzgbsfXsFdE8Wb60eUhWaTRcE+MlEyaCsJNA2naVXu7fs7j8G8AmZkGQ
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=ticket.id,ticket.title,ticket.created_at&$filter=getAllRows=true&$options=GrandTotal=true HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=ticket.id,ticket.title,ticket.created_at&$filter=getAllRows=true&$options=GrandTotal=true HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 8A:{{tenant}}.AZ34i9zkl1aURyE97S9/vSIgAgAAWgCmdOFAKGarzp8Y4r+HvPLG14jQhRNmgt508j2On8Pl1bIbCAF/9+QtDcwUlHyR5kZWCtHIPY02hn1SfV2EoCco9OC/Tpi1KFjDkT6oum5hsM4xCibs38G5ss8zc2wYFUAdWWMiYQJGKCBXtWcu3JmKxoFz1z+VGG4qjqbEnWGSM+8oiqt+ixv4XVyOcF58gDnDtD5wLE3DvGHvNMvKYGQz1e/jYE1rf9nIlQ+PPK4UkMnaENg08BbjyvTsqqUn8laOe29856Q2yP5+21dpkmcewbvohg+pge+nZ2LhGgjo1q0OVQdg9EcHWVClGm02zL0FzWC8GRbnvpqo1yK7vngfqHN7GA3MRzYvBp1ImPlGvNWi3+tivXVrhs4jtLQQibaO4Yd9St1YmLRNmzufflVBflvCUR7WVV0zqK4uZAVat2+BbeV7A2c0ieEb1V7/NV0Fo/FbbIqaH64Lg/kw+OWqqhpB8AqIqsAYvQmt1f7QUha9r5lZjellZjqp7MHN3YtxZkvYXKjGnoMEw/CPEpfUgV8VUAdshpzRlUgJCVBTN3L9GyyNFjcoOLW/dAKH6oivKyqzWiWfDo9CitEwgwAxFmIdlG7yeB6v0ucpaY0UPz6+h31iVQuEPaZQL8EehQjYHfeO7gwqD3fMnF1Abq3buqO7X8avrwUfgpYlXMmXtbJKVpx61/P09zdI/XXvxC8NW9HZuzgbsfXsFdE8Wb60eUhWaTRcE+MlEyaCsJNA2naVXu7fs7j8G8AmZkGQ
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=Count(ticket.id):Footer&$filter=getAllRows=true&$options=GrandTotal=true HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=Count(ticket.id):Footer&$filter=getAllRows=true&$options=GrandTotal=true HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 8A:{{tenant}}.AZ34i9zkl1aURyE97S9/vSIgAgAAWgCmdOFAKGarzp8Y4r+HvPLG14jQhRNmgt508j2On8Pl1bIbCAF/9+QtDcwUlHyR5kZWCtHIPY02hn1SfV2EoCco9OC/Tpi1KFjDkT6oum5hsM4xCibs38G5ss8zc2wYFUAdWWMiYQJGKCBXtWcu3JmKxoFz1z+VGG4qjqbEnWGSM+8oiqt+ixv4XVyOcF58gDnDtD5wLE3DvGHvNMvKYGQz1e/jYE1rf9nIlQ+PPK4UkMnaENg08BbjyvTsqqUn8laOe29856Q2yP5+21dpkmcewbvohg+pge+nZ2LhGgjo1q0OVQdg9EcHWVClGm02zL0FzWC8GRbnvpqo1yK7vngfqHN7GA3MRzYvBp1ImPlGvNWi3+tivXVrhs4jtLQQibaO4Yd9St1YmLRNmzufflVBflvCUR7WVV0zqK4uZAVat2+BbeV7A2c0ieEb1V7/NV0Fo/FbbIqaH64Lg/kw+OWqqhpB8AqIqsAYvQmt1f7QUha9r5lZjellZjqp7MHN3YtxZkvYXKjGnoMEw/CPEpfUgV8VUAdshpzRlUgJCVBTN3L9GyyNFjcoOLW/dAKH6oivKyqzWiWfDo9CitEwgwAxFmIdlG7yeB6v0ucpaY0UPz6+h31iVQuEPaZQL8EehQjYHfeO7gwqD3fMnF1Abq3buqO7X8avrwUfgpYlXMmXtbJKVpx61/P09zdI/XXvxC8NW9HZuzgbsfXsFdE8Wb60eUhWaTRcE+MlEyaCsJNA2naVXu7fs7j8G8AmZkGQ
@@ -377,7 +377,7 @@ Content-Type: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Archive/GetArchiveListByColumns HTTP/1.1
+POST {{api_url}}/v1/Agents/Archive/GetArchiveListByColumns HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer {{token}}
@@ -413,7 +413,7 @@ Authorization: Bearer {{token}}
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Archive/GetArchiveListByColumns2
+POST {{api_url}}/v1/Agents/Archive/GetArchiveListByColumns2
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{token}}
@@ -430,7 +430,7 @@ Authorization: Bearer {{token}}
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/FindContact?$select=contactId%2Ccode%2Cname,email/emailAddress&$entities=contact HTTP/1.1
+GET {{api_url}}/v1/Archive/FindContact?$select=contactId%2Ccode%2Cname,email/emailAddress&$entities=contact HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
@@ -438,7 +438,7 @@ Accept: application/json
 ###
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/FindContact?$select=contactId,name,email/emailAddress&$entities=contact&$filter=contactid gt 0 HTTP/1.1
+GET {{api_url}}/v1/Archive/FindContact?$select=contactId,name,email/emailAddress&$entities=contact&$filter=contactid gt 0 HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
@@ -446,7 +446,7 @@ Accept: application/json
 ###
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/SimpleContact?$select=email/emailAddress,contactId%2Ccode%2Cname%2CcontactAssociate%2FpersonId%2Ccategory%2Cbusiness%2Corgnr%2Cnumber,contactAssociate/associateDbId HTTP/1.1
+GET {{api_url}}/v1/Archive/SimpleContact?$select=email/emailAddress,contactId%2Ccode%2Cname%2CcontactAssociate%2FpersonId%2Ccategory%2Cbusiness%2Corgnr%2Cnumber,contactAssociate/associateDbId HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json

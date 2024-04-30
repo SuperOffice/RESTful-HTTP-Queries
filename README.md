@@ -48,7 +48,7 @@ This is setting needed because your tenants API URL might dynamically change, an
 Query using access token:
 
 ```http
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/3 HTTP/1.1
+GET {{api_url}}/v1/Contact/3 HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/json
 ```
@@ -56,7 +56,7 @@ Accept: application/json
 Query using ticket credential with app secret:
 
 ```http
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/3 HTTP/1.1
+GET {{api_url}}/v1/Contact/3 HTTP/1.1
 Authorization: SOTicket {{ticket}}
 SO-AppToken: {{app_secret}}
 Accept: application/json

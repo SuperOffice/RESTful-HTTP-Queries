@@ -1,3 +1,3 @@
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Preference/GetAll HTTP/1.1
+GET {{api_url}}/v1/Agents/Preference/GetAll HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/json

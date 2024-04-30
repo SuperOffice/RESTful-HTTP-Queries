@@ -1,5 +1,5 @@
 # Get the company configuration
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Configuration/GetConfigurableScreenDeltasByQuery
+POST {{api_url}}/v1/Agents/Configuration/GetConfigurableScreenDeltasByQuery
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{token}}
@@ -15,7 +15,7 @@ Authorization: Bearer {{token}}
 ###
 
 # Get custom field info
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/GetCustomFieldInfoList
+POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/GetCustomFieldInfoList
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{token}}
@@ -32,7 +32,7 @@ Authorization: Bearer {{token}}
 # Get IsFavorite
 # Get IsNumberValid
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Contact/IsNumberValid
+POST {{api_url}}/v1/Agents/Contact/IsNumberValid
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{token}}
@@ -45,7 +45,7 @@ Authorization: Bearer {{token}}
 ###
 
 # Save a Draft
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Configuration/SaveConfigurableScreenDelta
+POST {{api_url}}/v1/Agents/Configuration/SaveConfigurableScreenDelta
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{token}}
@@ -69,7 +69,7 @@ Authorization: Bearer {{token}}
 ###
 
 # Get the company configuration
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Configuration/GetConfigurableScreenDeltasByQuery
+POST {{api_url}}/v1/Agents/Configuration/GetConfigurableScreenDeltasByQuery
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{token}}
@@ -90,7 +90,7 @@ Authorization: Bearer {{token}}
 ###
 
 # Get user groups
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/MDO/GetSimpleList
+POST {{api_url}}/v1/Agents/MDO/GetSimpleList
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{token}}
@@ -104,7 +104,7 @@ Authorization: Bearer {{token}}
 
 # Save and Publish
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Configuration/SaveAndPublish
+POST {{api_url}}/v1/Agents/Configuration/SaveAndPublish
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{token}}
@@ -128,6 +128,6 @@ Authorization: Bearer {{token}}
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Diagnostics/GetCacheNames
+POST {{api_url}}/v1/Agents/Diagnostics/GetCacheNames
 Accept: application/json
 Authorization: Bearer {{token}}

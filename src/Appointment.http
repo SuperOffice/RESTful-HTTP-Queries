@@ -1,20 +1,20 @@
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/Activity?$entities=appointment&$select=type,recordType,date,text&$orderby=appointmentId HTTP/1.1
+GET {{api_url}}/v1/Archive/Activity?$entities=appointment&$select=type,recordType,date,text&$orderby=appointmentId HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment/default HTTP/1.1
+GET {{api_url}}/v1/appointment/default HTTP/1.1
 Authorization: SoTicket {{ticket}}
 SO-AppToken: ca452f9c29870bc278017796cd16bd11
 Accept: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment HTTP/1.1
+POST {{api_url}}/v1/appointment HTTP/1.1
 Authorization: SoTicket {{ticket}}
 SO-AppToken: ca452f9c29870bc278017796cd16bd11
 Content-Type: application/json
@@ -31,26 +31,26 @@ Accept: application/json
 
 
 ###
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment?$select=type,text,contact/name HTTP/1.1
+GET {{api_url}}/v1/appointment?$select=type,text,contact/name HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Appointment/GetAppointmentEntity?appointmentEntityId=4
+POST {{api_url}}/v1/Agents/Appointment/GetAppointmentEntity?appointmentEntityId=4
 Authorization: Bearer {{token}}
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment/4
+GET {{api_url}}/v1/appointment/4
 Authorization: Bearer {{token}}
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment/4
+GET {{api_url}}/v1/appointment/4
 Authorization: SoTicket {{ticket}}
 SO-AppToken: ca452f9c29870bc278017796cd16bd11
 Content-Type: application/json
@@ -58,7 +58,7 @@ Accept: application/json
 
 ###
 
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/appointment/8 HTTP/1.1
+PATCH {{api_url}}/v1/appointment/8 HTTP/1.1
 Authorization: SoTicket {{ticket}}
 SO-AppToken: ca452f9c29870bc278017796cd16bd11
 Content-Type: application/json

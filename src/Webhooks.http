@@ -1,11 +1,11 @@
 ### Agents - CreateDefaultWebhook
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Webhook/CreateDefaultWebhook HTTP/1.1
+POST {{api_url}}/v1/Agents/Webhook/CreateDefaultWebhook HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
 
 ### Agents - SaveWebhook
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Webhook/SaveWebHook HTTP/1.1
+POST {{api_url}}/v1/Agents/Webhook/SaveWebHook HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
@@ -32,7 +32,7 @@ Accept: application/json
 
 
 ### Agents - GetAllWebhooks
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Webhook/GetAllWebhooks HTTP/1.1
+POST {{api_url}}/v1/Agents/Webhook/GetAllWebhooks HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
@@ -45,32 +45,32 @@ Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/dynamic?$select=webhook_usage.webhook_usage_id,webhook_usage.total_calls,webhook_usage.total_errors,webhook_usage.consecutive_errors,webhook_usage.last_error&$filter=webhook_usage.webhook_usage_id eq 34 HTTP/1.1
+GET {{api_url}}/v1/Archive/dynamic?$select=webhook_usage.webhook_usage_id,webhook_usage.total_calls,webhook_usage.total_errors,webhook_usage.consecutive_errors,webhook_usage.last_error&$filter=webhook_usage.webhook_usage_id eq 34 HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/json
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/56 HTTP/1.1
-Authorization: Bearer {{token}}
-Content-Type: application/json
-Accept: application/json
-
-###
-
-DELETE https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/21 HTTP/1.1
+GET {{api_url}}/v1/Webhook/56 HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/default HTTP/1.1
+DELETE {{api_url}}/v1/Webhook/21 HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
-PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/56 HTTP/1.1
+
+GET {{api_url}}/v1/Webhook/default HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+###
+PUT {{api_url}}/v1/Webhook/56 HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
@@ -92,7 +92,7 @@ Accept: application/json
 }
 
 ###
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook HTTP/1.1
+POST {{api_url}}/v1/Webhook HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
@@ -114,7 +114,7 @@ Accept: application/json
 
 ###
 
-PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/11 HTTP/1.1
+PUT {{api_url}}/v1/Webhook/11 HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
@@ -133,7 +133,7 @@ Accept: application/json
 
 ###
 
-PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/11 HTTP/1.1
+PUT {{api_url}}/v1/Webhook/11 HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
@@ -152,7 +152,7 @@ Accept: application/json
 
 ###
 
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/47 HTTP/1.1
+PATCH {{api_url}}/v1/Webhook/47 HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
@@ -171,7 +171,7 @@ Accept: application/json
 
 ###
 
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/Webhook/15 HTTP/1.1
+PATCH {{api_url}}/v1/Webhook/15 HTTP/1.1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 Accept: application/json
