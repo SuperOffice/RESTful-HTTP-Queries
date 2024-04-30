@@ -2,14 +2,14 @@
 @select1 = consentPerson/person/personId,active,key,name,consentPerson/comment
 
 GET {{api_url}}/v1/Document/default
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 
 GET {{api_url}}/v1/List/DocumentTemplate/Items/58/Content/
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/octet-stream
 
@@ -17,32 +17,32 @@ Accept: application/octet-stream
 
 
 GET {{api_url}}/v1/document/141 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 
 GET {{api_url}}/v1/MDOList/doctmpl HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/List/DocumentTemplate/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/List/DocumentTemplate/Items/164/content/en HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 POST {{api_url}}/v1/Agents/Document/SaveDocumentEntity
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -105,7 +105,7 @@ Accept: application/json
 ###
 
 POST {{api_url}}/v1/Agents/Document/CreateNewPhysicalDocumentFromTemplateWithCustomTags2
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -127,7 +127,7 @@ Accept: application/json
 ###
 
 POST {{api_url}}/v1/Agents/Document/SubstituteTemplateVariablesEx
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 

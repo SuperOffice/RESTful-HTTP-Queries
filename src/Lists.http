@@ -1,59 +1,59 @@
 GET {{api_url}}/v1/MDOList/Lists HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 GET {{api_url}}/v1/List/Country/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/List/TicketStatus/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/MDOList/ticketstatus HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 ###
 
 GET {{api_url}}/v1/MDOList/functionrights
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Accept-Language: *
 
 ###
 GET {{api_url}}/v1/MDOList/udlist108 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/MDOList/cache HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 
 GET {{api_url}}/v1/List/82/items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/MDOList/contact_freetextsearch?query=Super HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 #POST {{api_url}}/v1/Agents/List/DeleteFromListName HTTP/1.1
 POST {{api_url}}/v1/Agents/List/DeleteFromListDefinition HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -66,7 +66,7 @@ Content-Type: application/json; charset=utf-8
 
 
 POST {{api_url}}/v1/Agents/MDO/GetList HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -81,7 +81,7 @@ Content-Type: application/json; charset=utf-8
 
 
 POST {{api_url}}/v1/Agents/MDO/GetList HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -97,68 +97,68 @@ Content-Type: application/json; charset=utf-8
 
 
 GET {{api_url}}/v1/List HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/List/Category/Items/82 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 POST {{api_url}}/v1/Agents/List/GetCategory?categoryId=3 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/List/Category/Headings HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/List/Category/1/UserGroups HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 #GET {{api_url}}/v1/List/Category/MDOItems?query=Com HTTP/1.1
 GET {{api_url}}/v1/List/Category/MDOItems HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 
 GET {{api_url}}/v1/List/Country/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/List/Country/MDOItems HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 POST {{api_url}}/v1/Agents/List/GetCategories HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
 ###
 GET {{api_url}}/v1/List/82/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 POST {{api_url}}/v1/Agents/List/GetListEntityByName HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -169,48 +169,48 @@ Content-Type: application/json; charset=utf-8
 ###
 
 GET {{api_url}}/v1/List/109/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 GET {{api_url}}/v1/List/doctmpl HTTP/1.1
-Authorization: {{token}}
+Authorization: {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/List/Country/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/List/WebPanel/Items/2 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ####
 
 GET {{api_url}}/v1/List/80/Items/2/UserGroups HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/List/81/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/List/28/Items/2/UserGroups HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 PUT {{api_url}}/v1/List/28/Items/2/UserGroups HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -245,24 +245,24 @@ Content-Type: application/json; charset=utf-8
 ###
 
 GET {{api_url}}/v1/List/default HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/MDOList HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/MDOList/tags HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 POST {{api_url}}/v1/List HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -275,7 +275,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/List/109/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -287,7 +287,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/List/106/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -299,7 +299,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/Agents/List/GetHeadingsFromName HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -312,7 +312,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/Agents/List/CreateDefaultListEntity HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
@@ -337,7 +337,7 @@ Accept: application/json; charset=utf-8
 
 
 POST {{api_url}}/v1/Agents/List/SaveListEntity HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -365,7 +365,7 @@ Content-Type: application/json
 ###
 
 POST {{api_url}}/v1/Agents/List/SaveListEntity HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -397,7 +397,7 @@ Content-Type: application/json
 
 
 POST {{api_url}}/v1/Agents/MDO/GetList HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -411,7 +411,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/Agents/MDO/GetList HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -426,7 +426,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/Agents/List/CreateDefaultListItemEntity HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 #Response
@@ -445,7 +445,7 @@ Accept: application/json; charset=utf-8
 
 # Fucking null reference exception!!!
 POST {{api_url}}/v1/Agents/List/SaveListItemEntity HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -469,7 +469,7 @@ Content-Type: application/json
 ###
 
 POST {{api_url}}/v1/List HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -503,7 +503,7 @@ Content-Type: application/json
 ###
 
 POST {{api_url}}/v1/List/109/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 

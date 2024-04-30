@@ -1,5 +1,5 @@
 GET {{api_url}}/v1/appointment/56 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###

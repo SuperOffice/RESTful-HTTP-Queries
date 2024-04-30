@@ -1,25 +1,25 @@
 ###
 
 GET {{api_url}}/v1/archive/dynamic?$select=associate.associate_id,associate.person_id,associate.person_id.firstname,associate.person_id.(email->person_id).email_address HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/archive/dynamic?$select=contact.name,contact.department&$filter=contact.name contains 'Star' or contact.department contains 'Expander' or contact.(email->contact_id).email_address eq 'white@white.com' or contact.(phone->owner_id).phone contains '90168 242' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 GET {{api_url}}/v1/person?$filter=email/emailAddress eq 'tony@superoffice.com'&$select=email/emailAddress,personId,firstName,lastName HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 GET {{api_url}}/v1/person?$filter=personId in (5,6,7,8)&$select=email/emailAddress,firstName,lastName HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###

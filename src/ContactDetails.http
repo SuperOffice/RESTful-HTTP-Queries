@@ -2,56 +2,56 @@
 
 GET {{api_url}}/v1/contact/28 HTTP/1.1
 Authorization: SOTicket {{ticket}}
-SO-AppToken: {{{{clientSecret}}}}
+SO-AppToken: {{{{client_secret}}}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact/28 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact?$select=name,nameDepartment&$filter=name eq 'Starbucks' and department eq 'Wholesale Coffee Distribution' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 
 ###
 
 GET {{api_url}}/v1/Contact/2/Persons"
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 GET {{api_url}}/v1/contact?$select=contactPhone/formattedNumber,url/URLAddress,contactId,category,business,country,number,code,orgnr,stop,registeredBy,registeredDate,nameDepartment,updatedBy,updatedDate,hasInterests&$orderby=contactId&$filter=contactId gt 5000 and contactId lt 10000&$top=5000 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 ###
 
 
 GET {{api_url}}/v1/contact?$select=contactId,hasInfoText&$orderby=contactId&$filter=contactId in (1,2,3,4,5,6,7,8) HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 
 ###
 GET {{api_url}}/v1/contact/5?$select=Name,Department,Emails HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/Contact/Duplicates/Super%20+ HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 
 POST {{api_url}}/v1/Agents/Contact/GetDuplicates HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -61,19 +61,19 @@ Content-Type: application/json; charset=utf-8
 ###
 
 GET {{api_url}}/v1/MDOList/contint?query=contactId eq 13418 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/archive/dynamic?$select=contactinterest.contact_id,contactinterest.cinterest_idx&$filter=contactinterest.contact_id in (13418,13921) HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact/3 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -82,7 +82,7 @@ Accept: application/json
 
 
 GET {{api_url}}/v1/contact?$filter=name begins Su HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -91,14 +91,14 @@ Accept: application/json
 
 
 GET {{api_url}}/v1/Archive/Dynamic?$select=contact.name,contact.department,contact.number2&$filter=(contact.name contains 'white' or contact.number2 contains 10110) and contact.contact_id notOneOf (32,67) HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
 POST {{api_url}}/v1/contact HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -109,7 +109,7 @@ Accept: application/json
 
 ###
 POST {{api_url}}/v1/contact HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -138,7 +138,7 @@ Accept: application/json
 ###
 
 GET {{api_url}}/v1/contact/5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -146,12 +146,12 @@ Accept: application/json
 
 
 GET {{api_url}}/v1/contact?$select=contactId,name&$filter=contactExtra/x_hassupportagreement eq 0 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 PATCH {{api_url}}/v1/contact/28 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -159,7 +159,7 @@ Accept: application/json
 
 ###
 PATCH {{api_url}}/v1/contact/28 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -175,7 +175,7 @@ Accept: application/json
 
 ###
 PATCH {{api_url}}/v1/contact/5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -199,7 +199,7 @@ Accept: application/json
 ###
 
 PATCH {{api_url}}/v1/contact/5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -232,7 +232,7 @@ Accept: application/json
 ###
 
 PATCH {{api_url}}/v1/contact/5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -253,19 +253,19 @@ Accept: application/json
 
 
 GET {{api_url}}/v1/contact?$select=name&$filter=contactInterestIds oneOf (2,3) HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 GET {{api_url}}/v1/contact?$select=name&$filter=hasInterests set true HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 
 GET {{api_url}}/v1/Contact?$filter=phone/formattedNumber is '+4790168242' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###

@@ -1,6 +1,6 @@
 @qry = KB_ENTRY.title,KB_ENTRY.question,KB_ENTRY.answer,KB_ENTRY.category_id,KB_ENTRY.access_level
 GET {{api_url}}/v1/Archive/Dynamic?$select=KB_ENTRY.title,KB_ENTRY.question,KB_ENTRY.answer,KB_ENTRY.category_id,KB_ENTRY.access_level HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###

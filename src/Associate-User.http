@@ -1,5 +1,5 @@
 POST {{api_url}}/v1/Agents/Associate/GetAssociatesByGroup?$select=AssociateId,Name
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -15,7 +15,7 @@ Accept: application/json
 
 
 POST {{api_url}}/v1/Agents/MDO/GetList
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -32,7 +32,7 @@ Accept: application/json
 POST {{api_url}}/v1/Agents/Archive/GetArchiveListByColumns HTTP/1.1
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
   "ProviderName": "InternalUsers",
@@ -71,7 +71,7 @@ Authorization: Bearer {{token}}
 ###
 
 POST {{api_url}}/v1/Agents/Associate/GetAssociateList
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -80,32 +80,32 @@ Accept: application/json
 ###
 
 GET {{api_url}}/v1/user/currentPrincipal HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/user/currentAssociate HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #Inaccessible online
 GET {{api_url}}/v1/user/current HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/archive/dynamic?$select=associate.associate_id,associate.name,associate.lastlogin HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/user/currentToken HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###

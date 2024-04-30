@@ -1,4 +1,4 @@
 ### Get User Preferences
 GET {{api_url}}/v1/archive/UserPreferences HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json

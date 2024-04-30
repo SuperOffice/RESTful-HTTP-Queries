@@ -1,41 +1,41 @@
 GET {{api_url}}/v1/Archive/Person?$filter=personUdef/SuperOffice:SuperIdUid = 'oIns7VrorQWa5rTTQsYLls1QIOhlYxifxSw7LqeElX'
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/person/default HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/person/1192925 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/person?$filter=lastName contains 'L\'Oréal' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 GET {{api_url}}/v1/Person?$select=firstName,lastName,email/emailAddress,phone/formattedNumber HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/Person?$select=firstName,lastName,email/emailAddress,personCountry,personCountryId HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 POST {{api_url}}/v1/Agents/Person/GetUserCandidateByPerson
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Accept-Language: en
 Content-Type: application/json; charset=utf-8
@@ -48,7 +48,7 @@ Content-Type: application/json; charset=utf-8
 
 
 POST {{api_url}}/v1/Agents/Person/CreateOrUpdateUserCandidate
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Accept-Language: en
 Content-Type: application/json; charset=utf-8
@@ -61,40 +61,40 @@ Content-Type: application/json; charset=utf-8
 
 ###
 GET {{api_url}}/v1/agents/person HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 
 ###
 
 GET {{api_url}}/v1/Archive/Person?$filter=personUdef/SuperOffice:1 = 'Works'
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Accept-Language: en
 
 ###
 
 GET {{api_url}}/v1/archive/simpleperson?$select=firstName,lastName&$filter=personId eq 3 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 ###
 GET https://{{env}}.superoffice.com/{{tenant}}//api/v1/Person/3/Simple?$select=firstName,lastName HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 
 ###
 GET {{api_url}}/v1/person/25 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 
 ###
 PATCH {{api_url}}/v1/person/29 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -115,7 +115,7 @@ Accept: application/json
 ###
 
 PATCH {{api_url}}/v1/person/174639 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -130,7 +130,7 @@ Accept: application/json
 ###
 
 PATCH {{api_url}}/v1/person/5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -155,7 +155,7 @@ Accept: application/json
 
 # This fails... needs the complete address fields like above.
 PATCH {{api_url}}/v1/person/29 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -173,14 +173,14 @@ Accept: application/json
 
 
 GET {{api_url}}/v1/person/174644 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
 PATCH {{api_url}}/v1/person/174644 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -200,7 +200,7 @@ Accept: application/json
 ###
 
 POST {{api_url}}/v1/Person HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -228,7 +228,7 @@ Accept: application/json
 
 ###
 POST {{api_url}}/v1/Person HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -883,7 +883,7 @@ Accept: application/json
 ###
 
 PUT {{api_url}}/v1/Person/174644 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -2402,7 +2402,7 @@ Accept: application/json
 ###
 
 POST {{api_url}}/v1/Agents/BLOB/GetPersonImage HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 Accept-Language: en
@@ -2414,7 +2414,7 @@ Accept-Language: en
 ###
 
 POST {{api_url}}/v1/Agents/Person/GetPersonImage HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 Accept-Language: en
@@ -2426,7 +2426,7 @@ Accept-Language: en
 ###
 
 POST {{api_url}}/v1/Agents/Person/GetPersonImages HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 Accept-Language: en
@@ -2440,26 +2440,26 @@ Accept-Language: en
 ###
 
 GET {{api_url}}/v1/Person/25/Image
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/Person/25
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/Person/1077264/ImageInfo
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 
 POST {{api_url}}/v1/Agents/Person/CreateTemporaryKey
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Content-Type: application/json
 
@@ -2473,13 +2473,13 @@ Content-Type: application/json
 ###
 
 GET {{api_url}}/v1/archive/simpleperson?$select=personId,portraitThumbnail,firstName&$filter=personId=25
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 POST {{api_url}}/v1/Agents/Person/GetPersonEntity
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Accept-Language: en
 Content-Type: application/json; charset=utf-8
@@ -2492,7 +2492,7 @@ Content-Type: application/json; charset=utf-8
 
 
 PATCH {{api_url}}/v1/Person/28 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
 [

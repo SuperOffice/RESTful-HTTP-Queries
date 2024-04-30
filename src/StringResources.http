@@ -1,14 +1,14 @@
 ###
 
 GET {{api_url}}/v1/String/SR_TICKETARCHIVE_STATUS_OPEN HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
 POST {{api_url}}/v1/Agents/Resource/GetResourceSubstitutions
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Accept-Language: en
 Content-Type: application/json; charset=utf-8
@@ -23,6 +23,6 @@ Content-Type: application/json; charset=utf-8
 ###
 
 GET {{api_url}}/v1/MDOList/resource?search="SR_TICKETARCHIVE_STATUS_OPEN" HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json

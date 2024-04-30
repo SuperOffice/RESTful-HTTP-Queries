@@ -1,13 +1,13 @@
 @qry = ejscript.id,ejscript.hierarchy_id.name,ejscript.hierarchy_id.fullname
 GET {{api_url}}/v1/Archive/Dynamic?$select={{qry}} HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/Archive/Dynamic?$select=ejscript.id,ejscript.hierarchy_id.fullname HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -15,7 +15,7 @@ Accept: application/json
 
 
 GET {{api_url}}/v1/CRMScript/default
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -23,14 +23,14 @@ Accept: application/json
 
 
 GET {{api_url}}/v1/CRMScript
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
 POST {{api_url}}/v1/CRMScript
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -57,7 +57,7 @@ else
 
 ###
 PATCH {{api_url}}/v1/CRMScript/194
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -82,7 +82,7 @@ else
 
 
 POST {{api_url}}/v1/CRMScript/195/Execute
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
 {
@@ -92,7 +92,7 @@ Content-Type: application/json
 ###
 
 DELETE {{api_url}}/v1/CRMScript/194
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
 

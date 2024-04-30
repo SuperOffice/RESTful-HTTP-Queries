@@ -1,7 +1,7 @@
 @filter1 = consentPerson/person/personId in (7,17) 
 @select1 = consentPerson/person/personId,active,key,name,consentPerson/comment
 GET {{api_url}}/v1/Archive/ConsentPurpose?$select={{select1}}&filter={{filter1}} HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -11,34 +11,34 @@ Accept: application/json
 @filter2 = shipmenttypereservation.person_id in (5,7,17) 
 
 GET {{api_url}}/v1/archive/dynamic?$select={{select2}}&$filter={{filter2}} HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 GET {{api_url}}/v1/List/ShipmentType/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Accept-Language: en
 
 ###
 
 GET {{api_url}}/v1/List/LegalBase/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Accept-Language: en
 
 ###
 
 GET {{api_url}}/v1/List/ConsentPurpose/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Accept-Language: en
 
 ###
 
 GET {{api_url}}/v1/List/ConsentSource/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Accept-Language: en
 
@@ -50,7 +50,7 @@ Accept-Language: en
 #GET {{api_url}}/v1/archive/dynamic?$select={{query}} HTTP/1.1
 
 GET {{api_url}}/v1/archive/dynamic?$select={{query}}&$filter={{filter}} HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -62,7 +62,7 @@ Accept: application/json
 @filter = hasEmarketingConsent eq true
 
 GET {{api_url}}/v1/archive/Person?$select={{query}}&$filter={{filter}} HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -73,6 +73,6 @@ Accept: application/json
 @filter = consentperson.consentpurpose_id = 2
 
 GET {{api_url}}/v1/archive/dynamic?$select={{query}}&$filter={{filter}} HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json

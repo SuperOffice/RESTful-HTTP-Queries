@@ -4,7 +4,7 @@
 @app_secret=
 
 POST {{api_url}}/v1/Agents/DatabaseTable/Insert HTTP/1.1
-Authorization: SOTicket {{token}}
+Authorization: SOTicket {{access_token}}
 SO-AppToken: {{app_secret}}
 Accept: application/json
 Content-Type: application/json
@@ -42,7 +42,7 @@ Content-Type: application/json
 ###
 
 POST {{api_url}}/v1/Agents/DatabaseTable/Insert HTTP/1.1
-Authorization: SOTicket {{token}}
+Authorization: SOTicket {{access_token}}
 SO-AppToken: {{app_secret}}
 Accept: application/json
 Content-Type: application/json
@@ -80,7 +80,7 @@ Content-Type: application/json
 ###
 
 POST {{api_url}}/v1/Agents/DatabaseTable/Insert HTTP/1.1
-Authorization: SOTicket {{token}}
+Authorization: SOTicket {{access_token}}
 SO-AppToken: {{app_secret}}
 Accept: application/json
 Content-Type: application/json
@@ -143,7 +143,7 @@ Content-Type: application/json
 ###
 
 POST {{api_url}}/v1/Agents/DatabaseTable/Insert HTTP/1.1
-Authorization: SOTicket {{token}}
+Authorization: SOTicket {{access_token}}
 SO-AppToken: {{app_secret}}
 Accept: application/json
 Content-Type: application/json

@@ -2,7 +2,7 @@
 
 ### Authorization
 #  @name Authorization
-POST https://sod.superoffice.com/login/common/oauth/tokens?grant_type={{grantType}}&client_id={{clientId}}&client_secret={{clientSecret}}&redirect_uri={{redirectUri}}&refresh_token={{refresh_token}}
+POST https://sod.superoffice.com/login/common/oauth/tokens?grant_type={{grantType}}&client_id={{client_id}}&client_secret={{client_secret}}&redirect_uri={{redirect_uri}}&refresh_token={{refresh_token}}
 Accept: application/json
 
 ### Get State - Get the API URL for the tenant
@@ -12,4 +12,4 @@ Accept : application/json
 
 ### Response 200 (application/json) - Unfortunately this doesnt work, and its unable to overwrite the token => https://github.com/Huachao/vscode-restclient/issues/179 
 @{{api_url}} = {{State.response.body.Api}}
-@{{token}} = {{Authorization.response.body.access_token}}
+@{{access_token}} = {{Authorization.response.body.access_token}}

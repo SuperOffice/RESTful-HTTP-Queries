@@ -1,12 +1,12 @@
 ###
 GET {{api_url}}/v1/PreferenceDescription/default HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 POST {{api_url}}/v1/PreferenceDescription HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -25,7 +25,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/PreferenceDescription HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -44,7 +44,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/PreferenceDescription HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -63,7 +63,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/PreferenceDescription HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -81,7 +81,7 @@ Content-Type: application/json; charset=utf-8
 
 ###
 POST {{api_url}}/v1/PreferenceDescription HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -101,7 +101,7 @@ Content-Type: application/json; charset=utf-8
 
 ###
 POST {{api_url}}/v1/Preference/Mirroring/SkipTables HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -112,7 +112,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/Preference/Rights-sale/Sale.earning/2?value=0 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -122,7 +122,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/Preference/Rights-sale/Sale.earning_percent/2?value=0 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -133,7 +133,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/PreferenceDescription HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -151,7 +151,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/PreferenceDescription HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 

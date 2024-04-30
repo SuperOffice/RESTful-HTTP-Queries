@@ -2,32 +2,32 @@
 
 # Get all contact user defined field definitions
 GET {{api_url}}/v1/Contact/UdefLayout HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 DELETE {{api_url}}/v1/Contact/UdefLayout/My New Number
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/DeleteUserDefinedFieldInfo?UserDefinedFieldInfoId=151
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 # Get by progid
 GET {{api_url}}/v1/Contact/UdefLayout/SuperOffice:1 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 # udefFieldType	Enum: Number, ShortText, LongText, Date, UnlimitedDate, Checkbox, List, Decimal
 POST {{api_url}}/v1/Contact/UdefLayout?udefFieldType=Number HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 # Response
@@ -92,7 +92,7 @@ Accept: application/json; charset=utf-8
 ###
 
 PUT {{api_url}}/v1/Contact/UdefLayout HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -138,7 +138,7 @@ Content-Type: application/json; charset=utf-8
 # update the fields
 
 PUT {{api_url}}/v1/Contact/UdefLayout HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -755,7 +755,7 @@ Content-Type: application/json; charset=utf-8
 # update just one field
 
 PUT {{api_url}}/v1/Contact/UdefLayout HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -821,25 +821,25 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/Contact/UdefLayout/Publish HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET {{api_url}}/v1/Contact/UdefLayout/Changed HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET https://{{env}}.superoffice.com/{{tenant}}/default.aspx?flush HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/GetPublishedUserDefinedFieldList
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -854,7 +854,7 @@ Content-Type: application/json; charset=utf-8
 #*************************************************************
 
 POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/SaveUserDefinedFieldInfo
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -899,7 +899,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/GetUserDefinedFieldFromProgId
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -911,7 +911,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/CreateUserDefinedFieldInfo
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -924,7 +924,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/SaveUserDefinedFieldInfo
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -1028,12 +1028,12 @@ Response:
 ###
 
 POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/IsAnyPublishEventActive
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/SetPublishStartSystemEvent
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -1044,7 +1044,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/GetUserDefinedFieldFromFieldLabel
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -1056,7 +1056,7 @@ Content-Type: application/json; charset=utf-8
 ###
 
 POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/Publish
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 

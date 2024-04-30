@@ -1,7 +1,7 @@
 ###
 
 GET {{api_url}}/v1/Archive/Activity?$entities=appointment&$select=type,recordType,date,text&$orderby=appointmentId HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -32,20 +32,20 @@ Accept: application/json
 
 ###
 GET {{api_url}}/v1/appointment?$select=type,text,contact/name HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
 POST {{api_url}}/v1/Agents/Appointment/GetAppointmentEntity?appointmentEntityId=4
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/appointment/4
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###

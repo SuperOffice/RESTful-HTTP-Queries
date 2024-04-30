@@ -1,25 +1,25 @@
 ###
 GET {{api_url}}/v1/project/246010 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 
 GET {{api_url}}/v1/project/246010/Links HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/project?$select=name,type,associateId,projectMember/contactId,projectMember/personId&$filter=projectId eq 246010 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/projectmember?$select=projectId,contactId,personId&$filter=projectId gt 246828 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json

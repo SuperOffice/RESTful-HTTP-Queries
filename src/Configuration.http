@@ -2,7 +2,7 @@
 POST {{api_url}}/v1/Agents/Configuration/GetConfigurableScreenDeltasByQuery
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
     "DeltaQuery":
@@ -18,7 +18,7 @@ Authorization: Bearer {{token}}
 POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/GetCustomFieldInfoList
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
     "TableName":"contact",
@@ -35,7 +35,7 @@ Authorization: Bearer {{token}}
 POST {{api_url}}/v1/Agents/Contact/IsNumberValid
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
   "ContactId": 2,
@@ -48,7 +48,7 @@ Authorization: Bearer {{token}}
 POST {{api_url}}/v1/Agents/Configuration/SaveConfigurableScreenDelta
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
   "TableRight": null,
@@ -72,7 +72,7 @@ Authorization: Bearer {{token}}
 POST {{api_url}}/v1/Agents/Configuration/GetConfigurableScreenDeltasByQuery
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
   "DeltaQuery": {
@@ -93,7 +93,7 @@ Authorization: Bearer {{token}}
 POST {{api_url}}/v1/Agents/MDO/GetSimpleList
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
     "Name":"UserGroup"
@@ -107,7 +107,7 @@ Authorization: Bearer {{token}}
 POST {{api_url}}/v1/Agents/Configuration/SaveAndPublish
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
   "ConfigurableScreenDelta": {
@@ -130,4 +130,4 @@ Authorization: Bearer {{token}}
 
 POST {{api_url}}/v1/Agents/Diagnostics/GetCacheNames
 Accept: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}

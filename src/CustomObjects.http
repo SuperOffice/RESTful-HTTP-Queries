@@ -1,14 +1,14 @@
 ###
 GET {{api_url}}/v1/archive/dynamic?$select=y_equipment.x_name,y_equipment.x_number,y_equipment.x_description,y_equipment.x_owner,y_equipment.x_start_date HTTP/1.1
 Accept: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 ###
 GET {{api_url}}/v1/Table/y_equipment/6 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 ###
 POST {{api_url}}/v1/Table/y_equipment HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -20,7 +20,7 @@ Content-Type: application/json
 }
 ###
 POST {{api_url}}/v1/Table/y_equipment HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -34,7 +34,7 @@ Content-Type: application/json
 
 ###
 PUT {{api_url}}/v1/Table/y_equipment/6 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -48,7 +48,7 @@ Content-Type: application/json
 
 ### DatabaseTable Agent - ReadRow
 POST {{api_url}}/v1/Agents/DatabaseTable/ReadRow HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -59,7 +59,7 @@ Content-Type: application/json
 
 ### DatabaseTable Agent - InsertRow
 POST {{api_url}}/v1/Agents/DatabaseTable/InsertRow HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -73,7 +73,7 @@ Content-Type: application/json
 
 ### DatabaseTable Agent - UpdateRow
 POST {{api_url}}/v1/Agents/DatabaseTable/UpdateRow HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -88,7 +88,7 @@ Content-Type: application/json
 
 ### DatabaseTable Agent - DeleteRow
 POST {{api_url}}/v1/Agents/DatabaseTable/DeleteRow HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -99,13 +99,13 @@ Content-Type: application/json
 
 ### TableRecord - Read
 GET {{api_url}}/v1/Table/y_equipment/1 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
 ### TableRecord - Insert
 POST {{api_url}}/v1/Table/y_equipment HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -116,7 +116,7 @@ Content-Type: application/json
 
 ### TableRecord - Update
 PUT {{api_url}}/v1/Table/y_equipment/2 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -127,6 +127,6 @@ Content-Type: application/json
 
 ### TableRecord - Delete
 DELETE  {{api_url}}/v1/Table/y_equipment/3 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json

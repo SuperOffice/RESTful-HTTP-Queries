@@ -1,6 +1,6 @@
 # Get the list of Typical Search entities to generate Typical Search buttons.
 GET {{api_url}}/v1/MDOList/SelectionMemberTypeV2 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -10,7 +10,7 @@ Accept: application/json
 
 # Get the list of Typical Search entities to generate Typical Search buttons.
 POST {{api_url}}/v1/Agents/MDO/GetList HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Accept-Language: en
 Content-Type: application/json; charset=utf-8
@@ -26,7 +26,7 @@ Content-Type: application/json; charset=utf-8
 
 # Get the list of Typical Searchs for contact.
 GET {{api_url}}/v1/MDOList/typicalSearch/selectable?additional=contact HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Accept-Language: en
 
@@ -37,7 +37,7 @@ Accept-Language: en
 
 # Get the list of Typical Searchs for contact.
 POST {{api_url}}/v1/Agents/MDO/GetList HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 Accept-Language: en
@@ -58,7 +58,7 @@ Accept-Language: en
 # NO REST equivalent!
 
 POST {{api_url}}/v1/Agents/Selection/GetSelectionForFind HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -71,7 +71,7 @@ Accept: application/json
 
 
 POST {{api_url}}/v1/Agents/Selection/GetSelectionForFind HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -84,7 +84,7 @@ Accept: application/json
 
 
 POST {{api_url}}/v1/Agents/Selection/GetSelectionForFind HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -97,7 +97,7 @@ Accept: application/json
 
 
 POST {{api_url}}/v1/Agents/Selection/GetSelectionForFind HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -115,14 +115,14 @@ Accept: application/json
 # SAINT must be enabled to get SAINT fields in this list!
 
 GET {{api_url}}/v1/MDOList/archiveRestrictionColumns:ContactPersonDynamicSelectionV2 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Accept-Language: en
 
 ###
 
 GET {{api_url}}/v1/MDOList/archiveColumns:ContactPersonDynamicSelectionV2 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Accept-Language: en
 
@@ -131,7 +131,7 @@ Accept-Language: en
 
 
 GET {{api_url}}/v1/MDOList/archiveEntities:ContactPersonDynamicSelectionV2 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Accept-Language: en
 
@@ -139,7 +139,7 @@ Accept-Language: en
 
 
 POST {{api_url}}/v1/Agents/MDO/GetList HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -157,7 +157,7 @@ Accept: application/json
 # Selection ID: 21
 
 POST {{api_url}}/v1/Agents/Selection/GetDynamicSelectionCriteriaGroups HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -174,7 +174,7 @@ Accept: application/json
 # Selection ID: 21
 
 GET {{api_url}}/v1/Selection/28/CriteriaGroups HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -188,7 +188,7 @@ Accept: application/json
 # StorageType: ”criteria” 
 
 POST {{api_url}}/v1/Agents/Find/GetSpecifiedCriteriaInformationWithDefaults HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -211,7 +211,7 @@ Accept: application/json
 # associate, ejUser, intArray, listAll, listAny, listInterest, userGroup
 
 GET {{api_url}}/v1/MDOList/restrictionOperators/selectable?additional=positiveString HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 Accept-Language: en
@@ -219,7 +219,7 @@ Accept-Language: en
 ###
 
 POST {{api_url}}/v1/Agents/MDO/GetList HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 Accept-Language: en
@@ -234,7 +234,7 @@ Accept-Language: en
 ###
 
 POST {{api_url}}/v1/Agents/Archive/GetAvailableColumns
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Accept-Language: en
 Content-Type: application/json; charset=utf-8
@@ -249,21 +249,21 @@ Content-Type: application/json; charset=utf-8
 # Get list of category items. 
 
 GET {{api_url}}/v1/MDOList/Category HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/Selection/28/CriteriaGroups HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
 PUT {{api_url}}/v1/Selection/24/CriteriaGroups HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -405,7 +405,7 @@ Accept: application/json
 ]
 ###
 POST {{api_url}}/v1/Agents/Selection/SetDynamicSelectionCriteriaGroups
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 Accept-Language: en
@@ -552,7 +552,7 @@ Accept-Language: en
 ###
 
 POST {{api_url}}/v1/Agents/Selection/GetSelectionMembersArchiveRows HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -564,27 +564,27 @@ Accept: application/json
 ###
 
 POST {{api_url}}/v1/Agents/Selection/CreateDefaultSelectionEntity HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 
 GET {{api_url}}/v1/Selection/default HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 POST {{api_url}}/v1/Agents/Selection/GetSelectionEntity?selectionEntityId=18 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 
 ###
 
 GET {{api_url}}/v1/Selection/24 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -593,14 +593,14 @@ Accept: application/json
 
 
 GET {{api_url}}/v1/Selection/28/CriteriaGroups HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/List/SelectionCategory/Items HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 Accept-Language: en
@@ -609,7 +609,7 @@ Accept-Language: en
 
 #- beforeTime
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date after '2020-05-28T15:00:00' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -617,7 +617,7 @@ Accept: application/json
 
 #- beforeTime
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date thisPeriod 1 4 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -628,7 +628,7 @@ Accept: application/json
 #***********************************************************************************
 
 GET {{api_url}}/v1/Selection/default HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -638,7 +638,7 @@ Accept: application/json
 # Save Selection
 #***********************************************************************************
 POST {{api_url}}/v1/Selection HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -673,14 +673,14 @@ Accept: application/json
 ###
 
 GET {{api_url}}/v1/Selection/28 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
 POST {{api_url}}/v1/Agents/Archive/GetArchiveListByColumns HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 Accept-Language: en
@@ -715,7 +715,7 @@ Accept-Language: en
 ###
 
 GET {{api_url}}/v1/archive/ContactPersonDynamicSelectionV2?$select=firstName,lastName&$filter=selectionId = 34 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -725,13 +725,13 @@ Accept: application/json
 GET {{api_url}}/v1/archive/contactselection?$select=name,Count(name):Footer&$filter=selectionId eq 145379&$options=GrandTotal=true&$top=50000000 HTTP/1.1
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 ###
 
 GET {{api_url}}/v1/selection/145379/members?$select=name HTTP/1.1
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 ###

@@ -1,6 +1,6 @@
 ###
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -8,38 +8,38 @@ Accept: application/json
 #- Boolean --------------------------------------------------
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=hasInterests set true HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- String --------------------------------------------------
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=name begins 'S' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=name is 'Testing null Orgnr' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=name contains 'Orgnr' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=name notBegins 'S' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=name notContains 'Owl' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -47,20 +47,20 @@ Accept: application/json
 # Fails.
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=name notEnds 'Landing' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=name isNot 'SuperOffice Software Limited' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- between
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=name between ('A','S') HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -68,19 +68,19 @@ Accept: application/json
 #- Numbers --------------------------------------------------------------
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=contactId = 5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=contactId eq 2 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=contactId ne 2 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -88,19 +88,19 @@ Accept: application/json
 # Fails
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=contactId le 5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=contactId lt 5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=contactId gt 5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -108,38 +108,38 @@ Accept: application/json
 # Fails
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=contactId ge 5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=contactId set 5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=contactId equals 5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=contactId greater 5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=contactId less 5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/contact?$select=name,associateId,contactAssociate/fullName&$filter=contactId unequals 5 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -148,13 +148,13 @@ Accept: application/json
 
 #-All-
 GET {{api_url}}/v1/appointment?$select=type,text,contact/name HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date before '2020-05-28' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -162,35 +162,35 @@ Accept: application/json
 #-after 
 
 GET {{api_url}}/v1/appointment?$select=type,text,contact/name?&$filter=date after '2020-05-28' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- date
 GET {{api_url}}/v1/appointment?$select=date, type,text,contact/name?&$filter=date date '2020-05-28' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- between
 GET {{api_url}}/v1/appointment?$select=date, type,text,contact/name?&$filter=date between ('2020-05-11','2020-05-31') HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- beforeorEqual
 GET {{api_url}}/v1/appointment?$select=type,text,contact/name?&$filter=date beforeOrEqual '2020-05-28' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- dateTime
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date dateTime '2020-05-28T15:00:00' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -199,21 +199,21 @@ Accept: application/json
 
 #- beforeTime
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date beforeTime '2020-05-28T15:00:00' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- afterTime
 GET {{api_url}}/v1/archive/dynamic?$select=traveltransactionlog.record_id,traveltransactionlog.ttime,traveltransactionlog.tablenumber&$filter=traveltransactionlog.ttime afterTime '2010-12-02Z12:00:00' and traveltransactionlog.tablenumber eq 11&$inlineCount=true HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- beforeTime
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date beforeTime '2020-05-28T15:00:00' HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -222,21 +222,21 @@ Accept: application/json
 
 #- beforeToday
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date beforeToday HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- today
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date today HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- afterToday
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date afterToday HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -245,21 +245,21 @@ Accept: application/json
 
 #- lastWeek
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date lastWeek HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- thisWeek
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date thisWeek HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- nextWeek
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date nextWeek HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -268,21 +268,21 @@ Accept: application/json
 
 #- lastMonth
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date lastMonth HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- thisMonth
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date thisMonth HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- nextMonth
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date nextMonth HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -291,21 +291,21 @@ Accept: application/json
 
 #- lastQuarter
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date lastQuarter HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- thisQuarter
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date thisQuarter HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- nextQuarter
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date nextQuarter HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -314,14 +314,14 @@ Accept: application/json
 
 #- thisHalf
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date thisHalf HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- thisYear
 GET {{api_url}}/v1/appointment?$select=date,type,text,contact/name?&$filter=date thisYear HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -330,7 +330,7 @@ Accept: application/json
 
 #- associateIsOneOf
 GET {{api_url}}/v1/contact?$select=name,associateId&$filter=registeredBy associateIsOneOf (1,6) HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -338,7 +338,7 @@ Accept: application/json
 
 #- associateIsNotOneOf
 GET {{api_url}}/v1/contact?$select=name,associateId&$filter=registeredBy associateIsNotOneOf (1,6) HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -347,14 +347,14 @@ Accept: application/json
 
 #- equals
 GET {{api_url}}/v1/contact?$select=name,associateId&$filter=category equals 4 HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 #- oneOf
 GET {{api_url}}/v1/contact?$select=name,associateId&$filter=category oneOf (3,6) HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -362,7 +362,7 @@ Accept: application/json
 
 #- notOneOf
 GET {{api_url}}/v1/contact?$select=name,associateId,category&$filter=category notOneOf (3,6) HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
