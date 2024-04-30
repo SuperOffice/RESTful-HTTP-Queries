@@ -21,20 +21,20 @@ The properties are as follows:
 - `{{access_token}}` - The access token to use for authentication.
 - `{{tenant}}` - The online tenant context identifier to query.
 - `{{ticket}}` - The ticket credential to use for queries. Must be used with app_secret.
-- `{{clientId}}` - client_id for your application.
-- `{{clientSecret}}` - client_secret for your application.
+- `{{client_id}}` - client_id for your application.
+- `{{client_secret}}` - client_secret for your application.
 - `{{refresh_token}}` - refresh_token for your application.
-- `{{redirectUri}}` - redirect_uri defined for your application.
-- `{{grantType}}` - set this to 'refresh_token'
+- `{{redirect_uri}}` - redirect_uri defined for your application.
+- `{{grant_type}}` - set this to 'refresh_token'
 
 ## Get Access Token
 
 To acquire a new accessToken you need to have the following properties defined in your settings.json explained above.
 
-- `{{clientId}}` - client_id for your application.
-- `{{clientSecret}}` - client_secret for your application.
-- `{{redirectUri}}` - redirect_uri defined for your application.
-- `{{grantType}}` - set this to 'refresh_token'
+- `{{client_id}}` - client_id for your application.
+- `{{client_secret}}` - client_secret for your application.
+- `{{redirect_uri}}` - redirect_uri defined for your application.
+- `{{grant_type}}` - set this to 'refresh_token'
 
 Use the [OIDC.http](./src/OIDC.http) file and run the `Authorization`-method to acquire a new accessToken. The result contains your `{{access_token}}` and `{{refresh_token}}`, put those into your settings.json.
 

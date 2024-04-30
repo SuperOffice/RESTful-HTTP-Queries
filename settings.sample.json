@@ -1,35 +1,35 @@
 {
     "rest-client.environmentVariables": {
         "$shared": {
-            "token": "",
+            "access_token": "",
             "tenant": "",
             "ticket": "",
-            "env": "online",
-            "api": "",
-            "clientId": "",
-            "clientSecret": "",
+            "api_url": "",
+            "env": "",
+            "client_id": "",
+            "client_secret": "",
             "refresh_token": "",
-            "redirectUri": "https://devnet-tools.superoffice.com/openid/callback",
-            "grantType": "refresh_token"
+            "redirect_uri": "https://devnet-tools.superoffice.com/openid/callback",
+            "grant_type": "refresh_token"
         },
         "sod": {
-            "token": "",
+            "access_token": "",
             "tenant": "",
             "ticket": "",
-            "env": "sod",
-            "api": "",
-            "clientId": "",
-            "clientSecret": "",
+            "api_url": "",
+            "env": "",
+            "client_id": "",
+            "client_secret": "",
             "refresh_token": ""
         },
         "online": {
-            "token": "",
+            "access_token": "",
             "tenant": "",
             "ticket": "",
-            "env": "online",
-            "api": "",
-            "clientId": "",
-            "clientSecret": "",
+            "api_url": "",
+            "env": "",
+            "client_id": "",
+            "client_secret": "",
             "refresh_token": ""
         }
     }
