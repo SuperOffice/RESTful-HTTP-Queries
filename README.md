@@ -6,7 +6,13 @@ Contains .http files used in VS Code and Visual Studio to perform RESTful querie
 
 In VS Code, install the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension.
 
-Copy the settings.sample.json into your .vscode-folder and rename it to settings.json
+Copy the settings.sample.json into your .vscode folder and rename it to settings.json. Afterwards the folder structure is
+
+RESTful-HTTP-Queries/
+|-- .vscode
+|---- settings.json
+|-- src
+|---- *.https files
 
 ## Environments
 
