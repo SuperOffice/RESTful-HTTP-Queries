@@ -151,4 +151,4 @@ Its also possible to copy/use variables from $shared in an environment:
 
 ## Disclaimer
 
-The extension [vscode-rest][<https://github.com/Huachao/vscode-restclient>] is not created by SuperOffice, and please reference their documentation for additional options.
+The extension [<https://github.com/Huachao/vscode-restclient>] is not created by SuperOffice, and please reference their documentation for additional options.
