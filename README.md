@@ -11,7 +11,8 @@ Copy the settings.sample.json into your .vscode-folder and rename it to settings
 ## Environments
 
 If you want to connect towards different environments you can define them in your settings.json. The sample-files comes with 2 environments, sod and online, but you can freely add more environments to fit your needs.
-To switch between environments you can use the shortcut `CTRL` + `Alt` + `E` and select from the dropdown.
+
+To switch between environments you can use the shortcut `CTRL` + `Alt` + `E`, or F1, and select from the dropdown.
 
 You can also skip configuring for different environments, and just input values in the $shared section. What you define under $shared will be overruled by environment-specific settings.
 
