@@ -8,11 +8,13 @@ In VS Code, install the [REST Client](https://marketplace.visualstudio.com/items
 
 Copy the settings.sample.json into your .vscode folder and rename it to settings.json. Afterwards the folder structure is
 
+```bash
 RESTful-HTTP-Queries/
 |-- .vscode
 |---- settings.json
 |-- src
 |---- *.https files
+```
 
 ## Environments
 
