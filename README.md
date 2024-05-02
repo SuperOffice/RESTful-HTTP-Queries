@@ -18,7 +18,7 @@ RESTful-HTTP-Queries/
 
 ## Environments
 
-If you want to connect towards different environments you can define them in your settings.json. The sample-files comes with 2 environments, sod and online, but you can freely add more environments to fit your needs.
+If you want to work with different environments you can define them in your settings.json. The sample-files comes with 2 environments, sod and online, but you can freely add more environments to fit your need.
 
 To switch between environments you can use the shortcut `CTRL` + `Alt` + `E`, or F1, and select from the dropdown.
 
@@ -70,7 +70,7 @@ SO-AppToken: {{app_secret}}
 Accept: application/json
 ```
 
-## How a settings.json should look like
+## How a configured settings.json should look like
 
 ```yaml
 {
@@ -108,7 +108,8 @@ Accept: application/json
 }
 ```
 
-Its also possible to copy variables from $shared and use them in an environment:
+Its also possible to copy/use variables from $shared in an environment:
+
 ```yaml
 {  
     "rest-client.environmentVariables": {  
@@ -147,3 +148,7 @@ Its also possible to copy variables from $shared and use them in an environment:
     }  
 }  
 ```
+
+## Disclaimer
+
+The extension [vscode-rest][<https://github.com/Huachao/vscode-restclient>] is not created by SuperOffice, and please reference their documentation for additional options.
