@@ -1,24 +1,20 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-@ticket=7T:
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/sale/3 HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/sale/3 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/sale/5/activities?$select=saleId,contactId HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/sale/5/activities?$select=saleId,contactId HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/SaleActivity?$entities=appointment,document&$select=saleId,contactId&$filter=saleId eq 5 HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/archive/SaleActivity?$entities=appointment,document&$select=saleId,contactId&$filter=saleId eq 5 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
@@ -26,14 +22,14 @@ Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/sale/default HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/sale/default HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/sale HTTP/1.1
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/sale HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -51,8 +47,8 @@ Accept: application/json
 
 ###
 
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/sale/3 HTTP/1.1
-Authorization: Bearer {{token}}
+PATCH {{api_url}}/v1/sale/3 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 

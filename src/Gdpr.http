@@ -1,13 +1,7 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-@ticket=7T:
-@app_secret=
-
 @filter1 = consentPerson/person/personId in (7,17) 
 @select1 = consentPerson/person/personId,active,key,name,consentPerson/comment
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/ConsentPurpose?$select={{select1}}&filter={{filter1}} HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Archive/ConsentPurpose?$select={{select1}}&filter={{filter1}} HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -16,35 +10,35 @@ Accept: application/json
 @select2 = shipmenttypereservation.person_id,shipmenttypereservation.shipmenttype_id
 @filter2 = shipmenttypereservation.person_id in (5,7,17) 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select={{select2}}&$filter={{filter2}} HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/archive/dynamic?$select={{select2}}&$filter={{filter2}} HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/ShipmentType/Items HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/List/ShipmentType/Items HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Accept-Language: en
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/LegalBase/Items HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/List/LegalBase/Items HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Accept-Language: en
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/ConsentPurpose/Items HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/List/ConsentPurpose/Items HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Accept-Language: en
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/ConsentSource/Items HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/List/ConsentSource/Items HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Accept-Language: en
 
@@ -53,10 +47,10 @@ Accept-Language: en
 
 @query = consentperson.person_id
 @filter = consentperson.person_id in (5,7,17) and consentperson.consentpurpose_id eq 2 and 
-#GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select={{query}} HTTP/1.1
+#GET {{api_url}}/v1/archive/dynamic?$select={{query}} HTTP/1.1
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select={{query}}&$filter={{filter}} HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/archive/dynamic?$select={{query}}&$filter={{filter}} HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -67,8 +61,8 @@ Accept: application/json
 @query = personId, firstName, lastName
 @filter = hasEmarketingConsent eq true
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/Person?$select={{query}}&$filter={{filter}} HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/archive/Person?$select={{query}}&$filter={{filter}} HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -78,7 +72,7 @@ Accept: application/json
 @query = consentperson.person_id
 @filter = consentperson.consentpurpose_id = 2
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select={{query}}&$filter={{filter}} HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/archive/dynamic?$select={{query}}&$filter={{filter}} HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json

@@ -1,0 +1,33 @@
+{
+    "rest-client.environmentVariables": {
+        "$shared": {
+            "access_token": "",
+            "ticket": "",
+            "api_url": "",
+            "env": "",
+            "client_id": "",
+            "client_secret": "",
+            "refresh_token": "",
+            "redirect_uri": "https://devnet-tools.superoffice.com/openid/callback",
+            "grant_type": "refresh_token"
+        },
+        "sod": {
+            "access_token": "8A:Cust31998.AcidMdWeI..",
+            "ticket": "",
+            "api_url": "https://sod2.superoffice.com/Cust31998/api",
+            "env": "sod",
+            "client_id": "a0a89a62a9...",
+            "client_secret": "13f63af902...",
+            "refresh_token": "IKT4eiAE..."
+        },
+        "online": {
+            "access_token": "",
+            "ticket": "",
+            "api_url": "",
+            "env": "online",
+            "client_id": "",
+            "client_secret": "",
+            "refresh_token": ""
+        }
+    }
+}

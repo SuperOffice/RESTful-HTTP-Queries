@@ -1,23 +1,17 @@
-@tenant=Cust12345
-@env=sod
-@token=7T:
-@app_secret=
-
-
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/persint HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/MDOList/persint HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/contint HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/MDOList/contint HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/1 HTTP/1.1
-Authorization: Bearer {{token}}
+PATCH {{api_url}}/v1/Person/1 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
 [
@@ -35,8 +29,8 @@ Content-Type: application/json
 
 ###
 
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/1 HTTP/1.1
-Authorization: Bearer {{token}}
+PATCH {{api_url}}/v1/Person/1 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
  { 
@@ -50,8 +44,8 @@ Content-Type: application/json
 
 ###
 
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/7 HTTP/1.1
-Authorization: Bearer {{token}}
+PATCH {{api_url}}/v1/Contact/7 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
 [
@@ -78,8 +72,8 @@ Content-Type: application/json
 # Get all selected interests for a person by person id
 @query = person.(personinterest->person_id).pinterest_idx,person.(personinterest->person_id).pinterest_idx.name
 @filter = person.person_id in (10,23) 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select={{query}}&$filter={{filter}} HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/archive/dynamic?$select={{query}}&$filter={{filter}} HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -90,7 +84,7 @@ Accept: application/json
 @query = person.(personinterest->person_id).pinterest_idx,person.(personinterest->person_id).pinterest_idx.name
 @filter = person.person_id in (10,23) 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select={{query}}&$filter={{filter}} HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/archive/dynamic?$select={{query}}&$filter={{filter}} HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json

@@ -1,13 +1,9 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-
 ### Get version information
-GET https://{{env}}.superoffice.com/{{tenant}}/api HTTP/1.1
+GET {{api_url}} HTTP/1.1
 Accept: application/json
 
 ### Get API Help as html
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1 HTTP/1.1
+GET {{api_url}}/v1 HTTP/1.1
 Content-Type: application/json
 Accept: application/html

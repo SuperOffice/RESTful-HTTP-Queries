@@ -1,18 +1,14 @@
-@token=
-@env=sod2
-@tenant=Cust12345
-
 ###
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=y_equipment.x_name,y_equipment.x_number,y_equipment.x_description,y_equipment.x_owner,y_equipment.x_start_date HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=y_equipment.x_name,y_equipment.x_number,y_equipment.x_description,y_equipment.x_owner,y_equipment.x_start_date HTTP/1.1
 Accept: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 ###
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Table/y_equipment/6 HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Table/y_equipment/6 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 ###
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Table/y_equipment HTTP/1.1
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Table/y_equipment HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -23,8 +19,8 @@ Content-Type: application/json
     "x_owner": "5",
 }
 ###
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Table/y_equipment HTTP/1.1
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Table/y_equipment HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -37,8 +33,8 @@ Content-Type: application/json
 }
 
 ###
-PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Table/y_equipment/6 HTTP/1.1
-Authorization: Bearer {{token}}
+PUT {{api_url}}/v1/Table/y_equipment/6 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json
 
@@ -49,3 +45,88 @@ Content-Type: application/json
     "x_owner": "5",
     "x_start_date": "[DT:11/23/2023 14:30:00.0000000]"
 }
+
+### DatabaseTable Agent - ReadRow
+POST {{api_url}}/v1/Agents/DatabaseTable/ReadRow HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+{
+    "TableName": "y_equipment",
+    "Id": 1
+}
+
+### DatabaseTable Agent - InsertRow
+POST {{api_url}}/v1/Agents/DatabaseTable/InsertRow HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+{
+    "TableName": "y_equipment",
+    "Values": {
+        "x_company": 1,
+        "x_name": "printer"
+    }
+}
+
+### DatabaseTable Agent - UpdateRow
+POST {{api_url}}/v1/Agents/DatabaseTable/UpdateRow HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+{
+    "TableName": "y_equipment",
+    "Id": "2",
+    "Values": {
+        "x_company": 1,
+        "x_name": "phone"
+    }
+}
+
+### DatabaseTable Agent - DeleteRow
+POST {{api_url}}/v1/Agents/DatabaseTable/DeleteRow HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+{
+    "TableName": "y_equipment",
+    "Id": "2"
+}
+
+### TableRecord - Read
+GET {{api_url}}/v1/Table/y_equipment/1 HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+### TableRecord - Insert
+POST {{api_url}}/v1/Table/y_equipment HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+{
+    "x_company": 1,
+    "x_name": "printer"
+}
+
+### TableRecord - Update
+PUT {{api_url}}/v1/Table/y_equipment/2 HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+{
+    "x_company": 1,
+    "x_name": "Desk"
+}
+
+### TableRecord - Delete
+DELETE  {{api_url}}/v1/Table/y_equipment/3 HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json

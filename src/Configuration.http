@@ -1,15 +1,8 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-@ticket=7T:
-@client_secret=1234567890
-
-
 # Get the company configuration
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Configuration/GetConfigurableScreenDeltasByQuery
+POST {{api_url}}/v1/Agents/Configuration/GetConfigurableScreenDeltasByQuery
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
     "DeltaQuery":
@@ -22,10 +15,10 @@ Authorization: Bearer {{token}}
 ###
 
 # Get custom field info
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/GetCustomFieldInfoList
+POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/GetCustomFieldInfoList
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
     "TableName":"contact",
@@ -39,10 +32,10 @@ Authorization: Bearer {{token}}
 # Get IsFavorite
 # Get IsNumberValid
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Contact/IsNumberValid
+POST {{api_url}}/v1/Agents/Contact/IsNumberValid
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
   "ContactId": 2,
@@ -52,10 +45,10 @@ Authorization: Bearer {{token}}
 ###
 
 # Save a Draft
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Configuration/SaveConfigurableScreenDelta
+POST {{api_url}}/v1/Agents/Configuration/SaveConfigurableScreenDelta
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
   "TableRight": null,
@@ -76,10 +69,10 @@ Authorization: Bearer {{token}}
 ###
 
 # Get the company configuration
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Configuration/GetConfigurableScreenDeltasByQuery
+POST {{api_url}}/v1/Agents/Configuration/GetConfigurableScreenDeltasByQuery
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
   "DeltaQuery": {
@@ -97,10 +90,10 @@ Authorization: Bearer {{token}}
 ###
 
 # Get user groups
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/MDO/GetSimpleList
+POST {{api_url}}/v1/Agents/MDO/GetSimpleList
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
     "Name":"UserGroup"
@@ -111,10 +104,10 @@ Authorization: Bearer {{token}}
 
 # Save and Publish
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Configuration/SaveAndPublish
+POST {{api_url}}/v1/Agents/Configuration/SaveAndPublish
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 
 {
   "ConfigurableScreenDelta": {
@@ -135,6 +128,6 @@ Authorization: Bearer {{token}}
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Diagnostics/GetCacheNames
+POST {{api_url}}/v1/Agents/Diagnostics/GetCacheNames
 Accept: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}

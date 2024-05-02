@@ -1,39 +1,33 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-@ticket=7T:
-@app_secret=
-
 ###
 
 # Get all contact user defined field definitions
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Contact/UdefLayout HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
-DELETE https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout/My New Number
-Authorization: Bearer {{token}}
+DELETE {{api_url}}/v1/Contact/UdefLayout/My New Number
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/DeleteUserDefinedFieldInfo?UserDefinedFieldInfoId=151
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/DeleteUserDefinedFieldInfo?UserDefinedFieldInfoId=151
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 # Get by progid
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout/SuperOffice:1 HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Contact/UdefLayout/SuperOffice:1 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 # udefFieldType	Enum: Number, ShortText, LongText, Date, UnlimitedDate, Checkbox, List, Decimal
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout?udefFieldType=Number HTTP/1.1
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Contact/UdefLayout?udefFieldType=Number HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 # Response
@@ -97,8 +91,8 @@ Accept: application/json; charset=utf-8
 
 ###
 
-PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout HTTP/1.1
-Authorization: Bearer {{token}}
+PUT {{api_url}}/v1/Contact/UdefLayout HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -143,8 +137,8 @@ Content-Type: application/json; charset=utf-8
 
 # update the fields
 
-PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout HTTP/1.1
-Authorization: Bearer {{token}}
+PUT {{api_url}}/v1/Contact/UdefLayout HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -760,8 +754,8 @@ Content-Type: application/json; charset=utf-8
 
 # update just one field
 
-PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout HTTP/1.1
-Authorization: Bearer {{token}}
+PUT {{api_url}}/v1/Contact/UdefLayout HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -826,26 +820,26 @@ Content-Type: application/json; charset=utf-8
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout/Publish HTTP/1.1
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Contact/UdefLayout/Publish HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Contact/UdefLayout/Changed HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Contact/UdefLayout/Changed HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
 GET https://{{env}}.superoffice.com/{{tenant}}/default.aspx?flush HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/GetPublishedUserDefinedFieldList
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/GetPublishedUserDefinedFieldList
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -859,8 +853,8 @@ Content-Type: application/json; charset=utf-8
 # remember that UDefFieldId ID changes with each new version
 #*************************************************************
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/SaveUserDefinedFieldInfo
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/SaveUserDefinedFieldInfo
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -904,8 +898,8 @@ Content-Type: application/json; charset=utf-8
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/GetUserDefinedFieldFromProgId
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/GetUserDefinedFieldFromProgId
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -916,8 +910,8 @@ Content-Type: application/json; charset=utf-8
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/CreateUserDefinedFieldInfo
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/CreateUserDefinedFieldInfo
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -929,8 +923,8 @@ Content-Type: application/json; charset=utf-8
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/SaveUserDefinedFieldInfo
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/SaveUserDefinedFieldInfo
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -1033,13 +1027,13 @@ Response:
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/IsAnyPublishEventActive
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/IsAnyPublishEventActive
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/SetPublishStartSystemEvent
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/SetPublishStartSystemEvent
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -1049,8 +1043,8 @@ Content-Type: application/json; charset=utf-8
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/GetUserDefinedFieldFromFieldLabel
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/GetUserDefinedFieldFromFieldLabel
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -1061,8 +1055,8 @@ Content-Type: application/json; charset=utf-8
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/UserDefinedFieldInfo/Publish
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/UserDefinedFieldInfo/Publish
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 

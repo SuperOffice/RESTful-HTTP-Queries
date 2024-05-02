@@ -1,6 +1,3 @@
-@tenant=Cust12345
-@env=sod
-
 ###
 GET https://{{env}}.superoffice.com/api/state/{{tenant}} HTTP/1.1
 Accept: application/json

@@ -1,44 +1,39 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-@ticket=7T:
-
-
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Ticket/default HTTP/1.1
-Authorization: Bearer {{token}}
+###
+GET {{api_url}}/v1/Ticket/66 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Ticket/159 HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Ticket/159 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 SO-TimeZone: US
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/15 HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Person/15 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 SO-TimeZone: NO
 
 ###
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=ticket_customers.ticket_id,ticket_customers.ticket_id.(ticket->id).title,ticket_customers.ticket_id.(ticket->id).last_changed,ticket_customers.ticket_id.(ticket->id).created_at&$filter=ticket_customers.customer_id eq 49 HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=ticket_customers.ticket_id,ticket_customers.ticket_id.(ticket->id).title,ticket_customers.ticket_id.(ticket->id).last_changed,ticket_customers.ticket_id.(ticket->id).created_at&$filter=ticket_customers.customer_id eq 49 HTTP/1.1
 Accept: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 SO-TimeZone: UTC, includeTZOffset
 
 ###
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/dynamic?$select=person.person_id,person.registered&$filter=person.person_id eq 49 HTTP/1.1
+GET {{api_url}}/v1/archive/dynamic?$select=person.person_id,person.registered&$filter=person.person_id eq 49 HTTP/1.1
 Accept: application/json
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 SO-TimeZone: UTC, includeTZOffset
 
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Ticket HTTP/1.1
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Ticket HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -108,14 +103,14 @@ Content-Type: application/json; charset=utf-8
 }
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/TicketMessage/23 HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/TicketMessage/23 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/TicketMessage HTTP/1.1
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/TicketMessage HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Content-Type: application/json; charset=utf-8
 
@@ -215,58 +210,58 @@ Content-Type: application/json; charset=utf-8
 ## - &$filter=ticket_customers.customer_id eq {{person_id}}
 @person_id=49
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/dynamic?$select=ticket_customers.ticket_id,ticket.(ticket_customers->ticket_id).title,Count(ticket_customers.id)&$filter=ticket_customers.customer_id eq {{person_id}} HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Archive/dynamic?$select=ticket_customers.ticket_id,ticket.(ticket_customers->ticket_id).title,Count(ticket_customers.id)&$filter=ticket_customers.customer_id eq {{person_id}} HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/dynamic?$select=ticket.id,ticket.title,Count(ticket.id)&$filter=ticket_customers.customer_id eq {{person_id}} HTTP/1.1
-Authorization: Bearer {{token}}
-Accept: application/json
-
-###
-
-
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/dynamic?$select=ticket.id,ticket.title,ticket.status,ticket.last_changed,ticket.(ej_message->id).html_body&$filter=ticket.id eq 127 HTTP/1.1
-Authorization: Bearer {{token}}
-Accept: application/json
-
-###
-
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/dynamic?$select=ej_message.id,ej_message.ticket_id,ej_message.html_body,ej_message.ticket_id.id,ej_message.ticket_id.status,ej_message.ticket_id.last_changed&$filter=ej_message.ticket_id eq 127 HTTP/1.1
-Authorization: Bearer {{token}}
-Accept: application/json
-
-###
-
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/dynamic?$select=message_id.id,message_id.message_id,message_id.domain,message_id.item_id&$filter=message_id.item_id in (316,382,383,384,385) HTTP/1.1
-Authorization: Bearer {{token}}
-Accept: application/json
-
-###
-
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/dynamic?$select=ej_message.id,ej_message.ticket_id,ej_message.message_id,ej_message.email_header&$filter=ej_message.message_id isNot '' HTTP/1.1
-Authorization: Bearer {{token}}
-Accept: application/json
-
-###
-
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/dynamic?$select=message_header.id,message_header.message_id,message_header.type,message_header.name,message_header.value,message_header.std_item
-Authorization: Bearer {{token}}
-Accept: application/json
-
-###
-
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/dynamic?$select=message_id.id,message_id.message_id,message_id.domain,message_id.item_id HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Archive/dynamic?$select=ticket.id,ticket.title,Count(ticket.id)&$filter=ticket_customers.customer_id eq {{person_id}} HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/dynamic?$select=s_message.mother_id HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Archive/dynamic?$select=ticket.id,ticket.title,ticket.status,ticket.last_changed,ticket.(ej_message->id).html_body&$filter=ticket.id eq 127 HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+###
+
+GET {{api_url}}/v1/Archive/dynamic?$select=ej_message.id,ej_message.ticket_id,ej_message.html_body,ej_message.ticket_id.id,ej_message.ticket_id.status,ej_message.ticket_id.last_changed&$filter=ej_message.ticket_id eq 127 HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+###
+
+GET {{api_url}}/v1/Archive/dynamic?$select=message_id.id,message_id.message_id,message_id.domain,message_id.item_id&$filter=message_id.item_id in (316,382,383,384,385) HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+###
+
+GET {{api_url}}/v1/Archive/dynamic?$select=ej_message.id,ej_message.ticket_id,ej_message.message_id,ej_message.email_header&$filter=ej_message.message_id isNot '' HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+###
+
+GET {{api_url}}/v1/Archive/dynamic?$select=message_header.id,message_header.message_id,message_header.type,message_header.name,message_header.value,message_header.std_item
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+###
+
+GET {{api_url}}/v1/Archive/dynamic?$select=message_id.id,message_id.message_id,message_id.domain,message_id.item_id HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+###
+
+
+GET {{api_url}}/v1/Archive/dynamic?$select=s_message.mother_id HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###

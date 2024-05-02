@@ -1,8 +1,3 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-@ticket=7T:1234abcxyzExample==
-@client_id=1234567890987654321
 @url=
 
 POST {{url}}/{{tenant}}/remote/services88/SoPrincipal.svc HTTP/1.1
@@ -20,7 +15,7 @@ SOAPAction: http://www.superoffice.net/ws/crm/NetServer/Services88/SoPrincipal/A
  xmlns:NetServerServices883="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
  xmlns:NetServerServices881="http://schemas.microsoft.com/2003/10/Serialization/"
  xmlns:SoPrincipal="http://www.superoffice.net/ws/crm/NetServer/Services88">
-  <SoPrincipal:ApplicationToken>{{client_id}}</SoPrincipal:ApplicationToken>
+  <SoPrincipal:ApplicationToken>{{clientId}}</SoPrincipal:ApplicationToken>
  <SOAP-ENV:Body>
    <SoPrincipal:AuthenticateUsernamePassword>
     <SoPrincipal:UserName xsi:type="xsd:string">jr</SoPrincipal:UserName>
@@ -38,7 +33,7 @@ SOAPAction: http://www.superoffice.net/ws/crm/NetServer/Services88/SoPrincipal/G
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
 xmlns:ser="http://www.superoffice.net/ws/crm/NetServer/Services88">
    <soapenv:Header>
-      <ser:ApplicationToken>{{client_id}}</ser:ApplicationToken>
+      <ser:ApplicationToken>{{{{clientId}}}}</ser:ApplicationToken>
    </soapenv:Header>
    <soapenv:Body>
       <ser:GetSystemInfo/>
@@ -90,7 +85,7 @@ SOAPAction: http://www.superoffice.net/ws/crm/NetServer/Services88/Contact/Creat
  xmlns:NetServerServices882="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
  xmlns:NetServerServices881="http://schemas.microsoft.com/2003/10/Serialization/"
  xmlns:Contact="http://www.superoffice.net/ws/crm/NetServer/Services88">
-  <Contact:ApplicationToken>{{client_id}}</Contact:ApplicationToken>
+  <Contact:ApplicationToken>{{{{clientId}}}}</Contact:ApplicationToken>
   <Contact:Credentials>
     <Contact:Ticket>{{ticket}}</Contact:Ticket>
   </Contact:Credentials>

@@ -1,54 +1,48 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-@ticket=7T:
-@app_secret=
-
 @filter1 = consentPerson/person/personId in (7,17) 
 @select1 = consentPerson/person/personId,active,key,name,consentPerson/comment
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Document/default
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Document/default
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/DocumentTemplate/Items/58/Content/
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/List/DocumentTemplate/Items/58/Content/
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/octet-stream
 
 ###
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/document/141 HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/document/141 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/MDOList/doctmpl HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/MDOList/doctmpl HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/DocumentTemplate/Items HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/List/DocumentTemplate/Items HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/List/DocumentTemplate/Items/164/content/en HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/List/DocumentTemplate/Items/164/content/en HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Document/SaveDocumentEntity
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/Document/SaveDocumentEntity
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -110,8 +104,8 @@ Accept: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Document/CreateNewPhysicalDocumentFromTemplateWithCustomTags2
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/Document/CreateNewPhysicalDocumentFromTemplateWithCustomTags2
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -132,8 +126,8 @@ Accept: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Document/SubstituteTemplateVariablesEx
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/Document/SubstituteTemplateVariablesEx
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 

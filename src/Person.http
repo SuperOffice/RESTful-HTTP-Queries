@@ -1,47 +1,41 @@
-@token=8A:
-@tenant=Cust12345
-@env=sod
-@ticket=7T:
-
-
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/Person?$filter=personUdef/SuperOffice:SuperIdUid = 'oIns7VrorQWa5rTTQsYLls1QIOhlYxifxSw7LqeElX'
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Archive/Person?$filter=personUdef/SuperOffice:SuperIdUid = 'oIns7VrorQWa5rTTQsYLls1QIOhlYxifxSw7LqeElX'
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/default HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/person/default HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/1192925 HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/person/1192925 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/person?$filter=lastName contains 'L\'Oréal' HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/person?$filter=lastName contains 'L\'Oréal' HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person?$select=firstName,lastName,email/emailAddress,phone/formattedNumber HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Person?$select=firstName,lastName,email/emailAddress,phone/formattedNumber HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person?$select=firstName,lastName,email/emailAddress,personCountry,personCountryId HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Person?$select=firstName,lastName,email/emailAddress,personCountry,personCountryId HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Person/GetUserCandidateByPerson
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/Person/GetUserCandidateByPerson
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Accept-Language: en
 Content-Type: application/json; charset=utf-8
@@ -53,8 +47,8 @@ Content-Type: application/json; charset=utf-8
 ###
 
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Person/CreateOrUpdateUserCandidate
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/Person/CreateOrUpdateUserCandidate
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Accept-Language: en
 Content-Type: application/json; charset=utf-8
@@ -66,41 +60,41 @@ Content-Type: application/json; charset=utf-8
 }
 
 ###
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/agents/person HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/agents/person HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Archive/Person?$filter=personUdef/SuperOffice:1 = 'Works'
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Archive/Person?$filter=personUdef/SuperOffice:1 = 'Works'
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Accept-Language: en
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/simpleperson?$select=firstName,lastName&$filter=personId eq 3 HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/archive/simpleperson?$select=firstName,lastName&$filter=personId eq 3 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 ###
 GET https://{{env}}.superoffice.com/{{tenant}}//api/v1/Person/3/Simple?$select=firstName,lastName HTTP/1.1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 
 ###
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/25 HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/person/25 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 
 ###
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/29 HTTP/1.1
-Authorization: Bearer {{token}}
+PATCH {{api_url}}/v1/person/29 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -120,8 +114,8 @@ Accept: application/json
 
 ###
 
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/174639 HTTP/1.1
-Authorization: Bearer {{token}}
+PATCH {{api_url}}/v1/person/174639 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -135,8 +129,8 @@ Accept: application/json
 
 ###
 
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/5 HTTP/1.1
-Authorization: Bearer {{token}}
+PATCH {{api_url}}/v1/person/5 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -160,8 +154,8 @@ Accept: application/json
 ###
 
 # This fails... needs the complete address fields like above.
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/29 HTTP/1.1
-Authorization: Bearer {{token}}
+PATCH {{api_url}}/v1/person/29 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -178,15 +172,15 @@ Accept: application/json
 ###
 
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/174644 HTTP/1.1
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/person/174644 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 ###
 
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/person/174644 HTTP/1.1
-Authorization: Bearer {{token}}
+PATCH {{api_url}}/v1/person/174644 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -205,8 +199,8 @@ Accept: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person HTTP/1.1
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Person HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -233,13 +227,13 @@ Accept: application/json
 }
 
 ###
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person HTTP/1.1
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Person HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
 {
-  "PersonId": 0,
+  "PersonId": 26,
   "Firstname": "Steve",
   "MiddleName": "Martin",
   "Lastname": "Johnson",
@@ -249,7 +243,7 @@ Accept: application/json
   "CreatedDate": "0001-01-01T00:00:00",
   "BirthDate": "0001-01-01T00:00:00",
   "CreatedBy": {
-    "AssociateId": 5,
+    "AssociateId": 6,
     "Name": "TY",
     "PersonId": 5,
     "Rank": 0,
@@ -888,8 +882,8 @@ Accept: application/json
 
 ###
 
-PUT https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/174644 HTTP/1.1
-Authorization: Bearer {{token}}
+PUT {{api_url}}/v1/Person/174644 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
@@ -2407,8 +2401,8 @@ Accept: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/BLOB/GetPersonImage HTTP/1.1
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/BLOB/GetPersonImage HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 Accept-Language: en
@@ -2419,8 +2413,8 @@ Accept-Language: en
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Person/GetPersonImage HTTP/1.1
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/Person/GetPersonImage HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 Accept-Language: en
@@ -2431,8 +2425,8 @@ Accept-Language: en
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Person/GetPersonImages HTTP/1.1
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/Person/GetPersonImages HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 Accept-Language: en
@@ -2445,27 +2439,27 @@ Accept-Language: en
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/25/Image
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Person/25/Image
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/25
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Person/25
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/1077264/ImageInfo
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/Person/1077264/ImageInfo
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Person/CreateTemporaryKey
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/Person/CreateTemporaryKey
+Authorization: Bearer {{access_token}}
 Accept: application/json
 Content-Type: application/json
 
@@ -2478,14 +2472,14 @@ Content-Type: application/json
 
 ###
 
-GET https://{{env}}.superoffice.com/{{tenant}}/api/v1/archive/simpleperson?$select=personId,portraitThumbnail,firstName&$filter=personId=25
-Authorization: Bearer {{token}}
+GET {{api_url}}/v1/archive/simpleperson?$select=personId,portraitThumbnail,firstName&$filter=personId=25
+Authorization: Bearer {{access_token}}
 Accept: application/json
 
 ###
 
-POST https://{{env}}.superoffice.com/{{tenant}}/api/v1/Agents/Person/GetPersonEntity
-Authorization: Bearer {{token}}
+POST {{api_url}}/v1/Agents/Person/GetPersonEntity
+Authorization: Bearer {{access_token}}
 Accept: application/json; charset=utf-8
 Accept-Language: en
 Content-Type: application/json; charset=utf-8
@@ -2497,19 +2491,17 @@ Content-Type: application/json; charset=utf-8
 ###
 
 
-PATCH https://{{env}}.superoffice.com/{{tenant}}/api/v1/Person/5 HTTP/1.1
-Authorization: Bearer {{token}}
+PATCH {{api_url}}/v1/Person/28 HTTP/1.1
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
 [
   {  
-    "op": "add",
-    "path": "Interests",
-    "value": [
+    "op": "replace",
+    "path": "/CreatedBy",
+    "value": 
       {     
-        "Id": "2",
-        "Selected": false
+        "AssociateId": "6"
       }
-    ]
   }
 ]

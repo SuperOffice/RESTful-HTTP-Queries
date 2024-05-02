@@ -1,14 +1,15 @@
-# 1. Specify the client id
-@clientId=
-# 2. Specify the client secret
-@clientSecret=
-# 3. Specify the refresh token (obtained during the authorization code flow) https://docs.superoffice.com/en/authentication/online/sign-in-user/auth-code-flow.html
-@refresh_token=
-# 4. Update the redirect uri if necessary.
-@redirectUri=https://devnet-tools.superoffice.com/openid/callback
-@grantType=refresh_token
-
 ### Request refresh token
 
-POST https://sod.superoffice.com/login/common/oauth/tokens?grant_type={{grantType}}&client_id={{clientId}}&client_secret={{clientSecret}}&redirect_uri={{redirectUri}}&refresh_token={{refresh_token}}
+### Authorization
+#  @name Authorization
+POST https://sod.superoffice.com/login/common/oauth/tokens?grant_type={{grant_type}}&client_id={{client_id}}&client_secret={{client_secret}}&redirect_uri={{redirect_uri}}&refresh_token={{refresh_token}}
 Accept: application/json
+
+### Get State - Get the API URL for the tenant
+# @name State
+GET https://sod.superoffice.com/api/state/{{tenant}}
+Accept : application/json
+
+### Response 200 (application/json) - Unfortunately this doesnt work, and its unable to overwrite the token => https://github.com/Huachao/vscode-restclient/issues/179 
+@{{api_url}} = {{State.response.body.Api}}
+@{{access_token}} = {{Authorization.response.body.access_token}}
