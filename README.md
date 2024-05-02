@@ -26,7 +26,6 @@ The properties are as follows:
 
 - `{{env}}` - The environment to query. Either `sod` or `sod2` or `qaonline` or `stage` or `online` or `online3`.
 - `{{access_token}}` - The access token to use for authentication.
-- `{{tenant}}` - The online tenant context identifier to query.
 - `{{ticket}}` - The ticket credential to use for queries. Must be used with app_secret.
 - `{{client_id}}` - client_id for your application.
 - `{{client_secret}}` - client_secret for your application.
@@ -67,4 +66,82 @@ GET {{api_url}}/v1/Contact/3 HTTP/1.1
 Authorization: SOTicket {{ticket}}
 SO-AppToken: {{app_secret}}
 Accept: application/json
+```
+
+## How a settings.json should look like
+
+```yaml
+{
+    "rest-client.environmentVariables": {
+        "$shared": {
+            "access_token": "",
+            "ticket": "",
+            "api_url": "",
+            "env": "",
+            "client_id": "",
+            "client_secret": "",
+            "refresh_token": "",
+            "redirect_uri": "https://devnet-tools.superoffice.com/openid/callback",
+            "grant_type": "refresh_token"
+        },
+        "sod": {
+            "access_token": "8A:Cust31998.AcidMdWeI..",
+            "ticket": "",
+            "api_url": "https://sod2.superoffice.com/Cust31998/api",
+            "env": "sod",
+            "client_id": "a0a89a62a9...",
+            "client_secret": "13f63af902...",
+            "refresh_token": "IKT4eiAE...",
+        },
+        "online": {
+            "access_token": "",
+            "ticket": "",
+            "api_url": "",
+            "env": "online",
+            "client_id": "",
+            "client_secret": "",
+            "refresh_token": ""
+        }
+    }
+}
+```
+
+Its also possible to copy variables from $shared and use them in an environment:
+```yaml
+{  
+    "rest-client.environmentVariables": {  
+        "$shared": {  
+            "access_token": "8A:Cust12345.ASqHJbq79KxpwtShL/qVGnMg...",  
+            "tenant": "Cust12345",  
+            "ticket": "7T:MAAxAGYAMQBhADIAYQBhADgANgBlADgAYwB...",  
+            "api_url": "https://sod2.superoffice.com/Cust12345/api",  
+            "env": "sod2",  
+            "client_id": "4fd6sdf376616343b38d141234567890",  
+            "client_secret": "1234567890616343b38d112345678904dfgf",  
+            "refresh_token": "DFbK232KPTgLAI9TuSbHkbO2EqMPu2cskdjfhskjsdkfjhsdkfjhskdfh2345",  
+            "redirect_uri": "https://devnet-tools.superoffice.com/openid/callback",  
+            "grant_type": "refresh_token"  
+        },  
+        "sod": {  
+            "access_token": "{{$shared access_token}}",  
+            "tenant": "Cust54321",  
+            "ticket": "{{$shared ticket}}",  
+            "env": "sod2",  
+            "api_url": "{{$shared api_url}}",  
+            "client_id": "{{$shared client_id}}",  
+            "client_secret": "{{$shared client_secret}}",  
+            "refresh_token": "{{$shared refresh_token}}"  
+        },  
+        "online": {  
+            "access_token": "",  
+            "tenant": "",  
+            "ticket": "",  
+            "api_url": "",  
+            "env": "",  
+            "client_id": "",  
+            "client_secret": "",  
+            "refresh_token": ""  
+        }  
+    }  
+}  
 ```
