@@ -1,3 +1,19 @@
+### FindSale
+@startDate=2016-01-04
+@endDate=2022-11-14
+GET {{api_url}}/v1/Archive/FindSale?$select=saleId,date,type,registeredDate,updatedDate,saleType,saleStatus,amount,probPercent,userGroup,source&$filter=date between ('{{startDate}}','{{endDate}}')
+Accept: application/json
+Authorization: Bearer {{access_token}}
+
+### FindSale - Metadata
+GET {{api_url}}/v1/Archive/FindSale$metadata
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+Authorization: Bearer {{access_token}}
+
+###
+
 GET {{api_url}}/v1/archive/dynamic?$select=kb_entry.id,kb_entry.title HTTP/1.1
 Accept: application/json
 Authorization: Bearer {{access_token}}
