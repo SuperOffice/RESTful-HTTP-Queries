@@ -1,3 +1,13 @@
+### Sale - Between startDate and endDate
+@startDate=2016-01-04
+@endDate=2022-11-14
+GET {{api_url}}/v1/Archive/Sale?$select=saleId,date,type,registeredDate,updatedDate,saleType,saleStatus,amount,probPercent,userGroup,source&$filter=date between ('{{startDate}}','{{endDate}}')
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+Authorization: Bearer {{access_token}}
+
+
 ###
 
 GET {{api_url}}/v1/sale/3 HTTP/1.1
