@@ -1,0 +1,428 @@
+@AgentEndpoint=/v1/Agents/Workflow/
+
+### CreateDefaultEmailFlow
+# @name DefaultEmailFlow
+POST {{api_url}}/v1/Agents/Workflow/CreateDefaultEmailFlow
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+### GetEmailFlow
+POST {{api_url}}/v1/Agents/Workflow/GetEmailFlow?emailFlowId=1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+### Save EmailFlow
+POST {{api_url}}/v1/Agents/Workflow/SaveEmailFlow
+Authorization: Bearer {{access_token}}
+Accept: application/json; charset=utf-8
+Accept-Language: en
+Content-Type: application/json; charset=utf-8
+
+{
+  "EmailFlowId": 0,
+  "Name": "Test1",
+  "Description": "",
+  "Status": "Stopped",
+  "JumpToFinish": false,
+  "StartOnlyOnce": true,
+  "OverrideConsentSubscription": false,
+  "FromType": "FromOnlySpecified",
+  "FromName": "",
+  "FromAddr": "",
+  "ReplyToType": "ReplyToOnlySpecified",
+  "ReplyToAddr": "",
+  "ReplyToName": "",
+  "SmsSender": "",
+  "UseGoogleAnalytics": false,
+  "GaSource": "",
+  "GaCampaign": "",
+  "UseTimeframe": false,
+  "SelectedDays": "Unknown",
+  "TimeframeStart": "[DT:01/01/1970 00:00:00.0000000]",
+  "TimeframeEnd": "[DT:01/01/1970 00:00:00.0000000]",
+  "UseWorkflowStart": false,
+  "WorkflowStart": "[DT:01/01/0001 00:00:00.0000000]",
+  "UseEnrollmentEnd": false,
+  "EnrollmentEnd": "[DT:01/01/0001 00:00:00.0000000]",
+  "RemoveFromFlows": [],
+  "TzLocation": {
+    "TZLocationID": 0,
+    "Name": "",
+    "TZLocationCode": "",
+    "TZLocationCities": "",
+    "IsoNumber": 0,
+    "TimeZoneSTDRules": {},
+    "TimeZoneDSTRules": {}
+  },
+  "Folder": {
+    "HierarchyId": 0,
+    "Domain": "EmailFlows",
+    "Name": null,
+    "Fullname": null,
+    "ParentId": 0,
+    "Children": [],
+    "Registered": "0001-01-01T00:00:00Z",
+    "RegisteredAssociateId": 0,
+    "Updated": "0001-01-01T00:00:00Z",
+    "UpdatedAssociateId": 0,
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "Associate": {
+    "AssociateId": 5,
+    "Name": "EF",
+    "PersonId": 5,
+    "Rank": 0,
+    "Tooltip": "",
+    "Type": "InternalAssociate",
+    "GroupIdx": 2,
+    "FullName": "Eivind2 Fasting",
+    "FormalName": "Eivind2 Fasting",
+    "Deleted": false,
+    "EjUserId": 2,
+    "UserName": null,
+    "TableRight": {
+      "Mask": "Select, Update",
+      "Reason": "[SR_USER_CANNOT_DELETE_SELF]"
+    },
+    "FieldProperties": {}
+  },
+  "ShipmentType": {
+    "Id": -1,
+    "Name": "",
+    "ToolTip": "",
+    "Deleted": false,
+    "Rank": 0,
+    "Type": null,
+    "ChildItems": [],
+    "IconHint": null,
+    "ColorBlock": 0,
+    "ExtraInfo": null,
+    "StyleHint": null,
+    "FullName": null,
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "Steps": [],
+  "Triggers": [],
+  "Goals": [],
+  "Filter": {
+    "RestrictionGroups": [],
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "BlockLists": [],
+  "ContentInfo": [],
+  "ExitFlowId": 0,
+  "ExitSuccessFlowId": 0,
+  "CreatedBy": null,
+  "UpdatedBy": null,
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "UpdatedDate": "0001-01-01T00:00:00Z",
+  "VisibleFor": [
+    {
+      "VisibleId": 0,
+      "Visibility": "All",
+      "DisplayValue": "[SR_VFC_ALL]",
+      "TableRight": null,
+      "FieldProperties": {}
+    }
+  ],
+  "TableRight": {
+    "Mask": "Select, Update, Insert, Delete",
+    "Reason": ""
+  },
+  "FieldProperties": {
+    "Name": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "System.String",
+      "FieldLength": 255
+    },
+    "Description": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 4000
+    },
+    "Status": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.Data.WorkflowDefinitionStatus",
+      "FieldLength": 2
+    },
+    "JumpToFinish": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 2
+    },
+    "StartOnlyOnce": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 2
+    },
+    "UseWorkflowStart": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 2
+    },
+    "WorkflowStart": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 16
+    },
+    "UseEnrollmentEnd": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 2
+    },
+    "EnrollmentEnd": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 16
+    },
+    "RemoveFromFlows": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32[]",
+      "FieldLength": 4000
+    },
+    "BlockLists": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32[]",
+      "FieldLength": 4000
+    },
+    "ExitFlowId": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 4
+    },
+    "ExitSuccessFlowId": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 4
+    },
+    "EmailFlowId": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 4
+    },
+    "OverrideConsentSubscription": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 2
+    },
+    "FromType": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.Data.EmailFromType",
+      "FieldLength": 2
+    },
+    "FromName": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 255
+    },
+    "FromAddr": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 255
+    },
+    "ReplyToType": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.Data.EmailReplyToType",
+      "FieldLength": 2
+    },
+    "ReplyToAddr": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 255
+    },
+    "ReplyToName": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 255
+    },
+    "SmsSender": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 255
+    },
+    "UseGoogleAnalytics": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 2
+    },
+    "GaSource": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 255
+    },
+    "GaCampaign": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 255
+    },
+    "UseTimeframe": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 2
+    },
+    "SelectedDays": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.Data.Weekday",
+      "FieldLength": 2
+    },
+    "TimeframeStart": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 16
+    },
+    "TimeframeEnd": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 16
+    }
+  }
+}
+
+### CreateDefaultWorkflowTrigger
+POST {{api_url}}{{AgentEndpoint}}CreateDefaultWorkflowTrigger
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+### Get WorkflowTrigger
+POST {{api_url}}{{AgentEndpoint}}GetWorkflowTrigger?workflowTriggerId=1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+### Save WorkflowTrigger
+POST {{api_url}}{{AgentEndpoint}}SaveWorkflowTrigger
+Authorization: Bearer {{access_token}}
+Accept: application/json
+Content-Type: application/json; charset=utf-8
+
+{
+    "WorkflowTriggerId": 0,
+    "WorkflowId": 1,
+    "TriggerType": "CreatedRequest",
+    "RestrictionGroups": [
+    {
+        "Name": "Trigger from API",
+        "Description": "This trigger is created through the API",
+        "Rank": 0,
+        "Restrictions": [
+        {
+            "Name": "request/slevel",
+            "Operator": "oneOf",
+            "Values": [
+            "[I:1]"
+            ]
+        }
+        ]
+    }
+    ]
+}
+
+### CreateDefaultWorkflowStepFromType
+POST {{api_url}}/v1/Agents/Workflow/CreateDefaultWorkflowStepFromType
+Authorization: Bearer {{access_token}}
+Accept: application/json
+Content-Type: application/json; charset=utf-8
+
+{
+    "StepType": "WaitForTime",
+}
+
+### SaveWorkflowStep
+POST {{api_url}}/v1/Agents/Workflow/CreateDefaultWorkflowStepFromType
+Authorization: Bearer {{access_token}}
+Accept: application/json
+Content-Type: application/json; charset=utf-8
+
+{
+    "StepType": "WaitForTime",
+}
+
