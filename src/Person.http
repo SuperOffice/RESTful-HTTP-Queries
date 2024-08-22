@@ -10,7 +10,7 @@ Accept: application/json
 
 ###
 
-GET {{api_url}}/v1/person/1192925 HTTP/1.1
+GET {{api_url}}/v1/person/7 HTTP/1.1
 Authorization: Bearer {{access_token}}
 Accept: application/json
 
