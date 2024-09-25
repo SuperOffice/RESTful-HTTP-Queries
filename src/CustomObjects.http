@@ -1,4 +1,19 @@
 ###
+
+# Search for a specific record in the table using the CustomObject archive provider
+
+GET {{api_url}}/v1/archive/CustomObject:y_equipment HTTP/1.1
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+# Search for a specific record using a criteria in the table using the CustomObject archive provider
+GET {{api_url}}/v1/archive/CustomObject:y_equipment$filter=x_name eq 'ShinyPart' HTTP/1.1
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
 GET {{api_url}}/v1/archive/dynamic?$select=y_equipment.x_name,y_equipment.x_number,y_equipment.x_description,y_equipment.x_owner,y_equipment.x_start_date HTTP/1.1
 Accept: application/json
 Authorization: Bearer {{access_token}}
