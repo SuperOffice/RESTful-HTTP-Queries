@@ -80,7 +80,7 @@ Content-Type: application/json
     "QuoteLineId": 0,
     "ERPQuoteLineKey": null,
     "QuoteAlternativeId": 10,
-    "ERPProductKey": "SUO_1",
+    "ERPProductKey": "SUO_2",
     "Status": "Ok",
     "Reason": null,
     "Quantity": 1.0,
