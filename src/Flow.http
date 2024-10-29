@@ -1,0 +1,163 @@
+@AgentEndpoint=/v1/Agents/Workflow/
+
+### CreateDefaultEmailFlow
+POST {{api_url}}{{AgentEndpoint}}CreateDefaultEmailFlow
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+### GetEmailFlow
+POST {{api_url}}{{AgentEndpoint}}GetEmailFlow?emailFlowId=1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+### Save EmailFlow
+POST {{api_url}}{{AgentEndpoint}}SaveEmailFlow
+Authorization: Bearer {{access_token}}
+Accept: application/json; charset=utf-8
+Accept-Language: en
+Content-Type: application/json; charset=utf-8
+
+{
+  "EmailFlowId": 0,
+  "Name": "Rad",
+  "Description": "",
+  "Status": "Stopped",
+  "JumpToFinish": false,
+  "StartOnlyOnce": true,
+  "OverrideConsentSubscription": false,
+  "FromType": "FromOnlySpecified",
+  "FromName": "",
+  "FromAddr": "",
+  "ReplyToType": "ReplyToOnlySpecified",
+  "ReplyToAddr": "",
+  "ReplyToName": "",
+  "SmsSender": "",
+  "UseGoogleAnalytics": false,
+  "GaSource": "",
+  "GaCampaign": "",
+  "UseTimeframe": false,
+  "SelectedDays": "Unknown",
+  "TimeframeStart": "[DT:01/01/1970 00:00:00.0000000]",
+  "TimeframeEnd": "[DT:01/01/1970 00:00:00.0000000]",
+  "UseWorkflowStart": false,
+  "WorkflowStart": "[DT:01/01/0001 00:00:00.0000000]",
+  "UseEnrollmentEnd": false,
+  "EnrollmentEnd": "[DT:01/01/0001 00:00:00.0000000]",
+  "RemoveFromFlows": [],
+  "TzLocation": {
+    "TZLocationID": 0,
+    "Name": "",
+    "TZLocationCode": "",
+    "TZLocationCities": "",
+    "IsoNumber": 0,
+    "TimeZoneSTDRules": {},
+    "TimeZoneDSTRules": {}
+  },
+  "Folder": {
+    "HierarchyId": 0,
+    "Domain": "EmailFlows",
+    "Name": null,
+    "Fullname": null,
+    "ParentId": 0,
+    "Children": [],
+    "Registered": "0001-01-01T00:00:00Z",
+    "RegisteredAssociateId": 0,
+    "Updated": "0001-01-01T00:00:00Z",
+    "UpdatedAssociateId": 0,
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "Steps": [
+    {
+      "TimeWaitAlgorithm": "NumIntervals",
+      "NumIntervals": 7,
+      "IntervalType": "Days",
+      "Until": "[DT:05/31/2024 14:24:23]",
+      "StepType": "WaitForTime",
+      "Rank": 1
+    }
+  ],
+  "Triggers": [
+    {
+      "TriggerType": "CreatedRequest",
+      "RestrictionGroups": [
+          {
+              "Name": "Trigger from API",
+              "Description": "This trigger is created through the API",
+              "Rank": 0,
+              "Restrictions": [
+              {
+                  "Name": "request/slevel",
+                  "Operator": "oneOf",
+                  "Values": [
+                  "[I:1]"
+                  ]
+              }
+              ]
+          }
+      ]
+    }
+  ],
+  "Goals": [],
+  "Filter": {
+    "RestrictionGroups": [],
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "BlockLists": [],
+  "ContentInfo": [],
+  "ExitFlowId": 0,
+  "ExitSuccessFlowId": 0,
+  "CreatedBy": null,
+  "UpdatedBy": null,
+  "CreatedDate": "0001-01-01T00:00:00Z",
+  "UpdatedDate": "0001-01-01T00:00:00Z",
+}
+
+### CreateDefaultWorkflowTrigger
+POST {{api_url}}{{AgentEndpoint}}CreateDefaultWorkflowTrigger
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+### Get WorkflowTrigger
+POST {{api_url}}{{AgentEndpoint}}GetWorkflowTrigger?workflowTriggerId=1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+### Save WorkflowTrigger
+POST {{api_url}}{{AgentEndpoint}}SaveWorkflowTrigger
+Authorization: Bearer {{access_token}}
+Accept: application/json
+Content-Type: application/json; charset=utf-8
+
+{
+    "WorkflowTriggerId": 0,
+    "WorkflowId": 1,
+    "TriggerType": "CreatedRequest",
+    "RestrictionGroups": [
+    {
+        "Name": "Trigger from API",
+        "Description": "This trigger is created through the API",
+        "Rank": 0,
+        "Restrictions": [
+        {
+            "Name": "request/slevel",
+            "Operator": "oneOf",
+            "Values": [
+            "[I:1]"
+            ]
+        }
+        ]
+    }
+    ]
+}
+
+### CreateDefaultWorkflowStepFromType
+POST {{api_url}}{{AgentEndpoint}}CreateDefaultWorkflowStepFromType
+Authorization: Bearer {{access_token}}
+Accept: application/json
+Content-Type: application/json; charset=utf-8
+
+{
+    "StepType": "WaitForTime",
+}

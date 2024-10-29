@@ -1,0 +1,5 @@
+### GET Contact
+
+GET {{api_url}}/v1/contact/5 HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json

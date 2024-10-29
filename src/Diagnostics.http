@@ -1,0 +1,23 @@
+### SendSystemMessage
+
+POST {{api_url}}/v1/Agents/Diagnostics/SendSystemMessage
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+
+{
+    "SystemMessageId": 1,
+    "AssociateId": "19",
+    "MarkdownMessage": "This is a test message",
+    "Type": "Info",
+    "Expire": "2024-12-31T00:00:00Z",
+}
+
+### GetSystemMessages
+
+POST {{api_url}}/v1/Agents/Diagnostics/GetSystemMessages
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+
+{
+    "AssociateId": 19
+}

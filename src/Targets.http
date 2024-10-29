@@ -1,0 +1,13 @@
+
+GET {{api_url}}/v1/Agents/Targets/GetTargetDimension?targetDimensionId=4 HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json; charset=utf-8
+Accept-Language: en
+
+###
+
+GET {{api_url}}/v1/List/4 HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json; charset=utf-8
+Accept-Language: en
+ 

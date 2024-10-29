@@ -1,0 +1,5 @@
+###
+
+GET {{api_url}}/v1/Archive/FindContact?$select=contactId,name,associateId,contactAssociate/fullName,category,business,country,contactUdef/SuperOffice:1 HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json

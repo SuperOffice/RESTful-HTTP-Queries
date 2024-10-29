@@ -163,3 +163,11 @@ Accept: application/json
 #         "CultureName": "en",
 #     }
 # }
+
+
+
+###
+
+GET {{api_url}}/v1/document/60/content
+Authorization: Bearer {{access_token}}
+Accept: application/pdf
