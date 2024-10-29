@@ -32,7 +32,7 @@ Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
 {
-  "ProviderName": "TicketMessage",
+  "ProviderName": "Contact",
   "Context": ""
 }
 
@@ -467,4 +467,41 @@ Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
 
+
 ###
+POST {{api_url}}/v1/Agents/Archive/GetAvailableColumns HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json
+
+{
+  "ProviderName": "CustomObjectDynamicSelectionV2:y_customobjects",
+  "Columns": ""
+}
+
+
+###
+
+GET {{api_url}}/v1/archive/dynamic?$select=y_log.id,y_log.x_ticket,y_log.(y_log_message->x_log).x_message,y_log.x_log.x_message&$filter=y_log.(y_log_message->x_log).x_message eq 'Whatsup' HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json; charset=utf-8
+
+
+###
+POST {{api_url}}/v1/Agents/Archive/GetArchiveListByColumns2 HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+Content-Type: application/json
+
+{   
+    "ProviderName": "Dynamic",
+    "Columns": "y_log_x_phase.x_text,y_log_x_phase.x_log",
+    "Restrictions": "y_log_x_phase.x_log eq 1"
+}
+
+
+###
+
+GET {{api_url}}/v1/archive/dynamic?$select=y_log_x_phase.id,y_log_x_phase.x_log HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json

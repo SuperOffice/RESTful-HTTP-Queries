@@ -96,12 +96,28 @@ Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
 
+### Agent - ExecuteScriptByIncludeId
+
+POST {{api_url}}/v1/Agents/CRMScript/ExecuteScriptByIncludeId
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+
+{
+               "CRMScriptIncludeId": "ExecuteScriptByIncludeId-test",
+               "Parameters": {
+                              "companyNumber": "This is your variable"
+               }
+}
+
 ###
-@include=myIncludeName
-@key=ob6ZOUUwph3XafpG
-@contentform=Content-Type: application/x-www-form-urlencoded
 
-GET https://{{env}}.superoffice.com/{{tenant}}/CS/scripts/customer.fcgi?action=safeParse&includeId=myIncludeName&key=ob6ZOUUwph3XafpG
+POST {{api_url}}/v1/Agents/CRMScript/ExecuteScript
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
 
-
-###
+{
+               "CRMScriptId": "391",
+               "Parameters": {
+                              "companyNumber": "3456"
+               }
+}
