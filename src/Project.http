@@ -530,7 +530,7 @@ Accept: application/json
     {
       "EntityName": "project",
       "Id": 7,
-      "Text": "what is this",
+      "Description": "Link to original project",
       "ExtraInfo": null,
       "LinkId": 9,
       "TableRight": null,
