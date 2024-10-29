@@ -1,0 +1,58 @@
+@ticketId=1
+@number2=1
+@log_ticket_custId=1
+@log_id=1
+
+### GetTicketLog - Get log data by ticketId
+GET {{api_url}}/v1/archive/dynamic?$select=y_log.id,y_log.x_ticket,y_log.x_ticket.title,y_log.x_ticket.status,y_log.x_ticket.ticket_status,y_log.x_ticket.ticket_status.name,y_log.x_ticket.cust_id,y_log.x_ticket.cust_id.fullName,y_log.x_ticket.cust_id.emailAddress,y_log.x_ticket.cust_id.contact_id,y_log.x_ticket.cust_id.contact_id.name,y_log.x_ticket.cust_id.contact_id.orgNr,y_log.x_ticket.cust_id.contact_id.userdef_id.long34,y_log.x_ticket.cust_id.direct/formattedNumber,y_log.x_ticket.cust_id.mobile/formattedNumber,y_log.x_ticket.x_cause_of_damage,y_log.x_ticket.x_description_of_damage,y_log.x_ticket.x_skadedato,y_log.x_ticket.x_selskapsnr,y_log.x_ticket.x_reported_by,y_log.x_ticket.x_apartments_json,y_log.x_registered,y_log.x_closed&$filter=y_log.x_ticket eq {{ticketId}} HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+
+
+### GetContactInfo - Get contact by number
+## @number2 = y_log.x_ticket.x_selskapsnr returned from GetTicketLog
+GET {{api_url}}/v1/archive/dynamic?$select=contact.contact_id,contact.name,contact.orgNr,contact.userdef_id.long26,contact.x_source_id&$filter=contact.number2 eq {{number2}} HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+
+
+### Get ticket_customers by ticketId and customer_id
+## @ticketId = y_log.x_ticket x_ticket_id returned from GetContactInfo
+## @log_ticket_custId = log_ticket_custId returned from GetContactInfo
+GET {{api_url}}/v1/archive/dynamic?$select=ticket_customers.customer_id,ticket_customers.customer_id.fullName,ticket_customers.customer_id.emailAddress,ticket_customers.customer_id.direct/formattedNumber,ticket_customers.customer_id.mobile/formattedNumber,ticket_customers.customer_id.contact_id,ticket_customers.customer_id.contact_id.name,ticket_customers.customer_id.contact_id.orgNr&$filter=ticket_customers.ticket_id eq {{ticketId}} or ticket_customers.customer_id ne {{log_ticket_custId}} HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+
+
+### Get message by log_id, external and not deleted
+## @logId = y_log.id returned from GetTicketLog
+GET {{api_url}}/v1/archive/dynamic?$select=y_log_message.x_message,y_log_message.x_registered,y_log_message.x_registered_by.loginname&$filter=y_log_message.x_log eq {{log_id}} and y_log_message.x_external eq 1 and y_log_message.x_deleted ne 1 HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+
+
+### Get log_phase by log_id, active and external
+## @logId = y_log.id returned GetTicketLog
+GET {{api_url}}/v1/archive/dynamic?$select=y_log_x_phase.x_phase,y_log_x_phase.x_phase.x_name,y_log_x_phase.x_phase.x_description,y_log_x_phase.x_completed,y_log_x_phase.x_completed_at,y_log_x_phase.x_completed_by.loginname,y_log_x_phase.x_status.x_name&$filter=y_log_x_phase.x_log eq {{log_id}} and y_log_x_phase.x_phase.x_active eq 1 and y_log_x_phase.x_phase.x_external eq 1 HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
+
+
+
+
+### Alternative, building a query with JOIN
+##SELECT *
+##FROM y_log
+##JOIN y_log_message
+##ON y_log.id=y_log_message.y_log
+
+### GetTicketLog -Get log data by ticketId
+GET {{api_url}}/v1/archive/dynamic?$select=y_log.id,y_log.x_ticket,y_log.x_ticket.title,y_log.x_ticket.status,y_log.x_ticket.ticket_status,y_log.x_ticket.ticket_status.name,y_log.x_ticket.cust_id,y_log.x_ticket.cust_id.fullName,y_log.x_ticket.cust_id.emailAddress,y_log.x_ticket.cust_id.contact_id,y_log.x_ticket.cust_id.contact_id.name,y_log.x_ticket.cust_id.contact_id.orgNr,y_log.x_ticket.cust_id.contact_id.userdef_id.long34,y_log.x_ticket.cust_id.direct/formattedNumber,y_log.x_ticket.cust_id.mobile/formattedNumber,y_log.x_ticket.x_cause_of_damage,y_log.x_ticket.x_description_of_damage,y_log.x_ticket.x_skadedato,y_log.x_ticket.x_selskapsnr,y_log.x_ticket.x_reported_by,y_log.x_ticket.x_apartments_json,y_log.x_registered,y_log.x_closed&$filter=y_log.x_ticket eq {{ticketId}} HTTP/1.1
+Authorization: Bearer {{access_token}}
+Accept: application/json
+
