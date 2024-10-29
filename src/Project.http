@@ -23,3 +23,771 @@ GET {{api_url}}/v1/projectmember?$select=projectId,contactId,personId&$filter=pr
 Authorization: Bearer {{access_token}}
 Content-Type: application/json
 Accept: application/json
+
+
+
+### Get project by id
+
+GET {{api_url}}/v1/Project/13 HTTP/1.1
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+Accept: application/json
+
+
+### Create new project, passing all the properties from the one fetched above, project_id = 13. 
+### Notice that ProjectId is set to 0, to create a new project instead of updating existing.
+### Add link to original document, in the links array.
+POST {{api_url}}/v1/Project HTTP/1.1
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "ProjectId": 0,
+  "Name": "DummyProject for dateTime (copy)",
+  "ProjectNumber": "0",
+  "ProjectMembers": [],
+  "Urls": [],
+  "CreatedDate": "2024-08-01T08:18:07",
+  "UpdatedDate": "2024-09-05T12:01:19",
+  "Description": "",
+  "Postit": "",
+  "CreatedBy": {
+    "AssociateId": 5,
+    "Name": "EF",
+    "PersonId": 5,
+    "Rank": 0,
+    "Tooltip": "",
+    "Type": "InternalAssociate",
+    "GroupIdx": 2,
+    "FullName": "Eivind2 tukla Fasting",
+    "FormalName": "Eivind2 tukla Fasting",
+    "Deleted": false,
+    "EjUserId": 2,
+    "UserName": null,
+    "TableRight": {
+      "Mask": "Select, Update, Delete",
+      "Reason": ""
+    },
+    "FieldProperties": {}
+  },
+  "UpdatedBy": {
+    "AssociateId": 19,
+    "Name": "EF1",
+    "PersonId": 30,
+    "Rank": 0,
+    "Tooltip": "",
+    "Type": "InternalAssociate",
+    "GroupIdx": 2,
+    "FullName": "Eivind SO Fasting",
+    "FormalName": "Eivind SO Fasting",
+    "Deleted": false,
+    "EjUserId": 8,
+    "UserName": null,
+    "TableRight": {
+      "Mask": "Select, Update",
+      "Reason": "[SR_USER_CANNOT_DELETE_SELF]"
+    },
+    "FieldProperties": {}
+  },
+  "Associate": {
+    "AssociateId": 5,
+    "Name": "EF",
+    "PersonId": 5,
+    "Rank": 0,
+    "Tooltip": "",
+    "Type": "InternalAssociate",
+    "GroupIdx": 2,
+    "FullName": "Eivind2 tukla Fasting",
+    "FormalName": "Eivind2 tukla Fasting",
+    "Deleted": false,
+    "EjUserId": 2,
+    "UserName": null,
+    "TableRight": {
+      "Mask": "Select, Update, Delete",
+      "Reason": ""
+    },
+    "FieldProperties": {}
+  },
+  "ProjectStatus": {
+    "Id": 1,
+    "Value": "Planned",
+    "Tooltip": "",
+    "TableRight": null,
+    "FieldProperties": {
+      "ProjStatusId": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Int32",
+        "FieldLength": 4
+      },
+      "Value": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 239
+      },
+      "Tooltip": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 254
+      }
+    }
+  },
+  "ProjectType": {
+    "Id": 4,
+    "Value": "Conference",
+    "Tooltip": "",
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "HasImage": false,
+  "ImageDescription": "",
+  "ActiveStatusMonitorId": 0,
+  "Links": [
+    {
+      "EntityName": "project",
+      "Id": 7,
+      "Description": "Link to original project",
+      "ExtraInfo": null,
+      "LinkId": 9,
+      "TableRight": null,
+      "FieldProperties": {}
+    }
+  ],
+  "ActiveLinks": 1,
+  "Completed": false,
+  "NextMilestoneDate": "2024-11-02T16:17:50",
+  "NmdAppointmentId": 0,
+  "EndDate": "2024-11-02T16:17:50",
+  "ActiveErpLinks": 0,
+  "UserDefinedFields": {
+    "SuperOffice:1": ""
+  },
+  "ExtraFields": {},
+  "CustomFields": {
+    "SuperOffice:1": "",
+    "SuperOffice:1:org": ""
+  },
+  "PublishEventDate": "0001-01-01T00:00:00Z",
+  "PublishTo": "9999-12-31T23:59:59Z",
+  "PublishFrom": "0001-01-01T00:00:00Z",
+  "IsPublished": false,
+  "TableRight": {
+    "Mask": "Select, Update, Insert, Delete",
+    "Reason": ""
+  },
+  "FieldProperties": {
+    "ProjectId": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 4
+    },
+    "Name": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "System.String",
+      "FieldLength": 219
+    },
+    "ProjectNumber": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_MANDATORY_FIELD_2818]"
+      },
+      "FieldType": "System.String",
+      "FieldLength": 49
+    },
+    "CreatedDate": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.DateTime",
+      "FieldLength": 16
+    },
+    "UpdatedDate": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.DateTime",
+      "FieldLength": 16
+    },
+    "ActiveLinks": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.UInt32",
+      "FieldLength": 4
+    },
+    "NextMilestoneDate": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.DateTime",
+      "FieldLength": 16
+    },
+    "NmdAppointmentId": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 4
+    },
+    "EndDate": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.DateTime",
+      "FieldLength": 16
+    },
+    "ActiveErpLinks": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 4
+    },
+    "ProjectMembers": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "SuperOffice.CRM.Services.ProjectMember[]",
+      "FieldLength": 0
+    },
+    "Description": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 4000
+    },
+    "Postit": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 4000
+    },
+    "CreatedBy": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.Associate",
+      "FieldLength": 4
+    },
+    "UpdatedBy": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.Associate",
+      "FieldLength": 4
+    },
+    "Associate": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "SuperOffice.CRM.Services.Associate",
+      "FieldLength": 4
+    },
+    "ProjectStatus": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.ProjectStatus",
+      "FieldLength": 4
+    },
+    "ProjectType": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "SuperOffice.CRM.Services.ProjectType",
+      "FieldLength": 4
+    },
+    "HasImage": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 0
+    },
+    "ImageDescription": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "System.String",
+      "FieldLength": 254
+    },
+    "ActiveStatusMonitorId": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "System.String",
+      "FieldLength": 0
+    },
+    "Links": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 4
+    },
+    "Completed": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 2
+    },
+    "UserDefinedFields.SuperOffice:1": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "ShortText",
+      "FieldLength": 20
+    },
+    "CustomFields.SuperOffice:1": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "ShortText",
+      "FieldLength": 20
+    },
+    "Urls": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.EntityElement[]",
+      "FieldLength": 0
+    }
+  },
+  "_Links": {
+    "Href": "https://sod2.superoffice.com:443/Cust31038/Default.aspx?project/7?project/7_id=7",
+    "Self": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/7/",
+    "Self.Simple": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/7/Simple/",
+    "UdefLayout": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/UdefLayout/Published/",
+    "Associate.List": "https://sod2.superoffice.com:443/Cust31038/api/v1/MDOList/associate/",
+    "ProjectStatus.List": "https://sod2.superoffice.com:443/Cust31038/api/v1/MDOList/projectstatus/",
+    "ProjectType.List": "https://sod2.superoffice.com:443/Cust31038/api/v1/MDOList/projecttype/",
+    "Archive": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/",
+    "Archive.Activities": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/7/Activities/",
+    "Archive.Guide": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/7/Guide/",
+    "Archive.Members": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/7/Members/",
+    "Archive.Contacts": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/7/Contacts/",
+    "Archive.Links": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/7/Links/"
+  }
+}
+
+### Update/PUT projectName on the copied project.
+PUT {{api_url}}/v1/Project/13 HTTP/1.1
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "ProjectId": 13,
+  "Name": "DummyProject for dateTime (copy, now edited)",
+  "ProjectNumber": "0",
+  "ProjectMembers": [],
+  "Urls": [],
+  "CreatedDate": "2024-08-01T08:18:07",
+  "UpdatedDate": "2024-09-05T12:01:19",
+  "Description": "",
+  "Postit": "",
+  "CreatedBy": {
+    "AssociateId": 5,
+    "Name": "EF",
+    "PersonId": 5,
+    "Rank": 0,
+    "Tooltip": "",
+    "Type": "InternalAssociate",
+    "GroupIdx": 2,
+    "FullName": "Eivind2 tukla Fasting",
+    "FormalName": "Eivind2 tukla Fasting",
+    "Deleted": false,
+    "EjUserId": 2,
+    "UserName": null,
+    "TableRight": {
+      "Mask": "Select, Update, Delete",
+      "Reason": ""
+    },
+    "FieldProperties": {}
+  },
+  "UpdatedBy": {
+    "AssociateId": 19,
+    "Name": "EF1",
+    "PersonId": 30,
+    "Rank": 0,
+    "Tooltip": "",
+    "Type": "InternalAssociate",
+    "GroupIdx": 2,
+    "FullName": "Eivind SO Fasting",
+    "FormalName": "Eivind SO Fasting",
+    "Deleted": false,
+    "EjUserId": 8,
+    "UserName": null,
+    "TableRight": {
+      "Mask": "Select, Update",
+      "Reason": "[SR_USER_CANNOT_DELETE_SELF]"
+    },
+    "FieldProperties": {}
+  },
+  "Associate": {
+    "AssociateId": 5,
+    "Name": "EF",
+    "PersonId": 5,
+    "Rank": 0,
+    "Tooltip": "",
+    "Type": "InternalAssociate",
+    "GroupIdx": 2,
+    "FullName": "Eivind2 tukla Fasting",
+    "FormalName": "Eivind2 tukla Fasting",
+    "Deleted": false,
+    "EjUserId": 2,
+    "UserName": null,
+    "TableRight": {
+      "Mask": "Select, Update, Delete",
+      "Reason": ""
+    },
+    "FieldProperties": {}
+  },
+  "ProjectStatus": {
+    "Id": 1,
+    "Value": "Planned",
+    "Tooltip": "",
+    "TableRight": null,
+    "FieldProperties": {
+      "ProjStatusId": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.Int32",
+        "FieldLength": 4
+      },
+      "Value": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 239
+      },
+      "Tooltip": {
+        "FieldRight": {
+          "Mask": "Update",
+          "Reason": ""
+        },
+        "FieldType": "System.String",
+        "FieldLength": 254
+      }
+    }
+  },
+  "ProjectType": {
+    "Id": 4,
+    "Value": "Conference",
+    "Tooltip": "",
+    "TableRight": null,
+    "FieldProperties": {}
+  },
+  "HasImage": false,
+  "ImageDescription": "",
+  "ActiveStatusMonitorId": 0,
+  "Links": [
+    {
+      "EntityName": "project",
+      "Id": 7,
+      "Text": "what is this",
+      "ExtraInfo": null,
+      "LinkId": 9,
+      "TableRight": null,
+      "FieldProperties": {}
+    }
+  ],
+  "ActiveLinks": 1,
+  "Completed": false,
+  "NextMilestoneDate": "2024-11-02T16:17:50",
+  "NmdAppointmentId": 0,
+  "EndDate": "2024-11-02T16:17:50",
+  "ActiveErpLinks": 0,
+  "UserDefinedFields": {
+    "SuperOffice:1": ""
+  },
+  "ExtraFields": {},
+  "CustomFields": {
+    "SuperOffice:1": "",
+    "SuperOffice:1:org": ""
+  },
+  "PublishEventDate": "0001-01-01T00:00:00Z",
+  "PublishTo": "9999-12-31T23:59:59Z",
+  "PublishFrom": "0001-01-01T00:00:00Z",
+  "IsPublished": false,
+  "TableRight": {
+    "Mask": "Select, Update, Insert, Delete",
+    "Reason": ""
+  },
+  "FieldProperties": {
+    "ProjectId": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 4
+    },
+    "Name": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "System.String",
+      "FieldLength": 219
+    },
+    "ProjectNumber": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_MANDATORY_FIELD_2818]"
+      },
+      "FieldType": "System.String",
+      "FieldLength": 49
+    },
+    "CreatedDate": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.DateTime",
+      "FieldLength": 16
+    },
+    "UpdatedDate": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.DateTime",
+      "FieldLength": 16
+    },
+    "ActiveLinks": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.UInt32",
+      "FieldLength": 4
+    },
+    "NextMilestoneDate": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.DateTime",
+      "FieldLength": 16
+    },
+    "NmdAppointmentId": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 4
+    },
+    "EndDate": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.DateTime",
+      "FieldLength": 16
+    },
+    "ActiveErpLinks": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 4
+    },
+    "ProjectMembers": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "SuperOffice.CRM.Services.ProjectMember[]",
+      "FieldLength": 0
+    },
+    "Description": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 4000
+    },
+    "Postit": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.String",
+      "FieldLength": 4000
+    },
+    "CreatedBy": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.Associate",
+      "FieldLength": 4
+    },
+    "UpdatedBy": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.Associate",
+      "FieldLength": 4
+    },
+    "Associate": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "SuperOffice.CRM.Services.Associate",
+      "FieldLength": 4
+    },
+    "ProjectStatus": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.ProjectStatus",
+      "FieldLength": 4
+    },
+    "ProjectType": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "SuperOffice.CRM.Services.ProjectType",
+      "FieldLength": 4
+    },
+    "HasImage": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 0
+    },
+    "ImageDescription": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "System.String",
+      "FieldLength": 254
+    },
+    "ActiveStatusMonitorId": {
+      "FieldRight": {
+        "Mask": "Update, UIHintMandatory",
+        "Reason": "[SR_ACCESS_MANDATORY]"
+      },
+      "FieldType": "System.String",
+      "FieldLength": 0
+    },
+    "Links": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Int32",
+      "FieldLength": 4
+    },
+    "Completed": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "System.Boolean",
+      "FieldLength": 2
+    },
+    "UserDefinedFields.SuperOffice:1": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "ShortText",
+      "FieldLength": 20
+    },
+    "CustomFields.SuperOffice:1": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "ShortText",
+      "FieldLength": 20
+    },
+    "Urls": {
+      "FieldRight": {
+        "Mask": "Update",
+        "Reason": ""
+      },
+      "FieldType": "SuperOffice.CRM.Services.EntityElement[]",
+      "FieldLength": 0
+    }
+  },
+  "_Links": {
+    "Href": "https://sod2.superoffice.com:443/Cust31038/Default.aspx?project/7?project/7_id=7",
+    "Self": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/7/",
+    "Self.Simple": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/7/Simple/",
+    "UdefLayout": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/UdefLayout/Published/",
+    "Associate.List": "https://sod2.superoffice.com:443/Cust31038/api/v1/MDOList/associate/",
+    "ProjectStatus.List": "https://sod2.superoffice.com:443/Cust31038/api/v1/MDOList/projectstatus/",
+    "ProjectType.List": "https://sod2.superoffice.com:443/Cust31038/api/v1/MDOList/projecttype/",
+    "Archive": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/",
+    "Archive.Activities": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/7/Activities/",
+    "Archive.Guide": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/7/Guide/",
+    "Archive.Members": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/7/Members/",
+    "Archive.Contacts": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/7/Contacts/",
+    "Archive.Links": "https://sod2.superoffice.com:443/Cust31038/api/v1/Project/7/Links/"
+  }
+}
+
+### Get project links
+GET {{api_url}}/v1/Project/13/Links HTTP/1.1
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+Accept: application/json
