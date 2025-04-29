@@ -1,0 +1,31 @@
+### Normal user - Allowed
+
+POST {{api_url}}/v1/Agents/Appointment/CreateVideoMeetingReservation HTTP/1.1
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+
+### Normal user - Allowed
+POST {{api_url}}/v1/Agents/Appointment/DeleteVideoMeetingReservation HTTP/1.1
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+
+{
+  "VideoMeetingId": "f1098b4e-e506-4fb3-8978-6d170cc4be66"
+}
+
+### SystemUser - not allowed
+POST {{api_url}}/v1/Agents/Appointment/CreateVideoMeetingReservation HTTP/1.1
+Authorization: SOTicket {{ticket}}
+SO-AppToken: {{client_secret}}
+Accept: application/json
+
+### SystemUser - not allowed
+POST {{api_url}}/v1/Agents/Appointment/DeleteVideoMeetingReservation HTTP/1.1
+Authorization: SOTicket {{ticket}}
+SO-AppToken: {{client_secret}}
+Content-Type: application/json
+
+{
+  "VideoMeetingId": "923b716e-c6e3-49ed-b07e-d9f69bccf806"
+}
+
