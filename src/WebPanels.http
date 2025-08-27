@@ -1,0 +1,98 @@
+
+
+GET {{api_url}}/v1/List/WebPanel/Items HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+# create a default webpanel (Get the default webpanel to send in a POST)
+
+GET {{api_url}}/v1/List/WebPanel/Items/Default HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+# Save the web panel
+# Returned ID: 97
+
+POST {{api_url}}/v1/List/WebPanel/Items
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "WebPanelId": 0,
+  "Name": "REST webpanel 4",
+  "Tooltip": "REST webpanel 4 tooltip",
+  "Deleted": false,
+  "Rank": 0,
+  "UrlEncoding": "Unknown",
+  "VisibleIn": "ContactCard",
+  "OnCentral": true,
+  "OnSatellite": false,
+  "OnTravel": false,
+  "OnSalesMarketingWeb": true,
+  "OnSalesMarketingPocket": false,
+  "ShowInMenuBar": false,
+  "ShowInToolBar": false,
+  "ShowInAddressBar": false,
+  "ShowInStatusBar": false,
+  "WindowName": "restwebpanel4",
+  "Url": "https://devnet-tools.superoffice.com",
+  "ProgId": null,
+  "Icon": 16384,
+  "AlwaysReloadOnShow": true,
+  "NeverReloadOnCurrentChange": false
+}
+
+###
+
+# Get a list of user groups for list item (webpanel) visibility
+GET {{api_url}}/v1/MDOList/usergroup
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Accept-Language: en
+
+###
+
+# Set the visible for user groups
+PUT {{api_url}}/v1/List/28/Items/97/UserGroups HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+[
+  {
+    "Id": 2,
+    "Name": "Sales",
+    "Selected": true,
+  },
+  {
+    "Id": 4,
+    "Name": "Services",
+    "Selected": false,
+  },
+  {
+    "Id": 3,
+    "Name": "Technical",
+    "Selected": true,
+  },
+  {
+    "Id": 5,
+    "Name": "Marketing",
+    "Selected": false,
+  },
+  {
+    "Id": 1,
+    "Name": "Administration",
+    "Selected": true,
+  }
+]
+
+###
+
+DELETE {{api_url}}/v1/List/WebPanel/Items/97
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
