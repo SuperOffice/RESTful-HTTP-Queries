@@ -96,3 +96,106 @@ Content-Type: application/json; charset=utf-8
 DELETE {{api_url}}/v1/List/WebPanel/Items/97
 Authorization: Bearer {{token}}
 Accept: application/json; charset=utf-8
+
+###
+#********************************************************************************
+#*** AGENTS *********************************************************************
+#********************************************************************************
+###
+
+POST {{api_url}}/v1/Agents/List/CreateDefaultWebPanelEntity
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+###
+
+POST {{api_url}}/v1/Agents/List/SaveWebPanelEntity
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "WebPanelId": 0,
+  "Name": "HTTP RPC webpanel",
+  "Tooltip": "HTTP RPC webpanel",
+  "Deleted": false,
+  "Rank": 0,
+  "UrlEncoding": "Unknown",
+  "VisibleIn": "CompanyMinicard",
+  "OnCentral": true,
+  "OnSatellite": false,
+  "OnTravel": false,
+  "OnSalesMarketingWeb": true,
+  "OnSalesMarketingPocket": false,
+  "ShowInMenuBar": false,
+  "ShowInToolBar": false,
+  "ShowInAddressBar": false,
+  "ShowInStatusBar": false,
+  "WindowName": "httprpcwebpanel",
+  "Url": "https://devnet-tools.superoffice.com",
+  "ProgId": null,
+  "Icon": 0,
+  "AlwaysReloadOnShow": false,
+  "NeverReloadOnCurrentChange": false
+}
+
+###
+
+POST {{api_url}}/v1/Agents/List/GetWebPanelEntity?webPanelEntityId=98 HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+
+
+###
+
+# WebPanel List ID: 28
+
+POST {{api_url}}/v1/Agents/List/GetVisibleForUserGroups HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "UdListDefinitionId": 28,
+  "ListItemId": 98
+}
+
+
+###
+
+POST {{api_url}}/v1/Agents/List/SetVisibleForUserGroups HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/json; charset=utf-8
+Content-Type: application/json; charset=utf-8
+
+{
+  "UdListDefinitionId": 28,
+  "ListItemId": 98,
+  "UserGroups": [
+    {
+        "Id": 2,
+        "Name": "Sales",
+        "Selected": true,
+    },
+    {
+        "Id": 4,
+        "Name": "Services",
+        "Selected": false,
+    },
+    {
+        "Id": 3,
+        "Name": "Technical",
+        "Selected": true,
+    },
+    {
+        "Id": 5,
+        "Name": "Marketing",
+        "Selected": false,
+    },
+    {
+        "Id": 1,
+        "Name": "Administration",
+        "Selected": true,
+    }
+  ]
+}
