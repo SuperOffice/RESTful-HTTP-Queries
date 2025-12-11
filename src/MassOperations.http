@@ -186,3 +186,74 @@ Content-Type: application/json
 }
 
 ###
+
+# Update company user defined fields
+
+POST {{api_url}}/v1/Agents/DatabaseTable/Upsert HTTP/1.1
+Authorization: SOTicket {{access_token}}
+SO-AppToken: {{app_secret}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "TableName": "udcontactsmall",
+  "Columns": [
+    "contact_id",
+    "SuperOffice:13",
+    "SuperOffice:2"
+  ],
+  "Keys": [
+    "contact_id"
+  ],
+  "Data": [
+     [ 
+        "5455",
+        "MyTextValue1",
+        "30"
+    ],
+    [
+        "9206",
+        "MyTextValue2",
+        "32"
+    ]
+  ],
+  "NomatchAction": "NoChange",
+  "ReturnRowStatus": true
+}
+
+###
+
+# Update company name, country, business, category and number1 fields
+
+POST {{api_url}}/v1/Agents/DatabaseTable/Upsert HTTP/1.1
+Authorization: SOTicket {{access_token}}
+SO-AppToken: {{app_secret}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "TableName": "contact",
+  "Keys": [
+    "contact_id"
+  ],
+  "Columns": [
+    "contact_id",
+    "name",
+    "country_id",
+    "business_idx",
+    "category_idx",
+    "number1",
+  ],
+  "Data": [
+    [
+      "14096",
+      "Meembee s.r.o.",
+      703,
+      2,
+      2,
+      "0987654321"
+    ]
+  ],
+  "NomatchAction": "NoChange",
+  "ReturnRowStatus": "True"
+}
